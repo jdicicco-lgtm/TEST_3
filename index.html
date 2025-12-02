@@ -34,7 +34,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
       <!-- FILTRI -->
       <aside class="lg:col-span-1 bg-white rounded-2xl shadow p-4 space-y-4">
-        <div class="flex items-center justify-between mb-2">
+        <div class="flex items-center justify-between mb-3">
           <h2 class="text-lg font-semibold text-slate-800">Filtri</h2>
           <button
             id="resetFiltersBtn"
@@ -45,65 +45,65 @@
         </div>
 
         <!-- Filtro Anno -->
-        <div>
-          <label class="block text-xs font-semibold text-slate-500 mb-1">Anno</label>
+        <div class="space-y-1">
+          <div class="flex items-center justify-between">
+            <label class="block text-xs font-semibold text-slate-500">Anno</label>
+            <span class="text-[10px] text-slate-400">Multi-selezione</span>
+          </div>
           <select
             id="yearFilter"
             multiple
-            class="w-full rounded-lg border border-slate-300 text-sm px-2 py-1 focus:outline-none focus:ring-1 focus:ring-slate-400"
+            class="w-full rounded-xl border border-slate-200 bg-slate-50 text-sm px-2 py-1.5 focus:outline-none focus:ring-1 focus:ring-slate-400"
           ></select>
-          <p class="text-[11px] text-slate-400 mt-1">
-            Multi-selezione (Ctrl+Click) · Default: 2024–2026.
-          </p>
         </div>
 
         <!-- Filtro Mese -->
-        <div>
-          <label class="block text-xs font-semibold text-slate-500 mb-1">Mese</label>
+        <div class="space-y-1">
+          <div class="flex items-center justify-between">
+            <label class="block text-xs font-semibold text-slate-500">Mese</label>
+            <span class="text-[10px] text-slate-400">Gen–Dic</span>
+          </div>
           <select
             id="monthFilter"
             multiple
-            class="w-full rounded-lg border border-slate-300 text-sm px-2 py-1 focus:outline-none focus:ring-1 focus:ring-slate-400"
-          ></select>
-        </div>
-
-        <!-- Tipologia -->
-        <div>
-          <label class="block text-xs font-semibold text-slate-500 mb-1">Tipologia</label>
-          <select
-            id="tipologiaFilter"
-            multiple
-            class="w-full rounded-lg border border-slate-300 text-sm px-2 py-1 focus:outline-none focus:ring-1 focus:ring-slate-400"
+            class="w-full rounded-xl border border-slate-200 bg-slate-50 text-sm px-2 py-1.5 focus:outline-none focus:ring-1 focus:ring-slate-400"
           ></select>
         </div>
 
         <!-- Gruppo Veicolo -->
-        <div>
-          <label class="block text-xs font-semibold text-slate-500 mb-1">Gruppo Veicolo</label>
+        <div class="space-y-1">
+          <div class="flex items-center justify-between">
+            <label class="block text-xs font-semibold text-slate-500">Gruppo veicolo</label>
+            <span class="text-[10px] text-slate-400">Pick list</span>
+          </div>
           <select
             id="gruppoFilter"
             multiple
-            class="w-full rounded-lg border border-slate-300 text-sm px-2 py-1 focus:outline-none focus:ring-1 focus:ring-slate-400"
+            class="w-full rounded-xl border border-slate-200 bg-slate-50 text-sm px-2 py-1.5 focus:outline-none focus:ring-1 focus:ring-slate-400"
           ></select>
         </div>
 
         <!-- Acquisizione -->
-        <div>
-          <label class="block text-xs font-semibold text-slate-500 mb-1">Acquisizione</label>
+        <div class="space-y-1">
+          <div class="flex items-center justify-between">
+            <label class="block text-xs font-semibold text-slate-500">Acquisizione</label>
+          </div>
           <select
             id="acquisizioneFilter"
             multiple
-            class="w-full rounded-lg border border-slate-300 text-sm px-2 py-1 focus:outline-none focus:ring-1 focus:ring-slate-400"
+            class="w-full rounded-xl border border-slate-200 bg-slate-50 text-sm px-2 py-1.5 focus:outline-none focus:ring-1 focus:ring-slate-400"
           ></select>
         </div>
 
         <!-- Stazione -->
-        <div>
-          <label class="block text-xs font-semibold text-slate-500 mb-1">Stazione</label>
+        <div class="space-y-1">
+          <div class="flex items-center justify-between">
+            <label class="block text-xs font-semibold text-slate-500">Stazione</label>
+          </div>
           <select
             id="stazioneFilter"
             multiple
-            class="w-full rounded-lg border border-slate-300 text-sm px-2 py-1 focus:outline-none focus:ring-1 focus:ring-slate-400"
+            class="w-full rounded-xl border border-slate-200 bg-slate-50 text-sm px-2 py-1.5 focus:outline-none focus:ring-1 focus:ring-slate-400"
           ></select>
         </div>
 
@@ -114,7 +114,7 @@
           </label>
           <select
             id="projectionSelect"
-            class="w-full rounded-lg border border-slate-300 text-sm px-2 py-1 focus:outline-none focus:ring-1 focus:ring-slate-400"
+            class="w-full rounded-xl border border-slate-200 bg-slate-50 text-sm px-2 py-1.5 focus:outline-none focus:ring-1 focus:ring-slate-400"
           >
             <option value="0.05">+5%</option>
             <option value="0.10" selected>+10% (default)</option>
@@ -284,10 +284,15 @@
       return s;
     }
 
+    function normalizeGroup(val) {
+      const s = normalizeText(val);
+      if (!s) return "";
+      return s.toUpperCase();
+    }
+
     function normalizeStation(val) {
       const s = normalizeText(val);
       if (!s) return "";
-      // Normalizzo a maiuscolo per evitare duplicati da minuscolo/maiuscolo
       return s.toUpperCase();
     }
 
@@ -353,12 +358,11 @@
     function populateFilterOptions(allFleet, allBookings) {
       const yearSelect = document.getElementById("yearFilter");
       const monthSelect = document.getElementById("monthFilter");
-      const tipologiaSelect = document.getElementById("tipologiaFilter");
       const gruppoSelect = document.getElementById("gruppoFilter");
       const acquisizioneSelect = document.getElementById("acquisizioneFilter");
       const stazioneSelect = document.getElementById("stazioneFilter");
 
-      [yearSelect, monthSelect, tipologiaSelect, gruppoSelect, acquisizioneSelect, stazioneSelect]
+      [yearSelect, monthSelect, gruppoSelect, acquisizioneSelect, stazioneSelect]
         .forEach(sel => sel.innerHTML = "");
 
       // Anni: limito a 2024–2026
@@ -384,30 +388,21 @@
         monthSelect.appendChild(opt);
       }
 
-      const tipologie = new Set();
       const gruppi = new Set();
       const acquisizioni = new Set();
       const stazioni = new Set();
 
       allFleet.forEach(f => {
-        if (f.tipologia) tipologie.add(f.tipologia);
         if (f.gruppo) gruppi.add(f.gruppo);
         if (f.acquisizione) acquisizioni.add(f.acquisizione);
         if (f.stazione) stazioni.add(f.stazione);
       });
       allBookings.forEach(b => {
-        if (b.tipologia) tipologie.add(b.tipologia);
         if (b.gruppo) gruppi.add(b.gruppo);
         if (b.acquisizione) acquisizioni.add(b.acquisizione);
         if (b.stazione) stazioni.add(b.stazione);
       });
 
-      Array.from(tipologie).sort().forEach(t => {
-        const opt = document.createElement("option");
-        opt.value = t;
-        opt.textContent = t;
-        tipologiaSelect.appendChild(opt);
-      });
       Array.from(gruppi).sort().forEach(g => {
         const opt = document.createElement("option");
         opt.value = g;
@@ -428,7 +423,7 @@
       });
 
       // Seleziona tutto di default
-      [yearSelect, monthSelect, tipologiaSelect, gruppoSelect, acquisizioneSelect, stazioneSelect]
+      [yearSelect, monthSelect, gruppoSelect, acquisizioneSelect, stazioneSelect]
         .forEach(sel => {
           for (let i = 0; i < sel.options.length; i++) {
             sel.options[i].selected = true;
@@ -487,7 +482,6 @@
 
         if (filters.years.length && !filters.years.includes(String(year))) return false;
         if (filters.months.length && !filters.months.includes(String(month))) return false;
-        if (filters.tipologie.length && f.tipologia && !filters.tipologie.includes(f.tipologia)) return false;
         if (filters.gruppi.length && f.gruppo && !filters.gruppi.includes(f.gruppo)) return false;
         if (filters.acquisizioni.length && f.acquisizione && !filters.acquisizioni.includes(f.acquisizione)) return false;
         if (filters.stazioni.length && f.stazione && !filters.stazioni.includes(f.stazione)) return false;
@@ -502,7 +496,6 @@
 
         if (filters.years.length && !filters.years.includes(String(year))) return false;
         if (filters.months.length && !filters.months.includes(String(month))) return false;
-        if (filters.tipologie.length && b.tipologia && !filters.tipologie.includes(b.tipologia)) return false;
         if (filters.gruppi.length && b.gruppo && !filters.gruppi.includes(b.gruppo)) return false;
         if (filters.acquisizioni.length && b.acquisizione && !filters.acquisizioni.includes(b.acquisizione)) return false;
         if (filters.stazioni.length && b.stazione && !filters.stazioni.includes(b.stazione)) return false;
@@ -513,9 +506,19 @@
       return { fleet, bookings };
     }
 
+    // KPI: nuova logica Dimensione Flotta (media veicoli per mese)
     function computeKpiForRange(fleet, bookings) {
-      const uniqueVehicles = new Set(fleet.map(f => f.id));
-      const fleetSize = uniqueVehicles.size;
+      // media veicoli/mese nel periodo
+      const monthlyCounts = {};
+      fleet.forEach(f => {
+        const d = parseISO(f.refDate);
+        const key = `${getYear(d)}-${String(getMonth(d)).padStart(2,"0")}`;
+        monthlyCounts[key] = (monthlyCounts[key] || 0) + 1;
+      });
+      const values = Object.values(monthlyCounts);
+      const fleetSize = values.length
+        ? values.reduce((a,b)=>a+b,0) / values.length
+        : 0;
 
       const sumCanone = fleet.reduce((acc, f) => acc + (f.canoneImponibile || 0), 0);
       const sumAss = fleet.reduce((acc, f) => acc + (f.assicurazione || 0), 0);
@@ -540,9 +543,8 @@
     }
 
     function computeJan2026Kpi(filters) {
-      const { tipologie, gruppi, acquisizioni, stazioni } = filters;
+      const { gruppi, acquisizioni, stazioni } = filters;
       const bookings = bookingsJan2026.filter(b => {
-        if (tipologie.length && b.tipologia && !tipologie.includes(b.tipologia)) return false;
         if (gruppi.length && b.gruppo && !gruppi.includes(b.gruppo)) return false;
         if (acquisizioni.length && b.acquisizione && !acquisizioni.includes(b.acquisizione)) return false;
         if (stazioni.length && b.stazione && !stazioni.includes(b.stazione)) return false;
@@ -562,9 +564,9 @@
         if (d < currentRange.start || d > currentRange.end) return;
         const key = `${getYear(d)}-${String(getMonth(d)).padStart(2,"0")}`;
         if (!buckets[key]) {
-          buckets[key] = { fleetIds: new Set(), costoTotale: 0, revenue: 0 };
+          buckets[key] = { fleetCount: 0, costoTotale: 0, revenue: 0 };
         }
-        buckets[key].fleetIds.add(f.id);
+        buckets[key].fleetCount += 1;
         buckets[key].costoTotale += (f.canoneImponibile || 0) + (f.assicurazione || 0);
       });
 
@@ -573,13 +575,13 @@
         if (d < currentRange.start || d > currentRange.end) return;
         const key = `${b.year}-${String(b.month).padStart(2,"0")}`;
         if (!buckets[key]) {
-          buckets[key] = { fleetIds: new Set(), costoTotale: 0, revenue: 0 };
+          buckets[key] = { fleetCount: 0, costoTotale: 0, revenue: 0 };
         }
         buckets[key].revenue += (b.price || 0);
       });
 
       const labels = Object.keys(buckets).sort();
-      const fleetSeries = labels.map(k => buckets[k].fleetIds.size);
+      const fleetSeries = labels.map(k => buckets[k].fleetCount);
       const costSeries  = labels.map(k => buckets[k].costoTotale);
       const revSeries   = labels.map(k => buckets[k].revenue);
 
@@ -592,7 +594,7 @@
           labels,
           datasets: [
             {
-              label: "Flotta (ID unici)",
+              label: "Flotta (veicoli, conteggio mensile)",
               data: fleetSeries,
               borderWidth: 2,
               tension: 0.2,
@@ -634,7 +636,7 @@
                 label: (item) => {
                   const datasetLabel = item.dataset.label || "";
                   if (datasetLabel.includes("Flotta")) {
-                    return `${datasetLabel}: ${item.parsed.y} veicoli`;
+                    return `${datasetLabel}: ${item.parsed.y}`;
                   }
                   return `${datasetLabel}: ${formatCurrency(item.parsed.y)}`;
                 }
@@ -683,7 +685,6 @@
 
       const years = getMultiSelectValues("yearFilter");
       const months = getMultiSelectValues("monthFilter");
-      const tipologie = getMultiSelectValues("tipologiaFilter");
       const gruppi = getMultiSelectValues("gruppoFilter");
       const acquisizioni = getMultiSelectValues("acquisizioneFilter");
       const stazioni = getMultiSelectValues("stazioneFilter");
@@ -693,7 +694,6 @@
       const filters = {
         years,
         months,
-        tipologie,
         gruppi,
         acquisizioni,
         stazioni,
@@ -709,7 +709,7 @@
       const kpiCurrent = computeKpiForRange(fleetCurrent, bookingsCurrent);
       const kpiPrev    = computeKpiForRange(fleetPrev, bookingsPrev);
 
-      document.getElementById("kpiFleetSize").textContent      = formatNumber(kpiCurrent.fleetSize);
+      document.getElementById("kpiFleetSize").textContent      = formatNumber(kpiCurrent.fleetSize, 1);
       document.getElementById("kpiCanone").textContent         = formatCurrency(kpiCurrent.canone);
       document.getElementById("kpiCanoneIvato").textContent    = formatCurrency(kpiCurrent.canoneIvato);
       document.getElementById("kpiAssicurazione").textContent  = formatCurrency(kpiCurrent.assicurazione);
@@ -719,7 +719,7 @@
       document.getElementById("kpiNumPren").textContent        = formatNumber(kpiCurrent.numPren);
 
       document.getElementById("kpiFleetSizePrev").textContent =
-        "Periodo precedente: " + formatNumber(kpiPrev.fleetSize);
+        "Periodo precedente: " + formatNumber(kpiPrev.fleetSize, 1);
       document.getElementById("kpiCanonePrev").textContent =
         "Periodo precedente: " + formatCurrency(kpiPrev.canone);
       document.getElementById("kpiAssicurazionePrev").textContent =
@@ -740,7 +740,7 @@
     }
 
     function resetFilters() {
-      ["yearFilter","monthFilter","tipologiaFilter","gruppoFilter","acquisizioneFilter","stazioneFilter"]
+      ["yearFilter","monthFilter","gruppoFilter","acquisizioneFilter","stazioneFilter"]
         .forEach(id => {
           const sel = document.getElementById(id);
           for (let i = 0; i < sel.options.length; i++) {
@@ -759,27 +759,24 @@
           loadJsonClean("bookingsJan2026.json")
         ]);
 
-        // normalizzo tipologia/gruppo/acquisizione/stazione in memoria
+        // Normalizzo gruppo / stazione in memoria per deduplicare
         fleetData = fleetData.map(r => ({
           ...r,
-          tipologia: normalizeText(r.tipologia),
-          gruppo: normalizeText(r.gruppo),
+          gruppo: normalizeGroup(r.gruppo),
           acquisizione: normalizeText(r.acquisizione),
           stazione: normalizeStation(r.stazione)
         }));
 
         bookings2025 = bookings2025.map(r => ({
           ...r,
-          tipologia: normalizeText(r.tipologia),
-          gruppo: normalizeText(r.gruppo),
+          gruppo: normalizeGroup(r.gruppo),
           acquisizione: normalizeText(r.acquisizione),
           stazione: normalizeStation(r.stazione)
         }));
 
         bookingsJan2026 = bookingsJan2026.map(r => ({
           ...r,
-          tipologia: normalizeText(r.tipologia),
-          gruppo: normalizeText(r.gruppo),
+          gruppo: normalizeGroup(r.gruppo),
           acquisizione: normalizeText(r.acquisizione),
           stazione: normalizeStation(r.stazione)
         }));
@@ -792,7 +789,7 @@
         populateFilterOptions(fleetData, allBookings);
 
         [
-          "yearFilter","monthFilter","tipologiaFilter","gruppoFilter",
+          "yearFilter","monthFilter","gruppoFilter",
           "acquisizioneFilter","stazioneFilter","projectionSelect"
         ].forEach(id => {
           document.getElementById(id).addEventListener("change", updateDashboard);
