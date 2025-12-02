@@ -280,6 +280,20 @@
     }
 
     // ===========================
+    //  CARICAMENTO JSON CON PULIZIA NaN
+    // ===========================
+    async function loadJsonClean(url) {
+      const res = await fetch(url);
+      if (!res.ok) {
+        throw new Error(`Errore nel caricamento di ${url}: status ${res.status}`);
+      }
+      let text = await res.text();
+      // rimpiazza NaN (non valido in JSON) con 0
+      text = text.replace(/\bNaN\b/g, "0");
+      return JSON.parse(text);
+    }
+
+    // ===========================
     //  GENERA BOOKING 2024/2026
     // ===========================
     function generateAllBookings(projectionFactor) {
@@ -539,7 +553,6 @@
     function updateMainChart(allFleet, allBookings, filters) {
       const { currentRange } = filters;
 
-      // Aggregazione per anno-mese
       const buckets = {}; // key: YYYY-MM -> { fleetIds:Set, costoTotale, revenue }
 
       allFleet.forEach(f => {
@@ -749,22 +762,15 @@
     }
 
     // ===========================
-    //  INIT (FETCH JSON)
+    //  INIT (FETCH JSON CON PULIZIA)
     // ===========================
     async function initDashboardWithJson() {
       try {
-        const [fleetRes, b2025Res, janRes] = await Promise.all([
-          fetch("fleetData.json"),
-          fetch("bookings2025.json"),
-          fetch("bookingsJan2026.json")
-        ]);
-
-        if (!fleetRes.ok || !b2025Res.ok || !janRes.ok) {
-          throw new Error("Errore nel caricamento dei JSON");
-        }
-
+        // carico i 3 JSON e sostituisco eventuali NaN con 0
         [fleetData, bookings2025, bookingsJan2026] = await Promise.all([
-          fleetRes.json(), b2025Res.json(), janRes.json()
+          loadJsonClean("fleetData.json"),
+          loadJsonClean("bookings2025.json"),
+          loadJsonClean("bookingsJan2026.json")
         ]);
 
         const defaultProjectionFactor = parseFloat(
@@ -787,7 +793,7 @@
         updateDashboard();
       } catch (err) {
         console.error("Errore durante init dashboard:", err);
-        alert("Errore nel caricamento dei dati JSON. Verifica che i file siano nella stessa cartella di index.html.");
+        alert("Errore nel caricamento dei dati JSON. Controlla che i file siano nella stessa cartella dell'HTML.");
       }
     }
 
