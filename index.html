@@ -324,6 +324,17 @@
       return s;
     }
 
+    // Trova dinamicamente la colonna giusta (es. "GRUPPO", "CarType", ecc.)
+    function detectColumn(obj, candidatesNormalized) {
+      if (!obj) return null;
+      const keys = Object.keys(obj);
+      for (const key of keys) {
+        const norm = key.toLowerCase().replace(/\s+/g, "");
+        if (candidatesNormalized.includes(norm)) return key;
+      }
+      return null;
+    }
+
     // Caricamento JSON con pulizia NaN numerici
     async function loadJsonClean(url) {
       const res = await fetch(url);
@@ -417,7 +428,7 @@
         monthSelect.appendChild(opt);
       }
 
-      // Gruppi: chiave da fleetStations2025
+      // Gruppi: chiave da fleetStations2025 (sorgente "ufficiale")
       const groupMap = new Map(); // key -> label
       stationsData.forEach(s => {
         if (!s.groupKey) return;
@@ -428,12 +439,12 @@
       // eventuali gruppi presenti solo nella flotta / bookings
       allFleet.forEach(f => {
         if (f.groupKey && !groupMap.has(f.groupKey)) {
-          groupMap.set(f.groupKey, f.gruppo || f.groupKey);
+          groupMap.set(f.groupKey, f.groupLabel || f.gruppo || f.groupKey);
         }
       });
       allBookings.forEach(b => {
         if (b.groupKey && !groupMap.has(b.groupKey)) {
-          groupMap.set(b.groupKey, b.gruppo || b.groupKey);
+          groupMap.set(b.groupKey, b.groupLabel || b.gruppo || b.groupKey);
         }
       });
 
@@ -451,13 +462,13 @@
       allFleet.forEach(f => {
         if (!f.acqKey) return;
         if (!acqMap.has(f.acqKey)) {
-          acqMap.set(f.acqKey, f.acquisizione || f.acqKey);
+          acqMap.set(f.acqKey, f.acqLabel || f.acquisizione || f.acqKey);
         }
       });
       allBookings.forEach(b => {
         if (!b.acqKey) return;
         if (!acqMap.has(b.acqKey)) {
-          acqMap.set(b.acqKey, b.acquisizione || b.acqKey);
+          acqMap.set(b.acqKey, b.acqLabel || b.acquisizione || b.acqKey);
         }
       });
 
@@ -481,13 +492,13 @@
       allFleet.forEach(f => {
         if (!f.stationKey) return;
         if (!stMap.has(f.stationKey)) {
-          stMap.set(f.stationKey, f.stazione || f.stationKey);
+          stMap.set(f.stationKey, f.stationLabel || f.stazione || f.stationKey);
         }
       });
       allBookings.forEach(b => {
         if (!b.stationKey) return;
         if (!stMap.has(b.stationKey)) {
-          stMap.set(b.stationKey, b.stazione || b.stationKey);
+          stMap.set(b.stationKey, b.stationLabel || b.stazione || b.stationKey);
         }
       });
 
@@ -664,7 +675,6 @@
     let mainChartInstance = null;
 
     function updateMainChart(allFleet, allBookings, stationsData, filters) {
-      // uso gli stessi dati filtrati del periodo corrente
       const { fleet, bookings, stations } = filterDataForRange(
         allFleet,
         allBookings,
@@ -895,7 +905,7 @@
           loadJsonClean("fleetStations2025.json")
         ]);
 
-        // normalizzo chiavi per join filtri
+        // normalizzo chiavi per le stazioni (sorgente per gruppo/stazione)
         fleetStations2025 = fleetStations2025.map(s => ({
           ...s,
           groupKey: normalizeKey(s.group),
@@ -904,52 +914,4 @@
           stationLabel: normalizeLabel(s.station)
         }));
 
-        fleetData = fleetData.map(f => ({
-          ...f,
-          groupKey: normalizeKey(f.gruppo || f.group || f.CarType),
-          acqKey: normalizeKey(f.acquisizione),
-          stationKey: normalizeKey(f.stazione || f.station)
-        }));
-
-        bookings2025 = bookings2025.map(b => ({
-          ...b,
-          groupKey: normalizeKey(b.gruppo || b.group || b.CarType),
-          acqKey: normalizeKey(b.acquisizione),
-          stationKey: normalizeKey(b.stazione || b.station)
-        }));
-
-        bookingsJan2026 = bookingsJan2026.map(b => ({
-          ...b,
-          groupKey: normalizeKey(b.gruppo || b.group || b.CarType),
-          acqKey: normalizeKey(b.acquisizione),
-          stationKey: normalizeKey(b.stazione || b.station)
-        }));
-
-        const defaultProjectionFactor = parseFloat(
-          document.getElementById("projectionSelect").value
-        );
-        const allBookings = generateAllBookings(defaultProjectionFactor);
-
-        populateFilterOptions(fleetData, allBookings, fleetStations2025);
-
-        [
-          "yearFilter","monthFilter","gruppoFilter",
-          "acquisizioneFilter","stazioneFilter","projectionSelect"
-        ].forEach(id => {
-          document.getElementById(id).addEventListener("change", updateDashboard);
-        });
-
-        document.getElementById("resetFiltersBtn")
-          .addEventListener("click", resetFilters);
-
-        updateDashboard();
-      } catch (err) {
-        console.error("Errore durante init dashboard:", err);
-        alert("Errore nel caricamento dei dati JSON. Verifica che i file siano nella stessa cartella di index.html.");
-      }
-    }
-
-    document.addEventListener("DOMContentLoaded", initDashboardWithJson);
-  </script>
-</body>
-</html>
+        // rilevo dinamicamente le colonne per flotta
