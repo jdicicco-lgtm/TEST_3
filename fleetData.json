@@ -1,0 +1,8022 @@
+[
+  {
+    "refDate": "2025-07-09",
+    "id": "GN639GX",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 570.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-05-01",
+    "id": "GF566YK",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-05-01",
+    "id": "GG531XG",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Sorrento",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-06-09",
+    "id": "GZ471GT",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Sorrento",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-05-15",
+    "id": "GT097PA",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "FG227FX",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "BRINDISI",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-05-01",
+    "id": "FJ490NV",
+    "gruppo": "CABRIOLET",
+    "tipologia": "AUTO",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "AFFILIATO",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-03-31",
+    "id": "FV903WK",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "Valle di Comino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 427.87,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "FY217SC",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GC174FV",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GK281MH",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 66.5
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GD279VK",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "SORRENTO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GD280VK",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GD285VK",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GD301VK",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2021-08-05",
+    "id": "GD320VK",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "ROMA CIAMPINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 441.66,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GD328VK",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "ROMA CIAMPINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GD355VK",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GD371VK",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GD575AL",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GD618AL",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GD625AL",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GD626AL",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GD627AL",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "ROMA CIAMPINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GD759ZV",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GE758NK",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GE790NK",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GE922HL",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GF054LF",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GF242ES",
+    "gruppo": "STATION",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GF251ES",
+    "gruppo": "STATION",
+    "tipologia": "AUTO",
+    "stazione": "SORRENTO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GF276LE",
+    "gruppo": "STATION",
+    "tipologia": "AUTO",
+    "stazione": "ROMA CIAMPINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GF475LE",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "FIRENZE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GK965MF",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 68.20375
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GN424YL",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 62.00375
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GF873WJ",
+    "gruppo": "STATION",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GP704RB",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 74.3925
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GG098GF",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "SORRENTO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2021-11-11",
+    "id": "GG150CW",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 440.7,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GG216SS",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GG218SS",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GG223SS",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GG313DE",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GR386AD",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 69.23375
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GG564DE",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GG599DE",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GG674WK",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GG710WK",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "VALLE DI COMINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GG865HC",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GG918DE",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "SORRENTO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GG924DE",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GG986HC",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GG989HC",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "SORRENTO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GG991HC",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "NAPOLI STAZIONE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GG992HC",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-03-24",
+    "id": "GH040ST",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 426.39,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-03-24",
+    "id": "GH041ST",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 426.59,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-03-24",
+    "id": "GH042ST",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 426.59,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GR483PB",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 73.11916666666666
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GH156YM",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1450.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GH163YM",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1450.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GH375LG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GH376LG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GR485PB",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 69.1075
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GR488PB",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 67.93124999999999
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GR490PB",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 82.7225
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GR912AG",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 69.1075
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GS410FA",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 75.24249999999999
+  },
+  {
+    "refDate": "2022-05-09",
+    "id": "GH706WX",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "ROMA TERMINI  ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GH867YF",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "nan",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GH868YF",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GH882PE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GH883PE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GH884PE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GH886PE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "ROMA CIAMPINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GH887PE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GH888PE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "ROMA TERMINI  ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GH889PE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GH890PE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GH891PE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "ROMA CIAMPINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GH893PE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI STAZIONE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GH894PE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GH896PE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "SORRENTO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-05-26",
+    "id": "GH971SV",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 450.37000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-05-09",
+    "id": "GJ002AM",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-05-09",
+    "id": "GJ003AM",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-04-14",
+    "id": "GJ178CL",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 353.02,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GT143VW",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 68.8
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GT144VW",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 65.355
+  },
+  {
+    "refDate": "2022-05-03",
+    "id": "GJ207JN",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 628.71,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-04-14",
+    "id": "GJ228CL",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 352.39,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-06-10",
+    "id": "GJ257YF",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 379.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GT681VW",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 66.27125
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GW467EY",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 79.56125
+  },
+  {
+    "refDate": "2022-05-26",
+    "id": "GJ271PY",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "ROMA CIAMPINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 445.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GW899FB",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Valle di Comino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 79.99249999999999
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GW966FB",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 69.8875
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GX398BV",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Roma Termini  ",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 80.7375
+  },
+  {
+    "refDate": "2022-06-09",
+    "id": "GJ346ZB",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "ROMA TERMINI  ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 379.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-05-09",
+    "id": "GJ449YW",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-03-09",
+    "id": "GJ451YW",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "SORRENTO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-06-09",
+    "id": "GJ452YW",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-06-09",
+    "id": "GJ461YW",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "ROMA CIAMPINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GJ462MM",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GJ463MM",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-05-15",
+    "id": "GJ464MM",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 750.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GJ465MM",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GJ468MM",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GJ469MM",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 750.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GJ477MM",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GJ479MM",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-05-03",
+    "id": "GJ523JK",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 575.43,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-04-05",
+    "id": "GJ525JK",
+    "gruppo": "PREMIUM",
+    "tipologia": "AUTO",
+    "stazione": "ROMA CIAMPINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1428.71,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-07-05",
+    "id": "GJ541AG",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 479.16,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-06-09",
+    "id": "GJ608YE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GX399BV",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Valle di Comino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 82.7175
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GJ634FV",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "nan",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GJ635FV",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "nan",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GJ636FV",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "nan",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GJ637FV",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "FIRENZE",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GJ638FV",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GJ639FV",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "nan",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2022-11-28",
+    "id": "GJ680VR",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "PALERMO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 572.91,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-11-28",
+    "id": "GJ683VR",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 572.91,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GX404BV",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 73.11625
+  },
+  {
+    "refDate": "2022-11-24",
+    "id": "GJ687VR",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 572.91,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-12-20",
+    "id": "GJ688VR",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "TRAPANI PORTO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 572.91,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-11-28",
+    "id": "GJ689VR",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 572.91,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GJ697HN",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-05-18",
+    "id": "GJ698VL",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "FIRENZE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 342.86,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-05-18",
+    "id": "GJ699VL",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 342.86,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-05-25",
+    "id": "GJ873PY",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 347.63,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-05-26",
+    "id": "GJ874PY",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI STAZIONE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 352.39,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-05-25",
+    "id": "GJ875PY",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 352.39,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GH614ZR",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 82.08749999999999
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GJ927FP",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GJ930AT",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GJ939FP",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GJ941FP",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GJ182TK",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 71.49625
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GJ184TK",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 74.33749999999999
+  },
+  {
+    "refDate": "2025-06-26",
+    "id": "GK026MG",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GK073MG",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 63.875
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GK075MG",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Valle di Comino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 63.875
+  },
+  {
+    "refDate": "2023-06-07",
+    "id": "GK303MG",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 100.14583333333333
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GK326MH",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 83.89625
+  },
+  {
+    "refDate": "2022-06-30",
+    "id": "GJ994YY",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 379.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-05-22",
+    "id": "GK004MG",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "ROMA TERMINI  ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 450.47,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-04-21",
+    "id": "GK019MG",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 574.18,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-03-05",
+    "id": "GK663ME",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 133.04999999999998
+  },
+  {
+    "refDate": "2023-05-22",
+    "id": "GK032MG",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "ROMA CIAMPINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 450.47,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GK976MF",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 74.08
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GK977MF",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 82.605
+  },
+  {
+    "refDate": "2025-07-22",
+    "id": "GM820ER",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Valle di Comino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 58.8375
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GN121WH",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Termini  ",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 64.0025
+  },
+  {
+    "refDate": "2023-05-22",
+    "id": "GK060MG",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 450.47,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-09-06",
+    "id": "GN175MS",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Valle di Comino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 139.72895833333334
+  },
+  {
+    "refDate": "2023-11-04",
+    "id": "GN176MS",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 139.72895833333334
+  },
+  {
+    "refDate": "2022-06-07",
+    "id": "GK094WP",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 437.91999999999996,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GK097TD",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GK130KP",
+    "gruppo": "STATION",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI STAZIONE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-09-07",
+    "id": "GN177MS",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 139.72895833333334
+  },
+  {
+    "refDate": "2023-06-21",
+    "id": "GK168MH",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 288.52,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-07-13",
+    "id": "GK178NL",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 409.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-06-14",
+    "id": "GK190MH",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 288.52,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-06-26",
+    "id": "GN197MS",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-09-06",
+    "id": "GN245MT",
+    "gruppo": "STATION",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 136.73634166666668
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GN247MT",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 62.7125
+  },
+  {
+    "refDate": "2023-09-06",
+    "id": "GN248MT",
+    "gruppo": "STATION",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 136.73634166666668
+  },
+  {
+    "refDate": "2022-11-04",
+    "id": "GK200HF",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 438.09,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-05-22",
+    "id": "GK240MG",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 450.47,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-05-22",
+    "id": "GK241MG",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 450.47,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-06-07",
+    "id": "GK244MG",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 574.18,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-05-01",
+    "id": "GK246MG",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 574.18,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-06-07",
+    "id": "GK247MG",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "ROMA CIAMPINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 574.18,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-06-07",
+    "id": "GK248MG",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 574.18,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-05-01",
+    "id": "GK249MG",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "ROMA CIAMPINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 574.18,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-06-07",
+    "id": "GK250MG",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 574.18,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-06-20",
+    "id": "GK250MH",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 288.52,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-05-01",
+    "id": "GK251MG",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 574.18,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-09-06",
+    "id": "GN249MT",
+    "gruppo": "STATION",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 136.73634166666668
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GN250MT",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 65.1675
+  },
+  {
+    "refDate": "2023-06-07",
+    "id": "GK304MG",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 574.18,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-07-11",
+    "id": "GK321MH",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 288.52,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-06-14",
+    "id": "GK322MH",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 288.52,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-08-09",
+    "id": "GN251MT",
+    "gruppo": "STATION",
+    "tipologia": "AUTO",
+    "stazione": "Roma Termini  ",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 136.73634166666668
+  },
+  {
+    "refDate": "2023-06-21",
+    "id": "GK345MH",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 288.52,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-06-20",
+    "id": "GK346MH",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 288.52,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-06-14",
+    "id": "GK347MH",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 288.52,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-06-14",
+    "id": "GK348MH",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 288.52,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-06-15",
+    "id": "GK349MH",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "ROMA CIAMPINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 288.52,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-05-30",
+    "id": "GK376BB",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 941.9,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-03-21",
+    "id": "GK405MF",
+    "gruppo": "PREMIUM",
+    "tipologia": "AUTO",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 656.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-02-03",
+    "id": "GK440FT",
+    "gruppo": "PREMIUM",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 638.71,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-07-11",
+    "id": "GK573BC",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 319.8,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-07-11",
+    "id": "GK574BC",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 319.8,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-08-03",
+    "id": "GK578YX",
+    "gruppo": "CABRIOLET",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 388.41,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-08-03",
+    "id": "GK579YX",
+    "gruppo": "CABRIOLET",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 388.84,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-08-03",
+    "id": "GK580YX",
+    "gruppo": "CABRIOLET",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 388.84,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GK597DP",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GK598DP",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GK599DP",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-03-05",
+    "id": "GK608ME",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 633.92,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-09-06",
+    "id": "GN252MT",
+    "gruppo": "STATION",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 136.73634166666668
+  },
+  {
+    "refDate": "2022-06-07",
+    "id": "GK678WN",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 437.91999999999996,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-07-07",
+    "id": "GK688XX",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "AUTO",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 779.14,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-06-09",
+    "id": "GK700GB",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-06-09",
+    "id": "GK709GB",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-07-05",
+    "id": "GK714GB",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-06-09",
+    "id": "GK715GB",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-05-09",
+    "id": "GK717GB",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-06-07",
+    "id": "GK758KP",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 437.91999999999996,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-06-30",
+    "id": "GK792NH",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "SORRENTO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 386.91,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-06-30",
+    "id": "GK793NH",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 386.91,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-06-30",
+    "id": "GK794NH",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 386.91,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-06-30",
+    "id": "GK795NH",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "ROMA TERMINI  ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 386.91,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-06-30",
+    "id": "GK796NH",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 386.91,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-11-04",
+    "id": "GK913HF",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 438.12,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-11-04",
+    "id": "GK935HF",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 438.09,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-06-09",
+    "id": "GK944GE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "VALLE DI COMINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-03-09",
+    "id": "GK959GE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GK961YW",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 650.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-07-28",
+    "id": "GN567MS",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 177.76091666666665
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GN568MS",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 82.5725
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GN573MS",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 81.12
+  },
+  {
+    "refDate": "2022-12-13",
+    "id": "GL064ZN",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 448.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-12-13",
+    "id": "GL065ZN",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 448.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-11-07",
+    "id": "GL217GR",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 494.97999999999996,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-11-07",
+    "id": "GL218GR",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Valle di Comino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 520.23,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-11-07",
+    "id": "GL219GR",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 494.97999999999996,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-11-07",
+    "id": "GL220GR",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "ROMA TERMINI  ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 494.97999999999996,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-11-07",
+    "id": "GL221GR",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 776.25,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GL253HJ",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "SORRENTO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-11-08",
+    "id": "GL262GR",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "FIRENZE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 494.97999999999996,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-09-14",
+    "id": "GN612MS",
+    "gruppo": "CABRIOLET",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 120.80283333333334
+  },
+  {
+    "refDate": "2023-07-27",
+    "id": "GN613MS",
+    "gruppo": "CABRIOLET",
+    "tipologia": "AUTO",
+    "stazione": "Sorrento",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 120.80283333333334
+  },
+  {
+    "refDate": "2023-09-14",
+    "id": "GP210RB",
+    "gruppo": "CABRIOLET",
+    "tipologia": "AUTO",
+    "stazione": "Sorrento",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 120.80283333333334
+  },
+  {
+    "refDate": "2023-10-15",
+    "id": "GP211RB",
+    "gruppo": "STATION",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 136.73634166666668
+  },
+  {
+    "refDate": "2023-09-14",
+    "id": "GP212RB",
+    "gruppo": "CABRIOLET",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Stazione",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 120.80283333333334
+  },
+  {
+    "refDate": "2023-10-15",
+    "id": "GP213RB",
+    "gruppo": "STATION",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 136.73634166666668
+  },
+  {
+    "refDate": "2024-01-04",
+    "id": "GP389RC",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 162.80729166666666
+  },
+  {
+    "refDate": "2023-11-04",
+    "id": "GP416RB",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 114.67383333333335
+  },
+  {
+    "refDate": "2023-11-04",
+    "id": "GP417RB",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 114.67383333333335
+  },
+  {
+    "refDate": "2022-08-15",
+    "id": "GL327BY",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 525.45,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-01-26",
+    "id": "GL422WT",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 696.42,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-01-26",
+    "id": "GL423WT",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 696.42,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-01-26",
+    "id": "GL424WT",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 696.42,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-01-26",
+    "id": "GL425WT",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 696.42,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-01-26",
+    "id": "GL426WT",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 696.42,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-01-26",
+    "id": "GL427WT",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 696.42,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-01-26",
+    "id": "GL428WT",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 696.42,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-01-26",
+    "id": "GL429WT",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Trapani Porto",
+    "acquisizione": "RENT",
+    "canoneImponibile": 696.42,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GL507WT",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GL549PE",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "RENT",
+    "canoneImponibile": 650.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-08-02",
+    "id": "GL579AS",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 396.38,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-08-02",
+    "id": "GL580AS",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "ROMA TERMINI  ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 396.38,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-08-02",
+    "id": "GL581AS",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "ROMA CIAMPINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 396.38,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-08-02",
+    "id": "GL582AS",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 396.38,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GL582PE",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "SORRENTO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 650.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-08-02",
+    "id": "GL583AS",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "ROMA TERMINI  ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 396.38,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-08-02",
+    "id": "GL584AS",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "FIRENZE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 396.38,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-08-02",
+    "id": "GL585AS",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 396.38,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-08-02",
+    "id": "GL586AS",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "SORRENTO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 396.38,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-08-02",
+    "id": "GL587AS",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 396.38,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-08-02",
+    "id": "GL588AS",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 396.38,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GL598VN",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 750.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GL632WT",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-05-20",
+    "id": "GL663VN",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Valle di Comino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 800.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-05-20",
+    "id": "GL664VN",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 800.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-05-20",
+    "id": "GL712VN",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 800.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GL739VN",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 800.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-05-20",
+    "id": "GL754VN",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 800.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GL767SF",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 650.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GL811VN",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 800.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GL829VN",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 750.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-05-20",
+    "id": "GL895VN",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Sorrento",
+    "acquisizione": "RENT",
+    "canoneImponibile": 800.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GL903VN",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "FIRENZE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 750.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GL907VN",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 750.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-05-20",
+    "id": "GL920VN",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 800.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-11-04",
+    "id": "GP418RB",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Roma Termini  ",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 114.67383333333335
+  },
+  {
+    "refDate": "2023-04-19",
+    "id": "GM004YF",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 355.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GM014TM",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-08-30",
+    "id": "GM061CM",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 776.9,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-08-30",
+    "id": "GM062CM",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 776.9,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-08-30",
+    "id": "GM063CM",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 776.9,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GM064NK",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "VALLE DI COMINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GM067NK",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GM076NK",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GM120FW",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GM121FW",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "SORRENTO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GM131FW",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GM150PG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GM157PG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-01",
+    "id": "GM168NH",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-03-27",
+    "id": "GM169NH",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-02-14",
+    "id": "GM185GY",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GM189FM",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 570.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GM191FM",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 570.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GM193FM",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Firenze",
+    "acquisizione": "RENT",
+    "canoneImponibile": 570.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GM195FM",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "ROMA TERMINI  ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 500.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GM196FM",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Stazione",
+    "acquisizione": "RENT",
+    "canoneImponibile": 570.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GM234TZ",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 500.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-01-23",
+    "id": "GM357FC",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-10-15",
+    "id": "GP419RB",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 162.80729166666666
+  },
+  {
+    "refDate": "2023-11-04",
+    "id": "GP422RB",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 114.67383333333335
+  },
+  {
+    "refDate": "2025-07-16",
+    "id": "GP473AL",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 55.60874999999999
+  },
+  {
+    "refDate": "2023-05-18",
+    "id": "GM484BN",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 478.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-02-27",
+    "id": "GM607BL",
+    "gruppo": "STATION",
+    "tipologia": "AUTO",
+    "stazione": "Roma Ciampino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 583.38,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-02-27",
+    "id": "GM608BL",
+    "gruppo": "STATION",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 583.38,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-02-27",
+    "id": "GM609BL",
+    "gruppo": "STATION",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 583.24,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-04-28",
+    "id": "GM640NK",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 478.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-11-04",
+    "id": "GP531RC",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 114.67383333333335
+  },
+  {
+    "refDate": "2023-02-20",
+    "id": "GM688BL",
+    "gruppo": "STATION",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 583.24,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-11-04",
+    "id": "GP532RC",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 114.67383333333335
+  },
+  {
+    "refDate": "2023-11-04",
+    "id": "GP533RC",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 114.67383333333335
+  },
+  {
+    "refDate": "2023-11-04",
+    "id": "GP534RC",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 114.67383333333335
+  },
+  {
+    "refDate": "2023-11-04",
+    "id": "GP535RC",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Valle di Comino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 114.67383333333335
+  },
+  {
+    "refDate": "2023-11-22",
+    "id": "GM706DA",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 478.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-04-05",
+    "id": "GM709DA",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 478.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-02-17",
+    "id": "GM732FL",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 990.51,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-02-17",
+    "id": "GM733FL",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1047.36,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-04-20",
+    "id": "GM816YE",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 355.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-05-17",
+    "id": "GM817YE",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 355.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-04-19",
+    "id": "GM818YE",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "RENT",
+    "canoneImponibile": 355.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-04-20",
+    "id": "GM819YE",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 355.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-11-04",
+    "id": "GP536RC",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Roma Termini  ",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 114.67383333333335
+  },
+  {
+    "refDate": "2023-05-16",
+    "id": "GM820YE",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 355.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-04-19",
+    "id": "GM821YE",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 399.48,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-05-16",
+    "id": "GM822YE",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Valle di Comino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 399.48,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-04-19",
+    "id": "GM823YE",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Roma Ciampino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 355.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-04-20",
+    "id": "GM824YE",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 355.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-04-13",
+    "id": "GM825YE",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 399.48,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-04-19",
+    "id": "GM826YE",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 399.48,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-04-13",
+    "id": "GM827YE",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Valle di Comino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 399.48,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-04-19",
+    "id": "GM830YE",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 399.48,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-05-16",
+    "id": "GM831YE",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Stazione",
+    "acquisizione": "RENT",
+    "canoneImponibile": 399.48,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-04-13",
+    "id": "GM832YE",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 399.48,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-02-14",
+    "id": "GM851FV",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GM851VA",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 570.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GM853VA",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Firenze",
+    "acquisizione": "RENT",
+    "canoneImponibile": 570.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GM854VA",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 570.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GM855VA",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 570.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GM856VA",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 570.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GM857VA",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "ROMA CIAMPINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 500.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GM859VA",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 570.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GM866VA",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Valle di Comino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 570.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GM867VA",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "RENT",
+    "canoneImponibile": 570.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GM868VA",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "RENT",
+    "canoneImponibile": 570.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GM869VA",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 500.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GM871VA",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 570.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GM874VA",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 570.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GM878VA",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 570.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-02-14",
+    "id": "GM985ET",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-02-14",
+    "id": "GM995ET",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-02-05",
+    "id": "GN027SE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 265.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-02-07",
+    "id": "GN033SE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 265.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-05-10",
+    "id": "GN057SL",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 600.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-10-11",
+    "id": "GN071WP",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 382.64,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN090SE",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 600.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN092SE",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 600.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN095SE",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Termini  ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 600.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN096SE",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 600.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN098SE",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Sorrento",
+    "acquisizione": "RENT",
+    "canoneImponibile": 600.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN099SE",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Firenze",
+    "acquisizione": "RENT",
+    "canoneImponibile": 600.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN100SE",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "SORRENTO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 600.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GP854RC",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Valle di Comino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 76.92125
+  },
+  {
+    "refDate": "2023-10-15",
+    "id": "GP986RB",
+    "gruppo": "PREMIUM",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 175.41525000000001
+  },
+  {
+    "refDate": "2023-10-15",
+    "id": "GP987RB",
+    "gruppo": "PREMIUM",
+    "tipologia": "AUTO",
+    "stazione": "nan",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GP989RB",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Stazione",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 77.4375
+  },
+  {
+    "refDate": "2023-10-15",
+    "id": "GP990RB",
+    "gruppo": "PREMIUM",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 175.41525000000001
+  },
+  {
+    "refDate": "2024-01-04",
+    "id": "GR429PA",
+    "gruppo": "PREMIUM",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 175.41525000000001
+  },
+  {
+    "refDate": "2024-01-04",
+    "id": "GR430PA",
+    "gruppo": "PREMIUM",
+    "tipologia": "AUTO",
+    "stazione": "Valle di Comino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 175.41525000000001
+  },
+  {
+    "refDate": "2023-08-11",
+    "id": "GN223KZ",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 659.44,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-15",
+    "id": "GT060NY",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Roma Termini  ",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 56.77125
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GT315VX",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 56.77125
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GT317VX",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 56.77125
+  },
+  {
+    "refDate": "2025-07-08",
+    "id": "GT323VX",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 56.77125
+  },
+  {
+    "refDate": "2025-07-22",
+    "id": "GT326VX",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 58.0625
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GT329VX",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 56.77125
+  },
+  {
+    "refDate": "2025-07-22",
+    "id": "GT668DA",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Roma Termini  ",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 55.60874999999999
+  },
+  {
+    "refDate": "2023-10-11",
+    "id": "GN274WP",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 382.64,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-04-29",
+    "id": "GN393EZ",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 534.93,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-05-30",
+    "id": "GN398ZZ",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Termini  ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 485.29,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-07-07",
+    "id": "GN400EY",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 609.36,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-02-07",
+    "id": "GN404LW",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 265.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GT687VW",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 79.505
+  },
+  {
+    "refDate": "2023-04-27",
+    "id": "GN437HE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Roma Termini  ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 343.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-02-07",
+    "id": "GN438HE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 265.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-04-27",
+    "id": "GN439HE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Roma Termini  ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 343.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-03-01",
+    "id": "GN442HE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 265.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-04-26",
+    "id": "GN444HE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Trapani Porto",
+    "acquisizione": "RENT",
+    "canoneImponibile": 343.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-04-26",
+    "id": "GN446HE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 265.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-04-26",
+    "id": "GN447HE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 343.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-04-26",
+    "id": "GN450HE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 343.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-06-22",
+    "id": "GN483CB",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1026.87,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-05-28",
+    "id": "GN496WM",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Trapani Porto",
+    "acquisizione": "RENT",
+    "canoneImponibile": 735.75,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-05-28",
+    "id": "GN497WM",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 735.75,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-05-28",
+    "id": "GN498WM",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 735.75,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-05-28",
+    "id": "GN499WM",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 735.75,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN500SH",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Stazione",
+    "acquisizione": "RENT",
+    "canoneImponibile": 600.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-05-28",
+    "id": "GN500WM",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 735.75,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-05-28",
+    "id": "GN501WM",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 735.75,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN503GW",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 500.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN504SH",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Firenze",
+    "acquisizione": "RENT",
+    "canoneImponibile": 600.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN505SH",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 600.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN509GW",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "ROMA TERMINI  ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 520.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-02-14",
+    "id": "GN524KZ",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-09-21",
+    "id": "GN562MM",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "Napoli Stazione",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 610.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GT691VW",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 79.505
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GT693VW",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 56.77125
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GT929VV",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 79.44125
+  },
+  {
+    "refDate": "2022-02-14",
+    "id": "GN574KZ",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN583GX",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 500.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN585GX",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Firenze",
+    "acquisizione": "RENT",
+    "canoneImponibile": 570.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN586GX",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 520.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN592GX",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 520.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN595GX",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "SORRENTO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 500.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN600GX",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 500.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN605GX",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 570.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN609GX",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Firenze",
+    "acquisizione": "RENT",
+    "canoneImponibile": 570.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-31",
+    "id": "GV120NP",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Roma Termini  ",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 55.60874999999999
+  },
+  {
+    "refDate": "2025-07-16",
+    "id": "GV796GS",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 56.77125
+  },
+  {
+    "refDate": "2023-08-08",
+    "id": "GN625MS",
+    "gruppo": "PREMIUM",
+    "tipologia": "AUTO",
+    "stazione": "FIRENZE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 923.61,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN629GX",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI STAZIONE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 500.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-15",
+    "id": "GV825GS",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 56.77125
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN639GX",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 570.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-04-05",
+    "id": "GN640EJ",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 444.12000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN642SG",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 400.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-06-05",
+    "id": "GN646WM",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 550.82,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN647SM",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 400.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN649SM",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "ROMA TERMINI  ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 400.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN653SM",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "SORRENTO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 400.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN655SM",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 400.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN657SM",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 400.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN659SM",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 400.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN660SM",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 400.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN661SJ",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "ROMA CIAMPINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 400.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN663SJ",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 400.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-15",
+    "id": "GV868GS",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 56.77125
+  },
+  {
+    "refDate": "2023-05-26",
+    "id": "GN710GT",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 587.21,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-05-26",
+    "id": "GN715GT",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 587.21,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-05-30",
+    "id": "GN732ZZ",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 485.63999999999993,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN764SM",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 600.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN767SM",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "RENT",
+    "canoneImponibile": 600.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN771SM",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Sorrento",
+    "acquisizione": "RENT",
+    "canoneImponibile": 600.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-05-10",
+    "id": "GN772SM",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Valle di Comino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 600.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-05-10",
+    "id": "GN774SM",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 600.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN775SM",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 600.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN777SM",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Stazione",
+    "acquisizione": "RENT",
+    "canoneImponibile": 600.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN780SM",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 600.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-10-17",
+    "id": "GN796WN",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 609.36,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-10-12",
+    "id": "GN799SR",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Roma Termini  ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 343.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GN802NX",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Valle di Comino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 570.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-31",
+    "id": "GX302BV",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 58.0625
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GX647BX",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 72.71124999999999
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GX648BX",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 72.45875
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GX944BW",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Valle di Comino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 81.4425
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GX945BW",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 81.4425
+  },
+  {
+    "refDate": "2023-08-10",
+    "id": "GN868CV",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "SORRENTO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 497.99999999999994,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-05-10",
+    "id": "GN887LG",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "RENT",
+    "canoneImponibile": 343.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-05-10",
+    "id": "GN888LG",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 343.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-04-19",
+    "id": "GN889HF",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 343.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-04-19",
+    "id": "GN890HF",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 343.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-04-19",
+    "id": "GN891HF",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "RENT",
+    "canoneImponibile": 343.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-09-29",
+    "id": "GN902DG",
+    "gruppo": "PREMIUM",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 756.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-05-09",
+    "id": "GN918SE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 343.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-05-09",
+    "id": "GN920SE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Valle di Comino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 343.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-05-09",
+    "id": "GN922SE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 343.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-06-20",
+    "id": "GN925SE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 343.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-05-09",
+    "id": "GN926SE",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Trapani Porto",
+    "acquisizione": "RENT",
+    "canoneImponibile": 343.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GX946BW",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 82.605
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GX947BW",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 84.72500000000001
+  },
+  {
+    "refDate": "2025-07-28",
+    "id": "GY021TX",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-31",
+    "id": "GY056TX",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 75.63
+  },
+  {
+    "refDate": "2025-08-06",
+    "id": "GY058TX",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "Roma Ciampino ",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 75.63
+  },
+  {
+    "refDate": "2025-02-18",
+    "id": "GP026FX",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Sorrento",
+    "acquisizione": "RENT",
+    "canoneImponibile": 517.5,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-02-18",
+    "id": "GP055FX",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "RENT",
+    "canoneImponibile": 517.5,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-02-18",
+    "id": "GP066FX",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 517.5,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GP067HP",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2025-07-22",
+    "id": "HA218LR",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1710.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-06-28",
+    "id": "CV821DD",
+    "gruppo": "CABRIOLET",
+    "tipologia": "AUTO",
+    "stazione": "Sorrento",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-02-18",
+    "id": "GP075FX",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "RENT",
+    "canoneImponibile": 517.5,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-07-14",
+    "id": "GP095AY",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 343.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-07-14",
+    "id": "GP098AY",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "RENT",
+    "canoneImponibile": 343.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-07-01",
+    "id": "GP141FT",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 813.62,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-08-31",
+    "id": "GP148KV",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 735.06,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-08-10",
+    "id": "EJ336TD",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Sorrento",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-06-30",
+    "id": "EN722SS",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Sorrento",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-06-26",
+    "id": "EZ498LT",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-06-19",
+    "id": "FC318NX",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Sorrento",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-09-14",
+    "id": "GP214RB",
+    "gruppo": "CABRIOLET",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 367.09,
+    "assicurazione": 120.0
+  },
+  {
+    "refDate": "2024-11-01",
+    "id": "GC626SR",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GR982BD",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "Brindisi",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 1.0,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "FK085NB",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GF759SZ",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GF969TB",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GH150EW",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2023-10-15",
+    "id": "GP420RB",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1.0,
+    "assicurazione": 120.0
+  },
+  {
+    "refDate": "2023-10-15",
+    "id": "GP421RB",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1.0,
+    "assicurazione": 120.0
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GJ684TH",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 151.85546666666667
+  },
+  {
+    "refDate": "2023-10-15",
+    "id": "GP423RB",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1.0,
+    "assicurazione": 120.0
+  },
+  {
+    "refDate": "2025-02-18",
+    "id": "GP451ZV",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 576.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-02-18",
+    "id": "GP456FV",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "RENT",
+    "canoneImponibile": 517.5,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-02-18",
+    "id": "GP461FV",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 517.5,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GJ633FV",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Ciampino ",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 113.94268333333333
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GJ926FP",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 124.94083333333333
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GJ942FP",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 122.55733333333332
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GJ943FP",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Firenze",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 122.55733333333332
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GJ944FP",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 122.55733333333332
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GJ946FP",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Roma Termini  ",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 122.55733333333332
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GJ947FP",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 122.55733333333332
+  },
+  {
+    "refDate": "2025-02-18",
+    "id": "GP583MR",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Sorrento",
+    "acquisizione": "RENT",
+    "canoneImponibile": 517.5,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-02-18",
+    "id": "GP584MR",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 517.5,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-02-18",
+    "id": "GP585MR",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Roma Termini  ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 517.5,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-02-18",
+    "id": "GP588MR",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "RENT",
+    "canoneImponibile": 517.5,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-02-18",
+    "id": "GP594MR",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Trapani Porto",
+    "acquisizione": "RENT",
+    "canoneImponibile": 517.5,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-02-18",
+    "id": "GP595MR",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "RENT",
+    "canoneImponibile": 517.5,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-07-20",
+    "id": "GP604FD",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Valle di Comino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 666.1,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-02-18",
+    "id": "GP610MR",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Roma Ciampino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 517.5,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GJ949FP",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 122.55733333333332
+  },
+  {
+    "refDate": "2025-02-18",
+    "id": "GP648SY",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "RENT",
+    "canoneImponibile": 576.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-02-18",
+    "id": "GP649SY",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Sorrento",
+    "acquisizione": "RENT",
+    "canoneImponibile": 576.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GJ968FP",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GK050CG",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Trapani Porto",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 134.385
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GK051CG",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 134.385
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GK052CG",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 134.385
+  },
+  {
+    "refDate": "2023-07-20",
+    "id": "GP712FD",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 666.1,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-07-07",
+    "id": "GP748MG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 582.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-08-01",
+    "id": "GP752MG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 582.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-07-18",
+    "id": "GP764BH",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 343.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-07-07",
+    "id": "GP765MG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 602.09,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-07-18",
+    "id": "GP768BH",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 343.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-07-18",
+    "id": "GP769BH",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 343.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-07-07",
+    "id": "GP771MG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 582.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GK053CG",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 134.385
+  },
+  {
+    "refDate": "2023-10-11",
+    "id": "GP860ST",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 265.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-07-20",
+    "id": "GP886KM",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 550.87,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-07-18",
+    "id": "GP909AZ",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Trapani Porto",
+    "acquisizione": "RENT",
+    "canoneImponibile": 343.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-07-18",
+    "id": "GP913AZ",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 265.68,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GK151CC",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 134.385
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GK195CC",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 134.385
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GK197CC",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 134.385
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GK198CC",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Valle di Comino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 134.385
+  },
+  {
+    "refDate": "2023-12-01",
+    "id": "GR017BF",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 386.4,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-04-01",
+    "id": "GR115RX",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "SORRENTO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 475.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-04-01",
+    "id": "GR116RX",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "SORRENTO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 475.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-04-01",
+    "id": "GR117RX",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 475.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-04-01",
+    "id": "GR118RX",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 475.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-04-01",
+    "id": "GR119RX",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 475.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-04-01",
+    "id": "GR121RX",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 475.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-04-01",
+    "id": "GR122RX",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "SORRENTO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 475.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-04-01",
+    "id": "GR123RX",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 475.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-04-01",
+    "id": "GR124RX",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Valle di Comino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 475.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-11-03",
+    "id": "GR326BE",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 386.4,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-04-01",
+    "id": "GR333RX",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 475.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-04-01",
+    "id": "GR334RX",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "ROMA CIAMPINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 475.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-04-01",
+    "id": "GR335RX",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "FIRENZE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 475.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-04-01",
+    "id": "GR338RX",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 475.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-04-01",
+    "id": "GR339RX",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "RENT",
+    "canoneImponibile": 475.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-04-01",
+    "id": "GR340RX",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "VALLE DI COMINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 475.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GK199CC",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 134.385
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GL276MM",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Trapani Porto",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 120.17383333333335
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GL280MM",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 120.17383333333335
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GL287MM",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 120.17383333333335
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GL291MM",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 120.17383333333335
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GL296MM",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 120.17383333333335
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GL297MM",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 120.17383333333335
+  },
+  {
+    "refDate": "2023-09-06",
+    "id": "GR580MD",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 813.62,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-11-02",
+    "id": "GR656CT",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Valle di Comino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 601.02,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-11-02",
+    "id": "GR665CT",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 601.02,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-11-23",
+    "id": "GR698CT",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 601.02,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-11-02",
+    "id": "GR773DX",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Valle di Comino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 508.75,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-11-02",
+    "id": "GR823CT",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 601.02,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-11-07",
+    "id": "GR829DX",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 508.75,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-02-15",
+    "id": "GR835CR",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-02-01",
+    "id": "GR837CR",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 0.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-11-02",
+    "id": "GR875CT",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 508.75,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GL302MM",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 120.17383333333335
+  },
+  {
+    "refDate": "2023-11-02",
+    "id": "GR939CT",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 508.75,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2023-11-03",
+    "id": "GR979BD",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 456.57,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GL308MM",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 120.17383333333335
+  },
+  {
+    "refDate": "2024-04-02",
+    "id": "GS011CV",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 386.4,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-05-10",
+    "id": "GS012DZ",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 411.33,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-02-18",
+    "id": "GS025MB",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "RENT",
+    "canoneImponibile": 576.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-08",
+    "id": "GS031FE",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 512.54,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2024-04-29",
+    "id": "GS058JF",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 411.33,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-07-23",
+    "id": "GS073JF",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "RENT",
+    "canoneImponibile": 407.24,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GS139DK",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1450.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-04-29",
+    "id": "GS172JF",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 410.71,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-07",
+    "id": "GS342EA",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 242.58,
+    "assicurazione": 157.23633333333333
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GL309MM",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 120.17383333333335
+  },
+  {
+    "refDate": "2025-02-18",
+    "id": "GS491NT",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 522.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-02-18",
+    "id": "GS498NT",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 522.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-04-29",
+    "id": "GS499DY",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 410.71,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-02-18",
+    "id": "GS508NT",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "RENT",
+    "canoneImponibile": 522.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-02-18",
+    "id": "GS513NT",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "RENT",
+    "canoneImponibile": 522.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-02-18",
+    "id": "GS521NT",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "RENT",
+    "canoneImponibile": 522.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-02-18",
+    "id": "GS600MA",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 576.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-02-18",
+    "id": "GS603MA",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "RENT",
+    "canoneImponibile": 576.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-01-09",
+    "id": "GS673EP",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 581.14,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-02-18",
+    "id": "GS734LY",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 522.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-05-15",
+    "id": "GS786ST",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-05-10",
+    "id": "GS795DY",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 385.78,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-07-05",
+    "id": "GS835ZL",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-07-05",
+    "id": "GS845ZL",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-03-01",
+    "id": "GT022PS",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 219.69,
+    "assicurazione": 120.64654383333334
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GM687JH",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 113.19358333333332
+  },
+  {
+    "refDate": "2025-03-01",
+    "id": "GT078PS",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 219.69,
+    "assicurazione": 120.64654383333334
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GM688JH",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 113.19358333333332
+  },
+  {
+    "refDate": "2024-09-15",
+    "id": "GT129SG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "SORRENTO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-09-25",
+    "id": "GT131SG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-09-25",
+    "id": "GT137SG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GM690JH",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 113.19358333333332
+  },
+  {
+    "refDate": "2024-09-25",
+    "id": "GT144SG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GM691JH",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Valle di Comino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 113.19358333333332
+  },
+  {
+    "refDate": "2024-09-25",
+    "id": "GT153SG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GT154SG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-09-25",
+    "id": "GT160SG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-09-25",
+    "id": "GT161SG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "TRAPANI PORTO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-09-25",
+    "id": "GT165SG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-03-01",
+    "id": "GT169PS",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Stazione",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 178.8,
+    "assicurazione": 116.08792983333332
+  },
+  {
+    "refDate": "2024-09-25",
+    "id": "GT171SG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "NAPOLI STAZIONE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-09-25",
+    "id": "GT173SG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GT176SG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-09-25",
+    "id": "GT180SG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "BRINDISI",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-09-25",
+    "id": "GT184SG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "ROMA CIAMPINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-03-01",
+    "id": "GT191PS",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 219.69,
+    "assicurazione": 120.64654383333334
+  },
+  {
+    "refDate": "2024-09-25",
+    "id": "GT191SG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "TRAPANI PORTO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GT192SG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "FIRENZE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-03-01",
+    "id": "GT194PS",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 219.69,
+    "assicurazione": 120.64654383333334
+  },
+  {
+    "refDate": "2024-09-15",
+    "id": "GT195SJ",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-03-01",
+    "id": "GT216PS",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Roma Termini  ",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 178.8,
+    "assicurazione": 116.08792983333332
+  },
+  {
+    "refDate": "2025-03-01",
+    "id": "GT222PS",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 178.8,
+    "assicurazione": 116.08792983333332
+  },
+  {
+    "refDate": "2025-03-01",
+    "id": "GT226PS",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Roma Termini  ",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 219.69,
+    "assicurazione": 120.64654383333334
+  },
+  {
+    "refDate": "2025-03-01",
+    "id": "GT243PS",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Sorrento",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 178.8,
+    "assicurazione": 116.08792983333332
+  },
+  {
+    "refDate": "2025-03-01",
+    "id": "GT266PS",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 178.8,
+    "assicurazione": 116.08792983333332
+  },
+  {
+    "refDate": "2025-03-01",
+    "id": "GT279PS",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 219.69,
+    "assicurazione": 120.64654383333334
+  },
+  {
+    "refDate": "2024-09-15",
+    "id": "GT285SG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "ROMA CIAMPINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-03-01",
+    "id": "GT286PS",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Valle di Comino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 219.69,
+    "assicurazione": 120.64654383333334
+  },
+  {
+    "refDate": "2024-09-15",
+    "id": "GT287SG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-09-25",
+    "id": "GT294SG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-09-15",
+    "id": "GT295SG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GT296SG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-03-01",
+    "id": "GT303PS",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 219.69,
+    "assicurazione": 116.08792983333332
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GM694JH",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Roma Termini  ",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 113.19358333333332
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GN834JD",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Trapani Porto",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 114.11293333333333
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GN835JD",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 114.11293333333333
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GN837JD",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Firenze",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 114.11293333333333
+  },
+  {
+    "refDate": "2025-03-01",
+    "id": "GT329PS",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 178.8,
+    "assicurazione": 116.08792983333332
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GN838JD",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 114.11293333333333
+  },
+  {
+    "refDate": "2025-03-01",
+    "id": "GT356PS",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Roma Ciampino ",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 178.8,
+    "assicurazione": 116.08792983333332
+  },
+  {
+    "refDate": "2025-03-01",
+    "id": "GT395PS",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 178.8,
+    "assicurazione": 116.08792983333332
+  },
+  {
+    "refDate": "2025-03-01",
+    "id": "GT398PS",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Roma Ciampino ",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 219.69,
+    "assicurazione": 120.64654383333334
+  },
+  {
+    "refDate": "2025-03-01",
+    "id": "GT408PS",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 219.69,
+    "assicurazione": 120.64654383333334
+  },
+  {
+    "refDate": "2025-03-01",
+    "id": "GT410PS",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Firenze",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 178.8,
+    "assicurazione": 116.08792983333332
+  },
+  {
+    "refDate": "2025-03-01",
+    "id": "GT421PS",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 219.69,
+    "assicurazione": 120.64654383333334
+  },
+  {
+    "refDate": "2025-03-01",
+    "id": "GT465PS",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Roma Termini  ",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 219.69,
+    "assicurazione": 120.64654383333334
+  },
+  {
+    "refDate": "2025-03-01",
+    "id": "GT485PS",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Firenze",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 219.69,
+    "assicurazione": 120.64654383333334
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GN839JD",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 112.98928333333333
+  },
+  {
+    "refDate": "2025-03-01",
+    "id": "GT672PZ",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 219.69,
+    "assicurazione": 120.64654383333334
+  },
+  {
+    "refDate": "2025-03-01",
+    "id": "GT679PZ",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Stazione",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 219.69,
+    "assicurazione": 120.64654383333334
+  },
+  {
+    "refDate": "2025-03-01",
+    "id": "GT681PZ",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 178.8,
+    "assicurazione": 116.08792983333332
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GP010HP",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Valle di Comino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 114.11293333333333
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GP015HP",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 114.11293333333333
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GP017HP",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 114.11293333333333
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GP019HP",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Valle di Comino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 114.11293333333333
+  },
+  {
+    "refDate": "2024-05-15",
+    "id": "GT716ST",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-05-15",
+    "id": "GT725ST",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-05-15",
+    "id": "GT789ST",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-04-08",
+    "id": "GT827PE",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 581.14,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-04-08",
+    "id": "GT833PE",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "RENT",
+    "canoneImponibile": 581.14,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-04-08",
+    "id": "GT834PE",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Roma Termini  ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 581.14,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-04-08",
+    "id": "GT836PE",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 581.14,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-04-08",
+    "id": "GT841PE",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 581.14,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-04-08",
+    "id": "GT843PE",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 581.14,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-04-08",
+    "id": "GT845PE",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 581.14,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GP021HP",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 114.11293333333333
+  },
+  {
+    "refDate": "2024-09-15",
+    "id": "GV032SS",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-08",
+    "id": "GV065SS",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 432.73,
+    "assicurazione": 185.53093750000002
+  },
+  {
+    "refDate": "2025-04-08",
+    "id": "GV067SS",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Sorrento",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 432.73,
+    "assicurazione": 185.53093750000002
+  },
+  {
+    "refDate": "2025-04-10",
+    "id": "GV068SS",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 432.73,
+    "assicurazione": 185.53093750000002
+  },
+  {
+    "refDate": "2025-04-08",
+    "id": "GV069SS",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Ciampino ",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 432.73,
+    "assicurazione": 185.53093750000002
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GP068HP",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Sorrento",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 114.11293333333333
+  },
+  {
+    "refDate": "2024-05-17",
+    "id": "GV083FN",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 919.89,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-05-17",
+    "id": "GV086FN",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 878.9999999999999,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-05-13",
+    "id": "GV091FN",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 919.89,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GP069HP",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Valle di Comino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 114.11293333333333
+  },
+  {
+    "refDate": "2025-04-07",
+    "id": "GV134HZ",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 564.74,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2025-04-07",
+    "id": "GV229SX",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Firenze",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 291.09,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2025-04-05",
+    "id": "GV236AK",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Termini  ",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 409.25,
+    "assicurazione": 181.1328125
+  },
+  {
+    "refDate": "2025-04-08",
+    "id": "GV237AK",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 409.25,
+    "assicurazione": 181.1328125
+  },
+  {
+    "refDate": "2025-04-08",
+    "id": "GV238AK",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 409.25,
+    "assicurazione": 181.1328125
+  },
+  {
+    "refDate": "2025-04-08",
+    "id": "GV239AK",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 409.25,
+    "assicurazione": 181.1328125
+  },
+  {
+    "refDate": "2025-04-08",
+    "id": "GV240AK",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Firenze",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 409.25,
+    "assicurazione": 181.1328125
+  },
+  {
+    "refDate": "2025-04-08",
+    "id": "GV241AK",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 409.25,
+    "assicurazione": 181.1328125
+  },
+  {
+    "refDate": "2025-04-05",
+    "id": "GV242AK",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 409.25,
+    "assicurazione": 181.1328125
+  },
+  {
+    "refDate": "2025-04-10",
+    "id": "GV243AK",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 409.0,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2025-04-05",
+    "id": "GV245AK",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 409.25,
+    "assicurazione": 181.1328125
+  },
+  {
+    "refDate": "2025-04-05",
+    "id": "GV246AK",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 409.25,
+    "assicurazione": 181.1328125
+  },
+  {
+    "refDate": "2025-04-05",
+    "id": "GV247AK",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 409.25,
+    "assicurazione": 181.1328125
+  },
+  {
+    "refDate": "2025-04-08",
+    "id": "GV248AK",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 409.25,
+    "assicurazione": 181.1328125
+  },
+  {
+    "refDate": "2025-04-05",
+    "id": "GV249AK",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 409.25,
+    "assicurazione": 181.1328125
+  },
+  {
+    "refDate": "2025-04-08",
+    "id": "GV250AK",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 409.25,
+    "assicurazione": 181.1328125
+  },
+  {
+    "refDate": "2025-04-08",
+    "id": "GV251AK",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 409.25,
+    "assicurazione": 181.1328125
+  },
+  {
+    "refDate": "2025-04-05",
+    "id": "GV252AK",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Firenze",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 409.25,
+    "assicurazione": 181.1328125
+  },
+  {
+    "refDate": "2025-04-08",
+    "id": "GV303AK",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 409.25,
+    "assicurazione": 181.1328125
+  },
+  {
+    "refDate": "2025-04-05",
+    "id": "GV559TA",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 409.25,
+    "assicurazione": 181.1328125
+  },
+  {
+    "refDate": "2025-04-08",
+    "id": "GV562TA",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Firenze",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 409.25,
+    "assicurazione": 181.1328125
+  },
+  {
+    "refDate": "2024-09-15",
+    "id": "GV710SP",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-09-15",
+    "id": "GV775SP",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "ROMA FIUMICINO ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-28",
+    "id": "GV782TA",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 352.13,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2025-04-28",
+    "id": "GV784TA",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 352.13,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2025-04-28",
+    "id": "GV787TA",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 352.13,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2025-04-28",
+    "id": "GV788TA",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 352.13,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2025-05-29",
+    "id": "GV790TA",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 352.13,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2025-04-28",
+    "id": "GV791TA",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 352.13,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GP648HR",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 113.36383333333333
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GP651HR",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Roma Ciampino ",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 113.36383333333333
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GP652HR",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 113.36383333333333
+  },
+  {
+    "refDate": "2024-06-21",
+    "id": "GV936KP",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-07-05",
+    "id": "GV939KP",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-03-13",
+    "id": "GV940KP",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-06-21",
+    "id": "GV941KP",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-07",
+    "id": "GV942JF",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 325.52,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2024-06-21",
+    "id": "GV942KP",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-06-11",
+    "id": "GV952KP",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-02-01",
+    "id": "GV975KP",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": NaN,
+    "assicurazione": NaN
+  },
+  {
+    "refDate": "2024-03-13",
+    "id": "GV977KP",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 447.00000000000006,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-10-25",
+    "id": "GW150WA",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "Roma Termini  ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 938.51,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-10-14",
+    "id": "GW323VW",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 476.97,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2022-04-01",
+    "id": "GP654HR",
+    "gruppo": "MINI",
+    "tipologia": "AUTO",
+    "stazione": "Valle di Comino",
+    "acquisizione": "PROPRIETÀ",
+    "canoneImponibile": 1.0,
+    "assicurazione": 113.36383333333333
+  },
+  {
+    "refDate": "2025-04-07",
+    "id": "GW577EY",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 410.04,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GW684HY",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GW688HY",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GW689HY",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GW697HY",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "VALLE DI COMINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GW752HZ",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GW753HZ",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "NAPOLI CAPODICHINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-07",
+    "id": "GW839EX",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 325.52,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GW891YG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1450.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-21",
+    "id": "GH503VR",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Trapani Aeroporto",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GW903YG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1450.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GW905XY",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "ROMA TERMINI  ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1450.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-11-01",
+    "id": "GW905YG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1450.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GW907YG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1450.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GW946YG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1450.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GW947YG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1450.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GW952YG",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1450.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-21",
+    "id": "GH610VL",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Trapani Aeroporto",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-07",
+    "id": "GX150CM",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 281.71,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2025-05-02",
+    "id": "GX153CM",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Roma Termini  ",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 435.07,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-05-02",
+    "id": "GX154CM",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 435.07,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-05-02",
+    "id": "GX156CM",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 435.07,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-05",
+    "id": "GX159CH",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 409.25,
+    "assicurazione": 181.1328125
+  },
+  {
+    "refDate": "2025-05-02",
+    "id": "GX159CM",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 435.07,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GX204HJ",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "SORRENTO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1450.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GX262CH",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GX266CH",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GX272CH",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GX275CH",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "CASSINO",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GX280CH",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GX283CH",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "DA ASSEGNARE",
+    "acquisizione": "RENT",
+    "canoneImponibile": 850.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-21",
+    "id": "GH611VL",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Trapani Aeroporto",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-07",
+    "id": "GX388CP",
+    "gruppo": "STATION",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 410.04,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2025-07-21",
+    "id": "GH616VL",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Trapani Aeroporto",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-21",
+    "id": "GJ265LD",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Trapani Aeroporto",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-21",
+    "id": "GJ267LD",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Trapani Aeroporto",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-11-14",
+    "id": "GX449FN",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 938.51,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-11-14",
+    "id": "GX452FN",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 938.51,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-21",
+    "id": "GJ341LD",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Trapani Porto",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-21",
+    "id": "GJ344LD",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Trapani Aeroporto",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-01-01",
+    "id": "GX709KK",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1450.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-28",
+    "id": "GX731CH",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 352.13,
+    "assicurazione": 128.0
+  },
+  {
+    "refDate": "2025-07-21",
+    "id": "GJ345LD",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Trapani Aeroporto",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-15",
+    "id": "GL952MA",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Trapani Porto",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-21",
+    "id": "GM389HP",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Trapani Aeroporto",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-21",
+    "id": "GM391HP",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Trapani Aeroporto",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-21",
+    "id": "GM423XA",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Trapani Aeroporto",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-18",
+    "id": "GN165CX",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Trapani Aeroporto",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-21",
+    "id": "GN222CX",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Trapani Aeroporto",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-04-01",
+    "id": "GY134NL",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 570.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-05-26",
+    "id": "GY799BF",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 385.77,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-03-20",
+    "id": "GY821HY",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 409.4,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-03-20",
+    "id": "GY834HY",
+    "gruppo": "LARGE",
+    "tipologia": "AUTO",
+    "stazione": "Cassino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 409.4,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-01",
+    "id": "GY841BF",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "Brindisi",
+    "acquisizione": "LEASING",
+    "canoneImponibile": 385.77,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2024-05-17",
+    "id": "GZ449LW",
+    "gruppo": "PEOPLE MOVER",
+    "tipologia": "PEOPLE MOVER",
+    "stazione": "Roma Fiumicino ",
+    "acquisizione": "RENT",
+    "canoneImponibile": 919.89,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-07-21",
+    "id": "GN683CX",
+    "gruppo": "ECONOMY",
+    "tipologia": "AUTO",
+    "stazione": "Trapani Aeroporto",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": 1.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-03-01",
+    "id": "GP314TC",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Napoli Capodichino",
+    "acquisizione": "RENT",
+    "canoneImponibile": 522.7272727272726,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-09-01",
+    "id": "HA892JN",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1200.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-09-23",
+    "id": "HA893JN",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1200.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-09-23",
+    "id": "HA894JN",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1200.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-09-01",
+    "id": "HA895JN",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1200.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-09-01",
+    "id": "HA896JN",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1200.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-09-01",
+    "id": "HA897JN",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1200.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-09-01",
+    "id": "HA898JN",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1220.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-09-01",
+    "id": "HA899JN",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1330.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-09-01",
+    "id": "HA900JN",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1330.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-09-01",
+    "id": "HA910JN",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1220.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-09-01",
+    "id": "HA911JN",
+    "gruppo": "COMMERCIAL PEOPLE MOVER",
+    "tipologia": "COMMERCIAL PEOPLE MOVER",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 1200.0,
+    "assicurazione": 0.0
+  },
+  {
+    "refDate": "2025-09-20",
+    "id": "GA278CV",
+    "gruppo": "SMALL",
+    "tipologia": "AUTO",
+    "stazione": "Trapani Aeroporto",
+    "acquisizione": "INVESTOR",
+    "canoneImponibile": NaN,
+    "assicurazione": NaN
+  },
+  {
+    "refDate": "2025-10-29",
+    "id": "HA235PW ",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 542.0,
+    "assicurazione": NaN
+  },
+  {
+    "refDate": "2025-10-29",
+    "id": "HA891SZ",
+    "gruppo": "SUV",
+    "tipologia": "AUTO",
+    "stazione": "nan",
+    "acquisizione": "RENT",
+    "canoneImponibile": 542.0,
+    "assicurazione": NaN
+  }
+]
