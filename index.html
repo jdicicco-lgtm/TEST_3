@@ -24,7 +24,7 @@
       </div>
       <div>
         <span class="inline-flex items-center rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">
-          Static HTML · JSON Data · GitHub Pages Ready
+          Static HTML · JSON Data · GitHub Pages
         </span>
       </div>
     </div>
@@ -36,7 +36,6 @@
       <aside class="lg:col-span-1 bg-white rounded-2xl shadow p-4 space-y-4">
         <div class="flex items-center justify-between mb-2">
           <h2 class="text-lg font-semibold text-slate-800">Filtri</h2>
-          <!-- Tastino per pulire i filtri -->
           <button
             id="resetFiltersBtn"
             class="text-xs px-3 py-1 rounded-full border border-slate-300 text-slate-600 hover:bg-slate-100 transition"
@@ -227,29 +226,18 @@
               </p>
               <p id="kpiPrenGen2026" class="text-2xl font-bold mt-1">-</p>
               <p class="text-[11px] text-slate-400 mt-1">
-                Conteggio delle prenotazioni reali (filtrate per dimensioni, ma non per % proiezione).
+                Conteggio delle prenotazioni reali filtrate per dimensioni (non per % proiezione).
               </p>
             </div>
           </div>
         </div>
 
-        <!-- GRAFICI -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          <!-- Grafico flotta -->
-          <div class="bg-white rounded-2xl shadow p-4 h-72">
-            <p class="text-xs font-semibold text-slate-500 mb-2">
-              Andamento Dimensione Flotta (media ID unici nel periodo)
-            </p>
-            <canvas id="fleetChart"></canvas>
-          </div>
-
-          <!-- Grafico revenue -->
-          <div class="bg-white rounded-2xl shadow p-4 h-72">
-            <p class="text-xs font-semibold text-slate-500 mb-2">
-              Revenue per mese (reale + proiezioni)
-            </p>
-            <canvas id="revenueChart"></canvas>
-          </div>
+        <!-- GRAFICO PRINCIPALE -->
+        <div class="bg-white rounded-2xl shadow p-4 h-[420px]">
+          <p class="text-xs font-semibold text-slate-500 mb-2">
+            Flotta, Costo Totale e Revenue per mese (periodo filtrato)
+          </p>
+          <canvas id="mainChart"></canvas>
         </div>
       </section>
     </div>
@@ -263,25 +251,16 @@
     let bookings2025 = [];
     let bookingsJan2026 = [];
 
-    // ===========================
-    //  UTILITY DATE & FORMAT
-    // ===========================
     const monthNames = [
-      "Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno",
-      "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"
+      "Gennaio","Febbraio","Marzo","Aprile","Maggio","Giugno",
+      "Luglio","Agosto","Settembre","Ottobre","Novembre","Dicembre"
     ];
 
     function parseISO(dateStr) {
       return new Date(dateStr + "T00:00:00");
     }
-
-    function getYear(d) {
-      return d.getFullYear();
-    }
-
-    function getMonth(d) {
-      return d.getMonth() + 1; // 1–12
-    }
+    function getYear(d) { return d.getFullYear(); }
+    function getMonth(d) { return d.getMonth() + 1; }
 
     function formatCurrency(value) {
       if (value == null || isNaN(value)) return "-";
@@ -301,23 +280,18 @@
     }
 
     // ===========================
-    //  GENERAZIONE BOOKING 2024/2026
+    //  GENERA BOOKING 2024/2026
     // ===========================
     function generateAllBookings(projectionFactor) {
       const all = [];
 
-      // Base = 2025 reale
       bookings2025.forEach((b) => {
         const d2025 = parseISO(b.startDate);
         const year2025 = getYear(d2025);
         const month = getMonth(d2025);
 
         // 2025 reale
-        all.push({
-          ...b,
-          year: year2025,
-          month
-        });
+        all.push({ ...b, year: year2025, month });
 
         // 2024 = -5%
         const d2024 = new Date(d2025);
@@ -334,7 +308,6 @@
         const d2026 = new Date(d2025);
         d2026.setFullYear(year2025 + 1);
         const m2026 = getMonth(d2026);
-
         if (m2026 !== 1) {
           all.push({
             ...b,
@@ -349,11 +322,7 @@
       // Jan 2026 reale
       bookingsJan2026.forEach((b) => {
         const d = parseISO(b.startDate);
-        all.push({
-          ...b,
-          year: getYear(d),
-          month: getMonth(d)
-        });
+        all.push({ ...b, year: getYear(d), month: getMonth(d) });
       });
 
       return all;
@@ -370,30 +339,21 @@
       const acquisizioneSelect = document.getElementById("acquisizioneFilter");
       const stazioneSelect = document.getElementById("stazioneFilter");
 
-      [yearSelect, monthSelect, tipologiaSelect, gruppoSelect, acquisizioneSelect, stazioneSelect].forEach(
-        (sel) => (sel.innerHTML = "")
-      );
+      [yearSelect, monthSelect, tipologiaSelect, gruppoSelect, acquisizioneSelect, stazioneSelect]
+        .forEach(sel => sel.innerHTML = "");
 
-      // Anni da flotta + bookings
+      // Anni
       const years = new Set();
-      allFleet.forEach((f) => {
-        const d = parseISO(f.refDate);
-        years.add(getYear(d));
-      });
-      allBookings.forEach((b) => {
-        years.add(b.year);
+      allFleet.forEach(f => years.add(getYear(parseISO(f.refDate))));
+      allBookings.forEach(b => years.add(b.year));
+      Array.from(years).sort().forEach(y => {
+        const opt = document.createElement("option");
+        opt.value = y;
+        opt.textContent = y;
+        yearSelect.appendChild(opt);
       });
 
-      Array.from(years)
-        .sort()
-        .forEach((y) => {
-          const opt = document.createElement("option");
-          opt.value = y;
-          opt.textContent = y;
-          yearSelect.appendChild(opt);
-        });
-
-      // Mesi fissi
+      // Mesi
       for (let m = 1; m <= 12; m++) {
         const opt = document.createElement("option");
         opt.value = m;
@@ -401,92 +361,79 @@
         monthSelect.appendChild(opt);
       }
 
-      // Dimensioni (tipologia, gruppo, acquisizione, stazione)
+      // Dimensioni dall’unione di flotta + prenotazioni
       const tipologie = new Set();
       const gruppi = new Set();
       const acquisizioni = new Set();
       const stazioni = new Set();
 
-      allFleet.forEach((f) => {
+      allFleet.forEach(f => {
         if (f.tipologia) tipologie.add(f.tipologia);
         if (f.gruppo) gruppi.add(f.gruppo);
         if (f.acquisizione) acquisizioni.add(f.acquisizione);
         if (f.stazione) stazioni.add(f.stazione);
       });
-
-      allBookings.forEach((b) => {
+      allBookings.forEach(b => {
         if (b.tipologia) tipologie.add(b.tipologia);
         if (b.gruppo) gruppi.add(b.gruppo);
         if (b.acquisizione) acquisizioni.add(b.acquisizione);
         if (b.stazione) stazioni.add(b.stazione);
       });
 
-      Array.from(tipologie)
-        .sort()
-        .forEach((t) => {
-          const opt = document.createElement("option");
-          opt.value = t;
-          opt.textContent = t;
-          tipologiaSelect.appendChild(opt);
-        });
-
-      Array.from(gruppi)
-        .sort()
-        .forEach((g) => {
-          const opt = document.createElement("option");
-          opt.value = g;
-          opt.textContent = g;
-          gruppoSelect.appendChild(opt);
-        });
-
-      Array.from(acquisizioni)
-        .sort()
-        .forEach((a) => {
-          const opt = document.createElement("option");
-          opt.value = a;
-          opt.textContent = a;
-          acquisizioneSelect.appendChild(opt);
-        });
-
-      Array.from(stazioni)
-        .sort()
-        .forEach((s) => {
-          const opt = document.createElement("option");
-          opt.value = s;
-          opt.textContent = s;
-          stazioneSelect.appendChild(opt);
-        });
+      Array.from(tipologie).sort().forEach(t => {
+        const opt = document.createElement("option");
+        opt.value = t;
+        opt.textContent = t;
+        tipologiaSelect.appendChild(opt);
+      });
+      Array.from(gruppi).sort().forEach(g => {
+        const opt = document.createElement("option");
+        opt.value = g;
+        opt.textContent = g;
+        gruppoSelect.appendChild(opt);
+      });
+      Array.from(acquisizioni).sort().forEach(a => {
+        const opt = document.createElement("option");
+        opt.value = a;
+        opt.textContent = a;
+        acquisizioneSelect.appendChild(opt);
+      });
+      Array.from(stazioni).sort().forEach(s => {
+        const opt = document.createElement("option");
+        opt.value = s;
+        opt.textContent = s;
+        stazioneSelect.appendChild(opt);
+      });
 
       // Seleziona tutto di default
-      [yearSelect, monthSelect, tipologiaSelect, gruppoSelect, acquisizioneSelect, stazioneSelect].forEach(
-        (sel) => {
+      [yearSelect, monthSelect, tipologiaSelect, gruppoSelect, acquisizioneSelect, stazioneSelect]
+        .forEach(sel => {
           for (let i = 0; i < sel.options.length; i++) {
             sel.options[i].selected = true;
           }
-        }
-      );
+        });
     }
 
-    function getMultiSelectValues(selectId) {
-      const sel = document.getElementById(selectId);
-      const values = [];
+    function getMultiSelectValues(id) {
+      const sel = document.getElementById(id);
+      const vals = [];
       for (let i = 0; i < sel.options.length; i++) {
-        if (sel.options[i].selected) values.push(sel.options[i].value);
+        if (sel.options[i].selected) vals.push(sel.options[i].value);
       }
-      return values;
+      return vals;
     }
 
     // ===========================
-    //  RANGE PERIODO CORRENTE/PRECEDENTE
+    //  RANGE PERIODO
     // ===========================
     function getCurrentAndPreviousRanges(filters) {
       const { years, months } = filters;
 
-      const allYears = years.length ? years.map((y) => parseInt(y, 10)) : [2024, 2025, 2026];
+      const allYears = years.length ? years.map(y => parseInt(y, 10)) : [2024, 2025, 2026];
       const minYear = Math.min(...allYears);
       const maxYear = Math.max(...allYears);
 
-      const allMonths = months.length ? months.map((m) => parseInt(m, 10)) : [1, 12];
+      const allMonths = months.length ? months.map(m => parseInt(m, 10)) : [1, 12];
       const minMonth = months.length ? Math.min(...allMonths) : 1;
       const maxMonth = months.length ? Math.max(...allMonths) : 12;
 
@@ -495,12 +442,10 @@
 
       const diffMonths =
         (endCurrent.getFullYear() - startCurrent.getFullYear()) * 12 +
-        (endCurrent.getMonth() - startCurrent.getMonth()) +
-        1;
+        (endCurrent.getMonth() - startCurrent.getMonth()) + 1;
 
       const endPrev = new Date(startCurrent);
       endPrev.setMonth(endPrev.getMonth() - 1);
-
       const startPrev = new Date(endPrev);
       startPrev.setMonth(startPrev.getMonth() - (diffMonths - 1));
       startPrev.setDate(1);
@@ -512,18 +457,10 @@
       };
     }
 
-    function isWithinRange(dateStr, range) {
-      const d = parseISO(dateStr);
-      return d >= range.start && d <= range.end;
-    }
-
-    // ===========================
-    //  FILTRO DATA PER RANGE
-    // ===========================
     function filterDataForRange(allFleet, allBookings, filters, rangeKey) {
       const range = rangeKey === "current" ? filters.currentRange : filters.previousRange;
 
-      const fleet = allFleet.filter((f) => {
+      const fleet = allFleet.filter(f => {
         const d = parseISO(f.refDate);
         const year = getYear(d);
         const month = getMonth(d);
@@ -538,7 +475,7 @@
         return d >= range.start && d <= range.end;
       });
 
-      const bookings = allBookings.filter((b) => {
+      const bookings = allBookings.filter(b => {
         const d = parseISO(b.startDate);
         const year = b.year;
         const month = b.month;
@@ -556,11 +493,8 @@
       return { fleet, bookings };
     }
 
-    // ===========================
-    //  KPI
-    // ===========================
     function computeKpiForRange(fleet, bookings) {
-      const uniqueVehicles = new Set(fleet.map((f) => f.id));
+      const uniqueVehicles = new Set(fleet.map(f => f.id));
       const fleetSize = uniqueVehicles.size;
 
       const sumCanone = fleet.reduce((acc, f) => acc + (f.canoneImponibile || 0), 0);
@@ -585,129 +519,143 @@
       };
     }
 
-    // Prenotazioni effettive Gennaio 2026 (no % proiezione)
     function computeJan2026Kpi(filters) {
       const { tipologie, gruppi, acquisizioni, stazioni } = filters;
-
-      const bookings = bookingsJan2026.filter((b) => {
+      const bookings = bookingsJan2026.filter(b => {
         if (tipologie.length && b.tipologia && !tipologie.includes(b.tipologia)) return false;
         if (gruppi.length && b.gruppo && !gruppi.includes(b.gruppo)) return false;
         if (acquisizioni.length && b.acquisizione && !acquisizioni.includes(b.acquisizione)) return false;
         if (stazioni.length && b.stazione && !stazioni.includes(b.stazione)) return false;
         return true;
       });
-
       return bookings.length;
     }
 
     // ===========================
-    //  GRAFICI
+    //  GRAFICO PRINCIPALE
     // ===========================
-    let fleetChartInstance = null;
-    let revenueChartInstance = null;
+    let mainChartInstance = null;
 
-    function updateCharts(allFleet, allBookingsFiltered, filters) {
+    function updateMainChart(allFleet, allBookings, filters) {
       const { currentRange } = filters;
 
-      // Flotta per year-month
-      const fleetByYearMonth = {};
-      allFleet.forEach((f) => {
+      // Aggregazione per anno-mese
+      const buckets = {}; // key: YYYY-MM -> { fleetIds:Set, costoTotale, revenue }
+
+      allFleet.forEach(f => {
         const d = parseISO(f.refDate);
         if (d < currentRange.start || d > currentRange.end) return;
-
-        const year = getYear(d);
-        const month = getMonth(d);
-        const key = `${year}-${String(month).padStart(2, "0")}`;
-
-        if (!fleetByYearMonth[key]) {
-          fleetByYearMonth[key] = new Set();
+        const key = `${getYear(d)}-${String(getMonth(d)).padStart(2,"0")}`;
+        if (!buckets[key]) {
+          buckets[key] = { fleetIds: new Set(), costoTotale: 0, revenue: 0 };
         }
-        fleetByYearMonth[key].add(f.id);
+        buckets[key].fleetIds.add(f.id);
+        buckets[key].costoTotale += (f.canoneImponibile || 0) + (f.assicurazione || 0);
       });
 
-      const fleetLabels = Object.keys(fleetByYearMonth).sort();
-      const fleetSeries = fleetLabels.map((key) => fleetByYearMonth[key].size);
-
-      // Revenue per year-month
-      const revByYearMonth = {};
-      allBookingsFiltered.forEach((b) => {
+      allBookings.forEach(b => {
         const d = parseISO(b.startDate);
         if (d < currentRange.start || d > currentRange.end) return;
-        const key = `${b.year}-${String(b.month).padStart(2, "0")}`;
-        if (!revByYearMonth[key]) revByYearMonth[key] = 0;
-        revByYearMonth[key] += b.price || 0;
+        const key = `${b.year}-${String(b.month).padStart(2,"0")}`;
+        if (!buckets[key]) {
+          buckets[key] = { fleetIds: new Set(), costoTotale: 0, revenue: 0 };
+        }
+        buckets[key].revenue += (b.price || 0);
       });
 
-      const revLabels = Object.keys(revByYearMonth).sort();
-      const revSeries = revLabels.map((key) => revByYearMonth[key]);
+      const labels = Object.keys(buckets).sort();
+      const fleetSeries = labels.map(k => buckets[k].fleetIds.size);
+      const costSeries  = labels.map(k => buckets[k].costoTotale);
+      const revSeries   = labels.map(k => buckets[k].revenue);
 
-      // Fleet chart
-      const fleetCtx = document.getElementById("fleetChart").getContext("2d");
-      if (fleetChartInstance) fleetChartInstance.destroy();
-      fleetChartInstance = new Chart(fleetCtx, {
+      const ctx = document.getElementById("mainChart").getContext("2d");
+      if (mainChartInstance) mainChartInstance.destroy();
+
+      mainChartInstance = new Chart(ctx, {
         type: "line",
         data: {
-          labels: fleetLabels,
+          labels,
           datasets: [
             {
-              label: "Dimensione flotta (ID unici)",
+              label: "Flotta (ID unici)",
               data: fleetSeries,
               borderWidth: 2,
-              fill: false,
-              tension: 0.2
-            }
-          ]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          scales: {
-            x: {
-              ticks: {
-                callback: function (val) {
-                  const label = this.getLabelForValue(val);
-                  const [y, m] = label.split("-");
-                  return `${monthNames[parseInt(m, 10) - 1].slice(0, 3)} ${y}`;
-                }
-              }
+              tension: 0.2,
+              yAxisID: "y"
             },
-            y: {
-              beginAtZero: true
-            }
-          }
-        }
-      });
-
-      // Revenue chart
-      const revCtx = document.getElementById("revenueChart").getContext("2d");
-      if (revenueChartInstance) revenueChartInstance.destroy();
-      revenueChartInstance = new Chart(revCtx, {
-        type: "bar",
-        data: {
-          labels: revLabels,
-          datasets: [
             {
-              label: "Revenue mensile",
+              label: "Costo Totale (€)",
+              data: costSeries,
+              borderWidth: 2,
+              tension: 0.2,
+              yAxisID: "y1"
+            },
+            {
+              label: "Revenue (€)",
               data: revSeries,
-              borderWidth: 1
+              borderWidth: 2,
+              borderDash: [4, 4],
+              tension: 0.2,
+              yAxisID: "y1"
             }
           ]
         },
         options: {
           responsive: true,
           maintainAspectRatio: false,
+          interaction: {
+            mode: "index",
+            intersect: false
+          },
+          plugins: {
+            tooltip: {
+              callbacks: {
+                title: (items) => {
+                  if (!items.length) return "";
+                  const label = items[0].label;
+                  const [y, m] = label.split("-");
+                  return `${monthNames[parseInt(m,10)-1]} ${y}`;
+                },
+                label: (item) => {
+                  const datasetLabel = item.dataset.label || "";
+                  if (datasetLabel.includes("Flotta")) {
+                    return `${datasetLabel}: ${item.parsed.y} veicoli`;
+                  }
+                  return `${datasetLabel}: ${formatCurrency(item.parsed.y)}`;
+                }
+              }
+            }
+          },
           scales: {
             x: {
               ticks: {
-                callback: function (val) {
-                  const label = this.getLabelForValue(val);
+                callback: function(value) {
+                  const label = this.getLabelForValue(value);
                   const [y, m] = label.split("-");
-                  return `${monthNames[parseInt(m, 10) - 1].slice(0, 3)} ${y}`;
+                  return `${monthNames[parseInt(m,10)-1].slice(0,3)} ${y}`;
                 }
               }
             },
             y: {
+              type: "linear",
+              position: "left",
+              title: {
+                display: true,
+                text: "Numero veicoli"
+              },
               beginAtZero: true
+            },
+            y1: {
+              type: "linear",
+              position: "right",
+              title: {
+                display: true,
+                text: "€"
+              },
+              beginAtZero: true,
+              grid: {
+                drawOnChartArea: false
+              }
             }
           }
         }
@@ -721,7 +669,6 @@
       const projectionFactor = parseFloat(
         document.getElementById("projectionSelect").value
       );
-
       const allBookings = generateAllBookings(projectionFactor);
 
       const years = getMultiSelectValues("yearFilter");
@@ -744,31 +691,23 @@
         previousRange: ranges.previous
       };
 
-      const { fleet: fleetCurrent, bookings: bookingsCurrent } = filterDataForRange(
-        fleetData,
-        allBookings,
-        filters,
-        "current"
-      );
-      const { fleet: fleetPrev, bookings: bookingsPrev } = filterDataForRange(
-        fleetData,
-        allBookings,
-        filters,
-        "previous"
-      );
+      const { fleet: fleetCurrent, bookings: bookingsCurrent } =
+        filterDataForRange(fleetData, allBookings, filters, "current");
+      const { fleet: fleetPrev, bookings: bookingsPrev } =
+        filterDataForRange(fleetData, allBookings, filters, "previous");
 
       const kpiCurrent = computeKpiForRange(fleetCurrent, bookingsCurrent);
-      const kpiPrev = computeKpiForRange(fleetPrev, bookingsPrev);
+      const kpiPrev    = computeKpiForRange(fleetPrev, bookingsPrev);
 
       // KPI correnti
-      document.getElementById("kpiFleetSize").textContent = formatNumber(kpiCurrent.fleetSize);
-      document.getElementById("kpiCanone").textContent = formatCurrency(kpiCurrent.canone);
-      document.getElementById("kpiCanoneIvato").textContent = formatCurrency(kpiCurrent.canoneIvato);
-      document.getElementById("kpiAssicurazione").textContent = formatCurrency(kpiCurrent.assicurazione);
-      document.getElementById("kpiCostoTotale").textContent = formatCurrency(kpiCurrent.costoTotale);
-      document.getElementById("kpiRevenue").textContent = formatCurrency(kpiCurrent.revenue);
-      document.getElementById("kpiRevenuePerDay").textContent = formatNumber(kpiCurrent.revenuePerDay, 2);
-      document.getElementById("kpiNumPren").textContent = formatNumber(kpiCurrent.numPren);
+      document.getElementById("kpiFleetSize").textContent      = formatNumber(kpiCurrent.fleetSize);
+      document.getElementById("kpiCanone").textContent         = formatCurrency(kpiCurrent.canone);
+      document.getElementById("kpiCanoneIvato").textContent    = formatCurrency(kpiCurrent.canoneIvato);
+      document.getElementById("kpiAssicurazione").textContent  = formatCurrency(kpiCurrent.assicurazione);
+      document.getElementById("kpiCostoTotale").textContent    = formatCurrency(kpiCurrent.costoTotale);
+      document.getElementById("kpiRevenue").textContent        = formatCurrency(kpiCurrent.revenue);
+      document.getElementById("kpiRevenuePerDay").textContent  = formatNumber(kpiCurrent.revenuePerDay, 2);
+      document.getElementById("kpiNumPren").textContent        = formatNumber(kpiCurrent.numPren);
 
       // KPI periodo precedente
       document.getElementById("kpiFleetSizePrev").textContent =
@@ -786,33 +725,25 @@
       document.getElementById("kpiNumPrenPrev").textContent =
         "Periodo precedente: " + formatNumber(kpiPrev.numPren);
 
-      // Prenotazioni Effettive Gennaio 2026
+      // Prenotazioni effettive Gennaio 2026
       const prenGen2026 = computeJan2026Kpi(filters);
       document.getElementById("kpiPrenGen2026").textContent = formatNumber(prenGen2026);
 
-      // Grafici
-      updateCharts(fleetData, allBookings, { ...filters, currentRange: ranges.current });
+      // Grafico
+      updateMainChart(fleetData, allBookings, filters);
     }
 
     // ===========================
     //  RESET FILTRI
     // ===========================
     function resetFilters() {
-      const yearSelect = document.getElementById("yearFilter");
-      const monthSelect = document.getElementById("monthFilter");
-      const tipologiaSelect = document.getElementById("tipologiaFilter");
-      const gruppoSelect = document.getElementById("gruppoFilter");
-      const acquisizioneSelect = document.getElementById("acquisizioneFilter");
-      const stazioneSelect = document.getElementById("stazioneFilter");
-
-      [yearSelect, monthSelect, tipologiaSelect, gruppoSelect, acquisizioneSelect, stazioneSelect].forEach(
-        (sel) => {
+      ["yearFilter","monthFilter","tipologiaFilter","gruppoFilter","acquisizioneFilter","stazioneFilter"]
+        .forEach(id => {
+          const sel = document.getElementById(id);
           for (let i = 0; i < sel.options.length; i++) {
             sel.options[i].selected = true;
           }
-        }
-      );
-
+        });
       document.getElementById("projectionSelect").value = "0.10";
       updateDashboard();
     }
@@ -833,9 +764,7 @@
         }
 
         [fleetData, bookings2025, bookingsJan2026] = await Promise.all([
-          fleetRes.json(),
-          b2025Res.json(),
-          janRes.json()
+          fleetRes.json(), b2025Res.json(), janRes.json()
         ]);
 
         const defaultProjectionFactor = parseFloat(
@@ -846,25 +775,19 @@
         populateFilterOptions(fleetData, allBookings);
 
         [
-          "yearFilter",
-          "monthFilter",
-          "tipologiaFilter",
-          "gruppoFilter",
-          "acquisizioneFilter",
-          "stazioneFilter",
-          "projectionSelect"
-        ].forEach((id) => {
+          "yearFilter","monthFilter","tipologiaFilter","gruppoFilter",
+          "acquisizioneFilter","stazioneFilter","projectionSelect"
+        ].forEach(id => {
           document.getElementById(id).addEventListener("change", updateDashboard);
         });
 
-        document
-          .getElementById("resetFiltersBtn")
+        document.getElementById("resetFiltersBtn")
           .addEventListener("click", resetFilters);
 
         updateDashboard();
       } catch (err) {
         console.error("Errore durante init dashboard:", err);
-        alert("Errore nel caricamento dei dati JSON. Controlla che i file siano nella stessa cartella dell'HTML.");
+        alert("Errore nel caricamento dei dati JSON. Verifica che i file siano nella stessa cartella di index.html.");
       }
     }
 
