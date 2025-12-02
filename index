@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard Flotta & Prenotazioni</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-slate-100 text-slate-900">
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <div>
+        <h1 class="text-2xl font-bold tracking-tight text-slate-800">
+          Dashboard Flotta &amp; Prenotazioni
+        </h1>
+        <p class="text-sm text-slate-500">
+          Analisi 2024–2026 · Flotta, Costi &amp; Revenue (con proiezioni)
+        </p>
+      </div>
+      <div>
+        <span class="inline-flex items-center rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">
+          Static HTML · JSON Data · GitHub Pages Ready
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+      <!-- FILTRI -->
+      <aside class="lg:col-span-1 bg-white rounded-2xl shadow p-4 space-y-4">
+        <div class="flex items-center justify-between mb-2">
+          <h2 class="text-lg font-semibold text-slate-800">Filtri</h2>
+          <!-- Tastino per pulire i filtri -->
+          <button
+            id="resetFiltersBtn"
+            class="text-xs px-3 py-1 rounded-full border border-slate-300 text-slate-600 hover:bg-slate-100 transition"
+          >
+            Pulisci filtri
+          </button>
+        </div>
+
+        <!-- Filtro Anno -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-500 mb-1">Anno</label>
+          <select
+            id="yearFilter"
+            multiple
+            class="w-full rounded-lg border border-slate-300 text-sm px-2 py-1 focus:outline-none focus:ring-1 focus:ring-slate-400"
+          ></select>
+          <p class="text-[11px] text-slate-400 mt-1">
+            Multi-selezione (Ctrl+Click) · Default: tutti gli anni.
+          </p>
+        </div>
+
+        <!-- Filtro Mese -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-500 mb-1">Mese</label>
+          <select
+            id="monthFilter"
+            multiple
+            class="w-full rounded-lg border border-slate-300 text-sm px-2 py-1 focus:outline-none focus:ring-1 focus:ring-slate-400"
+          ></select>
+        </div>
+
+        <!-- Tipologia -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-500 mb-1">Tipologia</label>
+          <select
+            id="tipologiaFilter"
+            multiple
+            class="w-full rounded-lg border border-slate-300 text-sm px-2 py-1 focus:outline-none focus:ring-1 focus:ring-slate-400"
+          ></select>
+        </div>
+
+        <!-- Gruppo Veicolo -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-500 mb-1">Gruppo Veicolo</label>
+          <select
+            id="gruppoFilter"
+            multiple
+            class="w-full rounded-lg border border-slate-300 text-sm px-2 py-1 focus:outline-none focus:ring-1 focus:ring-slate-400"
+          ></select>
+        </div>
+
+        <!-- Acquisizione -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-500 mb-1">Acquisizione</label>
+          <select
+            id="acquisizioneFilter"
+            multiple
+            class="w-full rounded-lg border border-slate-300 text-sm px-2 py-1 focus:outline-none focus:ring-1 focus:ring-slate-400"
+          ></select>
+        </div>
+
+        <!-- Stazione -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-500 mb-1">Stazione</label>
+          <select
+            id="stazioneFilter"
+            multiple
+            class="w-full rounded-lg border border-slate-300 text-sm px-2 py-1 focus:outline-none focus:ring-1 focus:ring-slate-400"
+          ></select>
+        </div>
+
+        <!-- Percentuale proiezione 2026 -->
+        <div class="border-t border-slate-200 pt-3 mt-2">
+          <label class="block text-xs font-semibold text-slate-500 mb-1">
+            Proiezione 2026 (% aumento su 2025)
+          </label>
+          <select
+            id="projectionSelect"
+            class="w-full rounded-lg border border-slate-300 text-sm px-2 py-1 focus:outline-none focus:ring-1 focus:ring-slate-400"
+          >
+            <option value="0.05">+5%</option>
+            <option value="0.10" selected>+10% (default)</option>
+            <option value="0.15">+15%</option>
+            <option value="0.20">+20%</option>
+          </select>
+          <p class="text-[11px] text-slate-400 mt-1">
+            Valido solo per le prenotazioni proiettate Feb–Dic 2026.
+          </p>
+        </div>
+      </aside>
+
+      <!-- CONTENUTO PRINCIPALE -->
+      <section class="lg:col-span-3 space-y-6">
+        <!-- DATA CARDS PRINCIPALI -->
+        <div>
+          <h2 class="text-sm font-semibold text-slate-600 mb-2">
+            Indicatori principali (periodo filtrato)
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4">
+            <!-- Dimensione Flotta -->
+            <div class="bg-white rounded-2xl shadow px-4 py-3">
+              <p class="text-xs font-semibold text-slate-500">Dimensione Flotta (media)</p>
+              <p id="kpiFleetSize" class="text-xl font-bold text-slate-900 mt-1">-</p>
+              <p id="kpiFleetSizePrev" class="text-[11px] text-slate-400 mt-1">
+                Periodo precedente: -
+              </p>
+            </div>
+
+            <!-- Canone Imponibile -->
+            <div class="bg-white rounded-2xl shadow px-4 py-3">
+              <p class="text-xs font-semibold text-slate-500">Canone Imponibile</p>
+              <p id="kpiCanone" class="text-xl font-bold text-slate-900 mt-1">-</p>
+              <p id="kpiCanonePrev" class="text-[11px] text-slate-400 mt-1">
+                Periodo precedente: -
+              </p>
+            </div>
+
+            <!-- Canone Totale IVATO -->
+            <div class="bg-white rounded-2xl shadow px-4 py-3">
+              <p class="text-xs font-semibold text-slate-500">Canone Totale (IVATO)</p>
+              <p id="kpiCanoneIvato" class="text-xl font-bold text-slate-900 mt-1">-</p>
+              <p class="text-[11px] text-slate-400 mt-1">
+                Calcolato con IVA 22% su Canone Imponibile.
+              </p>
+            </div>
+
+            <!-- Assicurazione -->
+            <div class="bg-white rounded-2xl shadow px-4 py-3">
+              <p class="text-xs font-semibold text-slate-500">Assicurazione</p>
+              <p id="kpiAssicurazione" class="text-xl font-bold text-slate-900 mt-1">-</p>
+              <p id="kpiAssicurazionePrev" class="text-[11px] text-slate-400 mt-1">
+                Periodo precedente: -
+              </p>
+            </div>
+
+            <!-- Costo Totale -->
+            <div class="bg-white rounded-2xl shadow px-4 py-3">
+              <p class="text-xs font-semibold text-slate-500">Costo Totale (Canone + Ass.)</p>
+              <p id="kpiCostoTotale" class="text-xl font-bold text-slate-900 mt-1">-</p>
+              <p id="kpiCostoTotalePrev" class="text-[11px] text-slate-400 mt-1">
+                Periodo precedente: -
+              </p>
+            </div>
+
+            <!-- Revenue -->
+            <div class="bg-white rounded-2xl shadow px-4 py-3">
+              <p class="text-xs font-semibold text-slate-500">Revenue</p>
+              <p id="kpiRevenue" class="text-xl font-bold text-slate-900 mt-1">-</p>
+              <p id="kpiRevenuePrev" class="text-[11px] text-slate-400 mt-1">
+                Periodo precedente: -
+              </p>
+            </div>
+
+            <!-- Revenue per Day -->
+            <div class="bg-white rounded-2xl shadow px-4 py-3">
+              <p class="text-xs font-semibold text-slate-500">Revenue per Day</p>
+              <p id="kpiRevenuePerDay" class="text-xl font-bold text-slate-900 mt-1">-</p>
+              <p id="kpiRevenuePerDayPrev" class="text-[11px] text-slate-400 mt-1">
+                Periodo precedente: -
+              </p>
+            </div>
+
+            <!-- Numero Prenotazioni -->
+            <div class="bg-white rounded-2xl shadow px-4 py-3">
+              <p class="text-xs font-semibold text-slate-500">Numero Prenotazioni</p>
+              <p id="kpiNumPren" class="text-xl font-bold text-slate-900 mt-1">-</p>
+              <p id="kpiNumPrenPrev" class="text-[11px] text-slate-400 mt-1">
+                Periodo precedente: -
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCCO PROIEZIONI 2026 & DATI EFFETTIVI -->
+        <div class="bg-slate-900 text-slate-50 rounded-2xl p-4">
+          <div class="flex items-center justify-between mb-3">
+            <h2 class="text-sm font-semibold tracking-wide">
+              PROIEZIONI 2026 &amp; DATI EFFETTIVI
+            </h2>
+            <span class="text-[11px] text-slate-400">
+              Gennaio 2026 = dati reali (no proiezione %)
+            </span>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-slate-800 rounded-2xl px-4 py-3">
+              <p class="text-[11px] font-semibold text-slate-300">
+                Prenotazioni Effettive (Gennaio 2026)
+              </p>
+              <p id="kpiPrenGen2026" class="text-2xl font-bold mt-1">-</p>
+              <p class="text-[11px] text-slate-400 mt-1">
+                Conteggio delle prenotazioni reali (filtrate per dimensioni, ma non per % proiezione).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- GRAFICI -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <!-- Grafico flotta -->
+          <div class="bg-white rounded-2xl shadow p-4 h-72">
+            <p class="text-xs font-semibold text-slate-500 mb-2">
+              Andamento Dimensione Flotta (media ID unici nel periodo)
+            </p>
+            <canvas id="fleetChart"></canvas>
+          </div>
+
+          <!-- Grafico revenue -->
+          <div class="bg-white rounded-2xl shadow p-4 h-72">
+            <p class="text-xs font-semibold text-slate-500 mb-2">
+              Revenue per mese (reale + proiezioni)
+            </p>
+            <canvas id="revenueChart"></canvas>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    // ===========================
+    //  VARIABILI GLOBALI (JSON)
+    // ===========================
+    let fleetData = [];
+    let bookings2025 = [];
+    let bookingsJan2026 = [];
+
+    // ===========================
+    //  UTILITY DATE & FORMAT
+    // ===========================
+    const monthNames = [
+      "Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno",
+      "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"
+    ];
+
+    function parseISO(dateStr) {
+      return new Date(dateStr + "T00:00:00");
+    }
+
+    function getYear(d) {
+      return d.getFullYear();
+    }
+
+    function getMonth(d) {
+      return d.getMonth() + 1; // 1–12
+    }
+
+    function formatCurrency(value) {
+      if (value == null || isNaN(value)) return "-";
+      return value.toLocaleString("it-IT", {
+        style: "currency",
+        currency: "EUR",
+        maximumFractionDigits: 0
+      });
+    }
+
+    function formatNumber(value, decimals = 0) {
+      if (value == null || isNaN(value)) return "-";
+      return value.toLocaleString("it-IT", {
+        maximumFractionDigits: decimals,
+        minimumFractionDigits: decimals
+      });
+    }
+
+    // ===========================
+    //  GENERAZIONE BOOKING 2024/2026
+    // ===========================
+    function generateAllBookings(projectionFactor) {
+      const all = [];
+
+      // Base = 2025 reale
+      bookings2025.forEach((b) => {
+        const d2025 = parseISO(b.startDate);
+        const year2025 = getYear(d2025);
+        const month = getMonth(d2025);
+
+        // 2025 reale
+        all.push({
+          ...b,
+          year: year2025,
+          month
+        });
+
+        // 2024 = -5%
+        const d2024 = new Date(d2025);
+        d2024.setFullYear(year2025 - 1);
+        all.push({
+          ...b,
+          year: getYear(d2024),
+          month: getMonth(d2024),
+          startDate: d2024.toISOString().slice(0, 10),
+          price: (b.price || 0) * 0.95
+        });
+
+        // 2026 Feb–Dic = +X%
+        const d2026 = new Date(d2025);
+        d2026.setFullYear(year2025 + 1);
+        const m2026 = getMonth(d2026);
+
+        if (m2026 !== 1) {
+          all.push({
+            ...b,
+            year: getYear(d2026),
+            month: m2026,
+            startDate: d2026.toISOString().slice(0, 10),
+            price: (b.price || 0) * (1 + projectionFactor)
+          });
+        }
+      });
+
+      // Jan 2026 reale
+      bookingsJan2026.forEach((b) => {
+        const d = parseISO(b.startDate);
+        all.push({
+          ...b,
+          year: getYear(d),
+          month: getMonth(d)
+        });
+      });
+
+      return all;
+    }
+
+    // ===========================
+    //  FILTRI
+    // ===========================
+    function populateFilterOptions(allFleet, allBookings) {
+      const yearSelect = document.getElementById("yearFilter");
+      const monthSelect = document.getElementById("monthFilter");
+      const tipologiaSelect = document.getElementById("tipologiaFilter");
+      const gruppoSelect = document.getElementById("gruppoFilter");
+      const acquisizioneSelect = document.getElementById("acquisizioneFilter");
+      const stazioneSelect = document.getElementById("stazioneFilter");
+
+      [yearSelect, monthSelect, tipologiaSelect, gruppoSelect, acquisizioneSelect, stazioneSelect].forEach(
+        (sel) => (sel.innerHTML = "")
+      );
+
+      // Anni da flotta + bookings
+      const years = new Set();
+      allFleet.forEach((f) => {
+        const d = parseISO(f.refDate);
+        years.add(getYear(d));
+      });
+      allBookings.forEach((b) => {
+        years.add(b.year);
+      });
+
+      Array.from(years)
+        .sort()
+        .forEach((y) => {
+          const opt = document.createElement("option");
+          opt.value = y;
+          opt.textContent = y;
+          yearSelect.appendChild(opt);
+        });
+
+      // Mesi fissi
+      for (let m = 1; m <= 12; m++) {
+        const opt = document.createElement("option");
+        opt.value = m;
+        opt.textContent = monthNames[m - 1];
+        monthSelect.appendChild(opt);
+      }
+
+      // Dimensioni (tipologia, gruppo, acquisizione, stazione)
+      const tipologie = new Set();
+      const gruppi = new Set();
+      const acquisizioni = new Set();
+      const stazioni = new Set();
+
+      allFleet.forEach((f) => {
+        if (f.tipologia) tipologie.add(f.tipologia);
+        if (f.gruppo) gruppi.add(f.gruppo);
+        if (f.acquisizione) acquisizioni.add(f.acquisizione);
+        if (f.stazione) stazioni.add(f.stazione);
+      });
+
+      allBookings.forEach((b) => {
+        if (b.tipologia) tipologie.add(b.tipologia);
+        if (b.gruppo) gruppi.add(b.gruppo);
+        if (b.acquisizione) acquisizioni.add(b.acquisizione);
+        if (b.stazione) stazioni.add(b.stazione);
+      });
+
+      Array.from(tipologie)
+        .sort()
+        .forEach((t) => {
+          const opt = document.createElement("option");
+          opt.value = t;
+          opt.textContent = t;
+          tipologiaSelect.appendChild(opt);
+        });
+
+      Array.from(gruppi)
+        .sort()
+        .forEach((g) => {
+          const opt = document.createElement("option");
+          opt.value = g;
+          opt.textContent = g;
+          gruppoSelect.appendChild(opt);
+        });
+
+      Array.from(acquisizioni)
+        .sort()
+        .forEach((a) => {
+          const opt = document.createElement("option");
+          opt.value = a;
+          opt.textContent = a;
+          acquisizioneSelect.appendChild(opt);
+        });
+
+      Array.from(stazioni)
+        .sort()
+        .forEach((s) => {
+          const opt = document.createElement("option");
+          opt.value = s;
+          opt.textContent = s;
+          stazioneSelect.appendChild(opt);
+        });
+
+      // Seleziona tutto di default
+      [yearSelect, monthSelect, tipologiaSelect, gruppoSelect, acquisizioneSelect, stazioneSelect].forEach(
+        (sel) => {
+          for (let i = 0; i < sel.options.length; i++) {
+            sel.options[i].selected = true;
+          }
+        }
+      );
+    }
+
+    function getMultiSelectValues(selectId) {
+      const sel = document.getElementById(selectId);
+      const values = [];
+      for (let i = 0; i < sel.options.length; i++) {
+        if (sel.options[i].selected) values.push(sel.options[i].value);
+      }
+      return values;
+    }
+
+    // ===========================
+    //  RANGE PERIODO CORRENTE/PRECEDENTE
+    // ===========================
+    function getCurrentAndPreviousRanges(filters) {
+      const { years, months } = filters;
+
+      const allYears = years.length ? years.map((y) => parseInt(y, 10)) : [2024, 2025, 2026];
+      const minYear = Math.min(...allYears);
+      const maxYear = Math.max(...allYears);
+
+      const allMonths = months.length ? months.map((m) => parseInt(m, 10)) : [1, 12];
+      const minMonth = months.length ? Math.min(...allMonths) : 1;
+      const maxMonth = months.length ? Math.max(...allMonths) : 12;
+
+      const startCurrent = new Date(minYear, minMonth - 1, 1);
+      const endCurrent = new Date(maxYear, maxMonth, 0);
+
+      const diffMonths =
+        (endCurrent.getFullYear() - startCurrent.getFullYear()) * 12 +
+        (endCurrent.getMonth() - startCurrent.getMonth()) +
+        1;
+
+      const endPrev = new Date(startCurrent);
+      endPrev.setMonth(endPrev.getMonth() - 1);
+
+      const startPrev = new Date(endPrev);
+      startPrev.setMonth(startPrev.getMonth() - (diffMonths - 1));
+      startPrev.setDate(1);
+      endPrev.setDate(new Date(endPrev.getFullYear(), endPrev.getMonth() + 1, 0).getDate());
+
+      return {
+        current: { start: startCurrent, end: endCurrent },
+        previous: { start: startPrev, end: endPrev }
+      };
+    }
+
+    function isWithinRange(dateStr, range) {
+      const d = parseISO(dateStr);
+      return d >= range.start && d <= range.end;
+    }
+
+    // ===========================
+    //  FILTRO DATA PER RANGE
+    // ===========================
+    function filterDataForRange(allFleet, allBookings, filters, rangeKey) {
+      const range = rangeKey === "current" ? filters.currentRange : filters.previousRange;
+
+      const fleet = allFleet.filter((f) => {
+        const d = parseISO(f.refDate);
+        const year = getYear(d);
+        const month = getMonth(d);
+
+        if (filters.years.length && !filters.years.includes(String(year))) return false;
+        if (filters.months.length && !filters.months.includes(String(month))) return false;
+        if (filters.tipologie.length && f.tipologia && !filters.tipologie.includes(f.tipologia)) return false;
+        if (filters.gruppi.length && f.gruppo && !filters.gruppi.includes(f.gruppo)) return false;
+        if (filters.acquisizioni.length && f.acquisizione && !filters.acquisizioni.includes(f.acquisizione)) return false;
+        if (filters.stazioni.length && f.stazione && !filters.stazioni.includes(f.stazione)) return false;
+
+        return d >= range.start && d <= range.end;
+      });
+
+      const bookings = allBookings.filter((b) => {
+        const d = parseISO(b.startDate);
+        const year = b.year;
+        const month = b.month;
+
+        if (filters.years.length && !filters.years.includes(String(year))) return false;
+        if (filters.months.length && !filters.months.includes(String(month))) return false;
+        if (filters.tipologie.length && b.tipologia && !filters.tipologie.includes(b.tipologia)) return false;
+        if (filters.gruppi.length && b.gruppo && !filters.gruppi.includes(b.gruppo)) return false;
+        if (filters.acquisizioni.length && b.acquisizione && !filters.acquisizioni.includes(b.acquisizione)) return false;
+        if (filters.stazioni.length && b.stazione && !filters.stazioni.includes(b.stazione)) return false;
+
+        return d >= range.start && d <= range.end;
+      });
+
+      return { fleet, bookings };
+    }
+
+    // ===========================
+    //  KPI
+    // ===========================
+    function computeKpiForRange(fleet, bookings) {
+      const uniqueVehicles = new Set(fleet.map((f) => f.id));
+      const fleetSize = uniqueVehicles.size;
+
+      const sumCanone = fleet.reduce((acc, f) => acc + (f.canoneImponibile || 0), 0);
+      const sumAss = fleet.reduce((acc, f) => acc + (f.assicurazione || 0), 0);
+      const costoTotale = sumCanone + sumAss;
+      const canoneIvato = sumCanone * 1.22;
+
+      const sumRevenue = bookings.reduce((acc, b) => acc + (b.price || 0), 0);
+      const sumDuration = bookings.reduce((acc, b) => acc + (b.duration || 0), 0);
+      const revenuePerDay = sumDuration > 0 ? sumRevenue / sumDuration : null;
+      const numPren = bookings.length;
+
+      return {
+        fleetSize,
+        canone: sumCanone,
+        canoneIvato,
+        assicurazione: sumAss,
+        costoTotale,
+        revenue: sumRevenue,
+        revenuePerDay,
+        numPren
+      };
+    }
+
+    // Prenotazioni effettive Gennaio 2026 (no % proiezione)
+    function computeJan2026Kpi(filters) {
+      const { tipologie, gruppi, acquisizioni, stazioni } = filters;
+
+      const bookings = bookingsJan2026.filter((b) => {
+        if (tipologie.length && b.tipologia && !tipologie.includes(b.tipologia)) return false;
+        if (gruppi.length && b.gruppo && !gruppi.includes(b.gruppo)) return false;
+        if (acquisizioni.length && b.acquisizione && !acquisizioni.includes(b.acquisizione)) return false;
+        if (stazioni.length && b.stazione && !stazioni.includes(b.stazione)) return false;
+        return true;
+      });
+
+      return bookings.length;
+    }
+
+    // ===========================
+    //  GRAFICI
+    // ===========================
+    let fleetChartInstance = null;
+    let revenueChartInstance = null;
+
+    function updateCharts(allFleet, allBookingsFiltered, filters) {
+      const { currentRange } = filters;
+
+      // Flotta per year-month
+      const fleetByYearMonth = {};
+      allFleet.forEach((f) => {
+        const d = parseISO(f.refDate);
+        if (d < currentRange.start || d > currentRange.end) return;
+
+        const year = getYear(d);
+        const month = getMonth(d);
+        const key = `${year}-${String(month).padStart(2, "0")}`;
+
+        if (!fleetByYearMonth[key]) {
+          fleetByYearMonth[key] = new Set();
+        }
+        fleetByYearMonth[key].add(f.id);
+      });
+
+      const fleetLabels = Object.keys(fleetByYearMonth).sort();
+      const fleetSeries = fleetLabels.map((key) => fleetByYearMonth[key].size);
+
+      // Revenue per year-month
+      const revByYearMonth = {};
+      allBookingsFiltered.forEach((b) => {
+        const d = parseISO(b.startDate);
+        if (d < currentRange.start || d > currentRange.end) return;
+        const key = `${b.year}-${String(b.month).padStart(2, "0")}`;
+        if (!revByYearMonth[key]) revByYearMonth[key] = 0;
+        revByYearMonth[key] += b.price || 0;
+      });
+
+      const revLabels = Object.keys(revByYearMonth).sort();
+      const revSeries = revLabels.map((key) => revByYearMonth[key]);
+
+      // Fleet chart
+      const fleetCtx = document.getElementById("fleetChart").getContext("2d");
+      if (fleetChartInstance) fleetChartInstance.destroy();
+      fleetChartInstance = new Chart(fleetCtx, {
+        type: "line",
+        data: {
+          labels: fleetLabels,
+          datasets: [
+            {
+              label: "Dimensione flotta (ID unici)",
+              data: fleetSeries,
+              borderWidth: 2,
+              fill: false,
+              tension: 0.2
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            x: {
+              ticks: {
+                callback: function (val) {
+                  const label = this.getLabelForValue(val);
+                  const [y, m] = label.split("-");
+                  return `${monthNames[parseInt(m, 10) - 1].slice(0, 3)} ${y}`;
+                }
+              }
+            },
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+
+      // Revenue chart
+      const revCtx = document.getElementById("revenueChart").getContext("2d");
+      if (revenueChartInstance) revenueChartInstance.destroy();
+      revenueChartInstance = new Chart(revCtx, {
+        type: "bar",
+        data: {
+          labels: revLabels,
+          datasets: [
+            {
+              label: "Revenue mensile",
+              data: revSeries,
+              borderWidth: 1
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            x: {
+              ticks: {
+                callback: function (val) {
+                  const label = this.getLabelForValue(val);
+                  const [y, m] = label.split("-");
+                  return `${monthNames[parseInt(m, 10) - 1].slice(0, 3)} ${y}`;
+                }
+              }
+            },
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    }
+
+    // ===========================
+    //  UPDATE DASHBOARD
+    // ===========================
+    function updateDashboard() {
+      const projectionFactor = parseFloat(
+        document.getElementById("projectionSelect").value
+      );
+
+      const allBookings = generateAllBookings(projectionFactor);
+
+      const years = getMultiSelectValues("yearFilter");
+      const months = getMultiSelectValues("monthFilter");
+      const tipologie = getMultiSelectValues("tipologiaFilter");
+      const gruppi = getMultiSelectValues("gruppoFilter");
+      const acquisizioni = getMultiSelectValues("acquisizioneFilter");
+      const stazioni = getMultiSelectValues("stazioneFilter");
+
+      const ranges = getCurrentAndPreviousRanges({ years, months });
+
+      const filters = {
+        years,
+        months,
+        tipologie,
+        gruppi,
+        acquisizioni,
+        stazioni,
+        currentRange: ranges.current,
+        previousRange: ranges.previous
+      };
+
+      const { fleet: fleetCurrent, bookings: bookingsCurrent } = filterDataForRange(
+        fleetData,
+        allBookings,
+        filters,
+        "current"
+      );
+      const { fleet: fleetPrev, bookings: bookingsPrev } = filterDataForRange(
+        fleetData,
+        allBookings,
+        filters,
+        "previous"
+      );
+
+      const kpiCurrent = computeKpiForRange(fleetCurrent, bookingsCurrent);
+      const kpiPrev = computeKpiForRange(fleetPrev, bookingsPrev);
+
+      // KPI correnti
+      document.getElementById("kpiFleetSize").textContent = formatNumber(kpiCurrent.fleetSize);
+      document.getElementById("kpiCanone").textContent = formatCurrency(kpiCurrent.canone);
+      document.getElementById("kpiCanoneIvato").textContent = formatCurrency(kpiCurrent.canoneIvato);
+      document.getElementById("kpiAssicurazione").textContent = formatCurrency(kpiCurrent.assicurazione);
+      document.getElementById("kpiCostoTotale").textContent = formatCurrency(kpiCurrent.costoTotale);
+      document.getElementById("kpiRevenue").textContent = formatCurrency(kpiCurrent.revenue);
+      document.getElementById("kpiRevenuePerDay").textContent = formatNumber(kpiCurrent.revenuePerDay, 2);
+      document.getElementById("kpiNumPren").textContent = formatNumber(kpiCurrent.numPren);
+
+      // KPI periodo precedente
+      document.getElementById("kpiFleetSizePrev").textContent =
+        "Periodo precedente: " + formatNumber(kpiPrev.fleetSize);
+      document.getElementById("kpiCanonePrev").textContent =
+        "Periodo precedente: " + formatCurrency(kpiPrev.canone);
+      document.getElementById("kpiAssicurazionePrev").textContent =
+        "Periodo precedente: " + formatCurrency(kpiPrev.assicurazione);
+      document.getElementById("kpiCostoTotalePrev").textContent =
+        "Periodo precedente: " + formatCurrency(kpiPrev.costoTotale);
+      document.getElementById("kpiRevenuePrev").textContent =
+        "Periodo precedente: " + formatCurrency(kpiPrev.revenue);
+      document.getElementById("kpiRevenuePerDayPrev").textContent =
+        "Periodo precedente: " + formatNumber(kpiPrev.revenuePerDay, 2);
+      document.getElementById("kpiNumPrenPrev").textContent =
+        "Periodo precedente: " + formatNumber(kpiPrev.numPren);
+
+      // Prenotazioni Effettive Gennaio 2026
+      const prenGen2026 = computeJan2026Kpi(filters);
+      document.getElementById("kpiPrenGen2026").textContent = formatNumber(prenGen2026);
+
+      // Grafici
+      updateCharts(fleetData, allBookings, { ...filters, currentRange: ranges.current });
+    }
+
+    // ===========================
+    //  RESET FILTRI
+    // ===========================
+    function resetFilters() {
+      const yearSelect = document.getElementById("yearFilter");
+      const monthSelect = document.getElementById("monthFilter");
+      const tipologiaSelect = document.getElementById("tipologiaFilter");
+      const gruppoSelect = document.getElementById("gruppoFilter");
+      const acquisizioneSelect = document.getElementById("acquisizioneFilter");
+      const stazioneSelect = document.getElementById("stazioneFilter");
+
+      [yearSelect, monthSelect, tipologiaSelect, gruppoSelect, acquisizioneSelect, stazioneSelect].forEach(
+        (sel) => {
+          for (let i = 0; i < sel.options.length; i++) {
+            sel.options[i].selected = true;
+          }
+        }
+      );
+
+      document.getElementById("projectionSelect").value = "0.10";
+      updateDashboard();
+    }
+
+    // ===========================
+    //  INIT (FETCH JSON)
+    // ===========================
+    async function initDashboardWithJson() {
+      try {
+        const [fleetRes, b2025Res, janRes] = await Promise.all([
+          fetch("fleetData.json"),
+          fetch("bookings2025.json"),
+          fetch("bookingsJan2026.json")
+        ]);
+
+        if (!fleetRes.ok || !b2025Res.ok || !janRes.ok) {
+          throw new Error("Errore nel caricamento dei JSON");
+        }
+
+        [fleetData, bookings2025, bookingsJan2026] = await Promise.all([
+          fleetRes.json(),
+          b2025Res.json(),
+          janRes.json()
+        ]);
+
+        const defaultProjectionFactor = parseFloat(
+          document.getElementById("projectionSelect").value
+        );
+        const allBookings = generateAllBookings(defaultProjectionFactor);
+
+        populateFilterOptions(fleetData, allBookings);
+
+        [
+          "yearFilter",
+          "monthFilter",
+          "tipologiaFilter",
+          "gruppoFilter",
+          "acquisizioneFilter",
+          "stazioneFilter",
+          "projectionSelect"
+        ].forEach((id) => {
+          document.getElementById(id).addEventListener("change", updateDashboard);
+        });
+
+        document
+          .getElementById("resetFiltersBtn")
+          .addEventListener("click", resetFilters);
+
+        updateDashboard();
+      } catch (err) {
+        console.error("Errore durante init dashboard:", err);
+        alert("Errore nel caricamento dei dati JSON. Controlla che i file siano nella stessa cartella dell'HTML.");
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", initDashboardWithJson);
+  </script>
+</body>
+</html>
