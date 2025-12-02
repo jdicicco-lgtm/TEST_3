@@ -53,7 +53,7 @@
             class="w-full rounded-lg border border-slate-300 text-sm px-2 py-1 focus:outline-none focus:ring-1 focus:ring-slate-400"
           ></select>
           <p class="text-[11px] text-slate-400 mt-1">
-            Multi-selezione (Ctrl+Click) · Default: tutti gli anni.
+            Multi-selezione (Ctrl+Click) · Default: 2024–2026.
           </p>
         </div>
 
@@ -244,9 +244,6 @@
   </main>
 
   <script>
-    // ===========================
-    //  VARIABILI GLOBALI (JSON)
-    // ===========================
     let fleetData = [];
     let bookings2025 = [];
     let bookingsJan2026 = [];
@@ -279,23 +276,33 @@
       });
     }
 
-    // ===========================
-    //  CARICAMENTO JSON CON PULIZIA NaN
-    // ===========================
+    // Normalizzazioni testo
+    function normalizeText(val) {
+      if (val === null || val === undefined) return "";
+      const s = String(val).trim();
+      if (!s || s.toUpperCase() === "NAN") return "";
+      return s;
+    }
+
+    function normalizeStation(val) {
+      const s = normalizeText(val);
+      if (!s) return "";
+      // Normalizzo a maiuscolo per evitare duplicati da minuscolo/maiuscolo
+      return s.toUpperCase();
+    }
+
+    // Caricamento JSON con pulizia NaN numerici
     async function loadJsonClean(url) {
       const res = await fetch(url);
       if (!res.ok) {
         throw new Error(`Errore nel caricamento di ${url}: status ${res.status}`);
       }
       let text = await res.text();
-      // rimpiazza NaN (non valido in JSON) con 0
       text = text.replace(/\bNaN\b/g, "0");
       return JSON.parse(text);
     }
 
-    // ===========================
-    //  GENERA BOOKING 2024/2026
-    // ===========================
+    // Generazione proiezioni prenotazioni
     function generateAllBookings(projectionFactor) {
       const all = [];
 
@@ -342,9 +349,7 @@
       return all;
     }
 
-    // ===========================
-    //  FILTRI
-    // ===========================
+    // Popolamento filtri
     function populateFilterOptions(allFleet, allBookings) {
       const yearSelect = document.getElementById("yearFilter");
       const monthSelect = document.getElementById("monthFilter");
@@ -356,16 +361,20 @@
       [yearSelect, monthSelect, tipologiaSelect, gruppoSelect, acquisizioneSelect, stazioneSelect]
         .forEach(sel => sel.innerHTML = "");
 
-      // Anni
+      // Anni: limito a 2024–2026
       const years = new Set();
       allFleet.forEach(f => years.add(getYear(parseISO(f.refDate))));
       allBookings.forEach(b => years.add(b.year));
-      Array.from(years).sort().forEach(y => {
-        const opt = document.createElement("option");
-        opt.value = y;
-        opt.textContent = y;
-        yearSelect.appendChild(opt);
-      });
+
+      Array.from(years)
+        .filter(y => y >= 2024 && y <= 2026)
+        .sort()
+        .forEach(y => {
+          const opt = document.createElement("option");
+          opt.value = y;
+          opt.textContent = y;
+          yearSelect.appendChild(opt);
+        });
 
       // Mesi
       for (let m = 1; m <= 12; m++) {
@@ -375,7 +384,6 @@
         monthSelect.appendChild(opt);
       }
 
-      // Dimensioni dall’unione di flotta + prenotazioni
       const tipologie = new Set();
       const gruppi = new Set();
       const acquisizioni = new Set();
@@ -437,9 +445,7 @@
       return vals;
     }
 
-    // ===========================
-    //  RANGE PERIODO
-    // ===========================
+    // Range corrente / precedente
     function getCurrentAndPreviousRanges(filters) {
       const { years, months } = filters;
 
@@ -545,15 +551,11 @@
       return bookings.length;
     }
 
-    // ===========================
-    //  GRAFICO PRINCIPALE
-    // ===========================
     let mainChartInstance = null;
 
     function updateMainChart(allFleet, allBookings, filters) {
       const { currentRange } = filters;
-
-      const buckets = {}; // key: YYYY-MM -> { fleetIds:Set, costoTotale, revenue }
+      const buckets = {};
 
       allFleet.forEach(f => {
         const d = parseISO(f.refDate);
@@ -666,18 +668,13 @@
                 text: "€"
               },
               beginAtZero: true,
-              grid: {
-                drawOnChartArea: false
-              }
+              grid: { drawOnChartArea: false }
             }
           }
         }
       });
     }
 
-    // ===========================
-    //  UPDATE DASHBOARD
-    // ===========================
     function updateDashboard() {
       const projectionFactor = parseFloat(
         document.getElementById("projectionSelect").value
@@ -712,7 +709,6 @@
       const kpiCurrent = computeKpiForRange(fleetCurrent, bookingsCurrent);
       const kpiPrev    = computeKpiForRange(fleetPrev, bookingsPrev);
 
-      // KPI correnti
       document.getElementById("kpiFleetSize").textContent      = formatNumber(kpiCurrent.fleetSize);
       document.getElementById("kpiCanone").textContent         = formatCurrency(kpiCurrent.canone);
       document.getElementById("kpiCanoneIvato").textContent    = formatCurrency(kpiCurrent.canoneIvato);
@@ -722,7 +718,6 @@
       document.getElementById("kpiRevenuePerDay").textContent  = formatNumber(kpiCurrent.revenuePerDay, 2);
       document.getElementById("kpiNumPren").textContent        = formatNumber(kpiCurrent.numPren);
 
-      // KPI periodo precedente
       document.getElementById("kpiFleetSizePrev").textContent =
         "Periodo precedente: " + formatNumber(kpiPrev.fleetSize);
       document.getElementById("kpiCanonePrev").textContent =
@@ -738,17 +733,12 @@
       document.getElementById("kpiNumPrenPrev").textContent =
         "Periodo precedente: " + formatNumber(kpiPrev.numPren);
 
-      // Prenotazioni effettive Gennaio 2026
       const prenGen2026 = computeJan2026Kpi(filters);
       document.getElementById("kpiPrenGen2026").textContent = formatNumber(prenGen2026);
 
-      // Grafico
       updateMainChart(fleetData, allBookings, filters);
     }
 
-    // ===========================
-    //  RESET FILTRI
-    // ===========================
     function resetFilters() {
       ["yearFilter","monthFilter","tipologiaFilter","gruppoFilter","acquisizioneFilter","stazioneFilter"]
         .forEach(id => {
@@ -761,17 +751,38 @@
       updateDashboard();
     }
 
-    // ===========================
-    //  INIT (FETCH JSON CON PULIZIA)
-    // ===========================
     async function initDashboardWithJson() {
       try {
-        // carico i 3 JSON e sostituisco eventuali NaN con 0
         [fleetData, bookings2025, bookingsJan2026] = await Promise.all([
           loadJsonClean("fleetData.json"),
           loadJsonClean("bookings2025.json"),
           loadJsonClean("bookingsJan2026.json")
         ]);
+
+        // normalizzo tipologia/gruppo/acquisizione/stazione in memoria
+        fleetData = fleetData.map(r => ({
+          ...r,
+          tipologia: normalizeText(r.tipologia),
+          gruppo: normalizeText(r.gruppo),
+          acquisizione: normalizeText(r.acquisizione),
+          stazione: normalizeStation(r.stazione)
+        }));
+
+        bookings2025 = bookings2025.map(r => ({
+          ...r,
+          tipologia: normalizeText(r.tipologia),
+          gruppo: normalizeText(r.gruppo),
+          acquisizione: normalizeText(r.acquisizione),
+          stazione: normalizeStation(r.stazione)
+        }));
+
+        bookingsJan2026 = bookingsJan2026.map(r => ({
+          ...r,
+          tipologia: normalizeText(r.tipologia),
+          gruppo: normalizeText(r.gruppo),
+          acquisizione: normalizeText(r.acquisizione),
+          stazione: normalizeStation(r.stazione)
+        }));
 
         const defaultProjectionFactor = parseFloat(
           document.getElementById("projectionSelect").value
@@ -793,7 +804,7 @@
         updateDashboard();
       } catch (err) {
         console.error("Errore durante init dashboard:", err);
-        alert("Errore nel caricamento dei dati JSON. Controlla che i file siano nella stessa cartella dell'HTML.");
+        alert("Errore nel caricamento dei dati JSON. Verifica che i file siano nella stessa cartella di index.html.");
       }
     }
 
