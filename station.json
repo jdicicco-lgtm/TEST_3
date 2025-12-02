@@ -1,0 +1,830 @@
+[
+    {
+        "Station":"cassino",
+        "Mese":"2025-01-01",
+        "CarType":"Commercial Van",
+        "flotta":84.0
+    },
+    {
+        "Station":"cassino",
+        "Mese":"2025-01-01",
+        "CarType":"Large",
+        "flotta":34.8387096774
+    },
+    {
+        "Station":"cassino",
+        "Mese":"2025-01-01",
+        "CarType":"Economy",
+        "flotta":23.0
+    },
+    {
+        "Station":"cassino",
+        "Mese":"2025-01-01",
+        "CarType":"Small",
+        "flotta":27.2903225806
+    },
+    {
+        "Station":"cassino",
+        "Mese":"2025-01-01",
+        "CarType":"Mini",
+        "flotta":24.4838709677
+    },
+    {
+        "Station":"cassino",
+        "Mese":"2025-01-01",
+        "CarType":"Premium",
+        "flotta":8.0
+    },
+    {
+        "Station":"cassino",
+        "Mese":"2025-01-01",
+        "CarType":"Suv",
+        "flotta":7.8387096774
+    },
+    {
+        "Station":"cassino",
+        "Mese":"2025-01-01",
+        "CarType":"People Mover",
+        "flotta":12.0
+    },
+    {
+        "Station":"cassino",
+        "Mese":"2025-01-01",
+        "CarType":"Station Wagon",
+        "flotta":12.0
+    },
+    {
+        "Station":"cassino",
+        "Mese":"2025-01-01",
+        "CarType":"Cabriolet",
+        "flotta":4.0
+    },
+    {
+        "Station":"firenze",
+        "Mese":"2025-01-01",
+        "CarType":"Small",
+        "flotta":0.0
+    },
+    {
+        "Station":"firenze",
+        "Mese":"2025-01-01",
+        "CarType":"Station Wagon",
+        "flotta":0.0
+    },
+    {
+        "Station":"firenze",
+        "Mese":"2025-01-01",
+        "CarType":"People Mover",
+        "flotta":1.0
+    },
+    {
+        "Station":"firenze",
+        "Mese":"2025-01-01",
+        "CarType":"Premium",
+        "flotta":0.0
+    },
+    {
+        "Station":"firenze",
+        "Mese":"2025-01-01",
+        "CarType":"Large",
+        "flotta":0.0
+    },
+    {
+        "Station":"firenze",
+        "Mese":"2025-01-01",
+        "CarType":"Economy",
+        "flotta":0.0
+    },
+    {
+        "Station":"firenze",
+        "Mese":"2025-01-01",
+        "CarType":"Mini",
+        "flotta":1.0
+    },
+    {
+        "Station":"firenze",
+        "Mese":"2025-01-01",
+        "CarType":"Commercial Van",
+        "flotta":0.0
+    },
+    {
+        "Station":"firenze",
+        "Mese":"2025-01-01",
+        "CarType":"Cabriolet",
+        "flotta":0.0
+    },
+    {
+        "Station":"firenze",
+        "Mese":"2025-01-01",
+        "CarType":"Suv",
+        "flotta":0.0
+    },
+    {
+        "Station":"brindisi",
+        "Mese":"2025-01-01",
+        "CarType":"Cabriolet",
+        "flotta":0.0
+    },
+    {
+        "Station":"brindisi",
+        "Mese":"2025-01-01",
+        "CarType":"People Mover",
+        "flotta":1.0
+    },
+    {
+        "Station":"brindisi",
+        "Mese":"2025-01-01",
+        "CarType":"Premium",
+        "flotta":0.0
+    },
+    {
+        "Station":"brindisi",
+        "Mese":"2025-01-01",
+        "CarType":"Station Wagon",
+        "flotta":0.0
+    },
+    {
+        "Station":"brindisi",
+        "Mese":"2025-01-01",
+        "CarType":"Small",
+        "flotta":3.0
+    },
+    {
+        "Station":"brindisi",
+        "Mese":"2025-01-01",
+        "CarType":"Suv",
+        "flotta":0.0
+    },
+    {
+        "Station":"brindisi",
+        "Mese":"2025-01-01",
+        "CarType":"Mini",
+        "flotta":0.0
+    },
+    {
+        "Station":"brindisi",
+        "Mese":"2025-01-01",
+        "CarType":"Economy",
+        "flotta":1.0
+    },
+    {
+        "Station":"brindisi",
+        "Mese":"2025-01-01",
+        "CarType":"Large",
+        "flotta":2.0
+    },
+    {
+        "Station":"brindisi",
+        "Mese":"2025-01-01",
+        "CarType":"Commercial Van",
+        "flotta":0.0
+    },
+    {
+        "Station":"Napoli Capodichino",
+        "Mese":"2025-01-01",
+        "CarType":"Small",
+        "flotta":9.3225806452
+    },
+    {
+        "Station":"Napoli Capodichino",
+        "Mese":"2025-01-01",
+        "CarType":"Large",
+        "flotta":7.0
+    },
+    {
+        "Station":"Napoli Capodichino",
+        "Mese":"2025-01-01",
+        "CarType":"Economy",
+        "flotta":7.0
+    },
+    {
+        "Station":"Napoli Capodichino",
+        "Mese":"2025-01-01",
+        "CarType":"Mini",
+        "flotta":5.7096774194
+    },
+    {
+        "Station":"Napoli Capodichino",
+        "Mese":"2025-01-01",
+        "CarType":"Cabriolet",
+        "flotta":4.0
+    },
+    {
+        "Station":"Napoli Capodichino",
+        "Mese":"2025-01-01",
+        "CarType":"Suv",
+        "flotta":3.0
+    },
+    {
+        "Station":"Napoli Capodichino",
+        "Mese":"2025-01-01",
+        "CarType":"People Mover",
+        "flotta":0.0
+    },
+    {
+        "Station":"Napoli Capodichino",
+        "Mese":"2025-01-01",
+        "CarType":"Station Wagon",
+        "flotta":1.0
+    },
+    {
+        "Station":"Napoli Capodichino",
+        "Mese":"2025-01-01",
+        "CarType":"Premium",
+        "flotta":1.0
+    },
+    {
+        "Station":"Napoli Capodichino",
+        "Mese":"2025-01-01",
+        "CarType":"Commercial Van",
+        "flotta":0.0
+    },
+    {
+        "Station":"napoli stazione",
+        "Mese":"2025-01-01",
+        "CarType":"Mini",
+        "flotta":0.0
+    },
+    {
+        "Station":"napoli stazione",
+        "Mese":"2025-01-01",
+        "CarType":"Small",
+        "flotta":0.0
+    },
+    {
+        "Station":"napoli stazione",
+        "Mese":"2025-01-01",
+        "CarType":"Large",
+        "flotta":2.0
+    },
+    {
+        "Station":"napoli stazione",
+        "Mese":"2025-01-01",
+        "CarType":"Station Wagon",
+        "flotta":0.0
+    },
+    {
+        "Station":"napoli stazione",
+        "Mese":"2025-01-01",
+        "CarType":"Cabriolet",
+        "flotta":0.0
+    },
+    {
+        "Station":"napoli stazione",
+        "Mese":"2025-01-01",
+        "CarType":"Suv",
+        "flotta":0.0
+    },
+    {
+        "Station":"napoli stazione",
+        "Mese":"2025-01-01",
+        "CarType":"Economy",
+        "flotta":0.0
+    },
+    {
+        "Station":"napoli stazione",
+        "Mese":"2025-01-01",
+        "CarType":"People Mover",
+        "flotta":0.0
+    },
+    {
+        "Station":"napoli stazione",
+        "Mese":"2025-01-01",
+        "CarType":"Commercial Van",
+        "flotta":0.0
+    },
+    {
+        "Station":"napoli stazione",
+        "Mese":"2025-01-01",
+        "CarType":"Premium",
+        "flotta":0.0
+    },
+    {
+        "Station":"palermo",
+        "Mese":"2025-01-01",
+        "CarType":"Mini",
+        "flotta":0.0
+    },
+    {
+        "Station":"palermo",
+        "Mese":"2025-01-01",
+        "CarType":"Suv",
+        "flotta":0.0
+    },
+    {
+        "Station":"palermo",
+        "Mese":"2025-01-01",
+        "CarType":"Cabriolet",
+        "flotta":0.0
+    },
+    {
+        "Station":"palermo",
+        "Mese":"2025-01-01",
+        "CarType":"Large",
+        "flotta":0.0
+    },
+    {
+        "Station":"palermo",
+        "Mese":"2025-01-01",
+        "CarType":"Commercial Van",
+        "flotta":0.0
+    },
+    {
+        "Station":"palermo",
+        "Mese":"2025-01-01",
+        "CarType":"Station Wagon",
+        "flotta":0.0
+    },
+    {
+        "Station":"palermo",
+        "Mese":"2025-01-01",
+        "CarType":"Economy",
+        "flotta":0.0
+    },
+    {
+        "Station":"palermo",
+        "Mese":"2025-01-01",
+        "CarType":"People Mover",
+        "flotta":0.0
+    },
+    {
+        "Station":"palermo",
+        "Mese":"2025-01-01",
+        "CarType":"Small",
+        "flotta":0.0
+    },
+    {
+        "Station":"palermo",
+        "Mese":"2025-01-01",
+        "CarType":"Premium",
+        "flotta":0.0
+    },
+    {
+        "Station":"roma ciampino",
+        "Mese":"2025-01-01",
+        "CarType":"Suv",
+        "flotta":0.0
+    },
+    {
+        "Station":"roma ciampino",
+        "Mese":"2025-01-01",
+        "CarType":"Small",
+        "flotta":1.0
+    },
+    {
+        "Station":"roma ciampino",
+        "Mese":"2025-01-01",
+        "CarType":"Economy",
+        "flotta":1.0
+    },
+    {
+        "Station":"roma ciampino",
+        "Mese":"2025-01-01",
+        "CarType":"Large",
+        "flotta":2.0
+    },
+    {
+        "Station":"roma ciampino",
+        "Mese":"2025-01-01",
+        "CarType":"People Mover",
+        "flotta":0.0
+    },
+    {
+        "Station":"roma ciampino",
+        "Mese":"2025-01-01",
+        "CarType":"Mini",
+        "flotta":1.0
+    },
+    {
+        "Station":"roma ciampino",
+        "Mese":"2025-01-01",
+        "CarType":"Station Wagon",
+        "flotta":0.0
+    },
+    {
+        "Station":"roma ciampino",
+        "Mese":"2025-01-01",
+        "CarType":"Cabriolet",
+        "flotta":0.0
+    },
+    {
+        "Station":"roma ciampino",
+        "Mese":"2025-01-01",
+        "CarType":"Premium",
+        "flotta":0.0
+    },
+    {
+        "Station":"roma ciampino",
+        "Mese":"2025-01-01",
+        "CarType":"Commercial Van",
+        "flotta":0.0
+    },
+    {
+        "Station":"roma fiumicino",
+        "Mese":"2025-01-01",
+        "CarType":"Suv",
+        "flotta":12.0
+    },
+    {
+        "Station":"roma fiumicino",
+        "Mese":"2025-01-01",
+        "CarType":"Mini",
+        "flotta":1.7419354839
+    },
+    {
+        "Station":"roma fiumicino",
+        "Mese":"2025-01-01",
+        "CarType":"Large",
+        "flotta":10.8387096774
+    },
+    {
+        "Station":"roma fiumicino",
+        "Mese":"2025-01-01",
+        "CarType":"People Mover",
+        "flotta":5.0
+    },
+    {
+        "Station":"roma fiumicino",
+        "Mese":"2025-01-01",
+        "CarType":"Small",
+        "flotta":6.0
+    },
+    {
+        "Station":"roma fiumicino",
+        "Mese":"2025-01-01",
+        "CarType":"Economy",
+        "flotta":0.0
+    },
+    {
+        "Station":"roma fiumicino",
+        "Mese":"2025-01-01",
+        "CarType":"Station Wagon",
+        "flotta":1.0
+    },
+    {
+        "Station":"roma fiumicino",
+        "Mese":"2025-01-01",
+        "CarType":"Premium",
+        "flotta":0.0
+    },
+    {
+        "Station":"roma fiumicino",
+        "Mese":"2025-01-01",
+        "CarType":"Cabriolet",
+        "flotta":0.0
+    },
+    {
+        "Station":"roma fiumicino",
+        "Mese":"2025-01-01",
+        "CarType":"Commercial Van",
+        "flotta":0.0
+    },
+    {
+        "Station":"roma termini",
+        "Mese":"2025-01-01",
+        "CarType":"Large",
+        "flotta":0.0
+    },
+    {
+        "Station":"roma termini",
+        "Mese":"2025-01-01",
+        "CarType":"Mini",
+        "flotta":0.0
+    },
+    {
+        "Station":"roma termini",
+        "Mese":"2025-01-01",
+        "CarType":"Station Wagon",
+        "flotta":0.0
+    },
+    {
+        "Station":"roma termini",
+        "Mese":"2025-01-01",
+        "CarType":"Suv",
+        "flotta":5.0
+    },
+    {
+        "Station":"roma termini",
+        "Mese":"2025-01-01",
+        "CarType":"People Mover",
+        "flotta":1.0
+    },
+    {
+        "Station":"roma termini",
+        "Mese":"2025-01-01",
+        "CarType":"Small",
+        "flotta":0.0
+    },
+    {
+        "Station":"roma termini",
+        "Mese":"2025-01-01",
+        "CarType":"Economy",
+        "flotta":1.0
+    },
+    {
+        "Station":"roma termini",
+        "Mese":"2025-01-01",
+        "CarType":"Cabriolet",
+        "flotta":0.0
+    },
+    {
+        "Station":"roma termini",
+        "Mese":"2025-01-01",
+        "CarType":"Premium",
+        "flotta":0.0
+    },
+    {
+        "Station":"roma termini",
+        "Mese":"2025-01-01",
+        "CarType":"Commercial Van",
+        "flotta":0.0
+    },
+    {
+        "Station":"sorrento",
+        "Mese":"2025-01-01",
+        "CarType":"Economy",
+        "flotta":1.0
+    },
+    {
+        "Station":"sorrento",
+        "Mese":"2025-01-01",
+        "CarType":"Mini",
+        "flotta":0.0
+    },
+    {
+        "Station":"sorrento",
+        "Mese":"2025-01-01",
+        "CarType":"Small",
+        "flotta":0.0
+    },
+    {
+        "Station":"sorrento",
+        "Mese":"2025-01-01",
+        "CarType":"Station Wagon",
+        "flotta":0.0
+    },
+    {
+        "Station":"sorrento",
+        "Mese":"2025-01-01",
+        "CarType":"Premium",
+        "flotta":0.0
+    },
+    {
+        "Station":"sorrento",
+        "Mese":"2025-01-01",
+        "CarType":"Large",
+        "flotta":0.0
+    },
+    {
+        "Station":"sorrento",
+        "Mese":"2025-01-01",
+        "CarType":"Suv",
+        "flotta":0.0
+    },
+    {
+        "Station":"sorrento",
+        "Mese":"2025-01-01",
+        "CarType":"People Mover",
+        "flotta":0.0
+    },
+    {
+        "Station":"sorrento",
+        "Mese":"2025-01-01",
+        "CarType":"Commercial Van",
+        "flotta":0.0
+    },
+    {
+        "Station":"sorrento",
+        "Mese":"2025-01-01",
+        "CarType":"Cabriolet",
+        "flotta":0.0
+    },
+    {
+        "Station":"Trapani aeroporto",
+        "Mese":"2025-01-01",
+        "CarType":"Suv",
+        "flotta":0.0
+    },
+    {
+        "Station":"Trapani aeroporto",
+        "Mese":"2025-01-01",
+        "CarType":"Large",
+        "flotta":0.0
+    },
+    {
+        "Station":"Trapani aeroporto",
+        "Mese":"2025-01-01",
+        "CarType":"Station Wagon",
+        "flotta":0.0
+    },
+    {
+        "Station":"Trapani aeroporto",
+        "Mese":"2025-01-01",
+        "CarType":"Premium",
+        "flotta":0.0
+    },
+    {
+        "Station":"Trapani aeroporto",
+        "Mese":"2025-01-01",
+        "CarType":"People Mover",
+        "flotta":0.0
+    },
+    {
+        "Station":"Trapani aeroporto",
+        "Mese":"2025-01-01",
+        "CarType":"Small",
+        "flotta":0.0
+    },
+    {
+        "Station":"Trapani aeroporto",
+        "Mese":"2025-01-01",
+        "CarType":"Mini",
+        "flotta":0.0
+    },
+    {
+        "Station":"Trapani aeroporto",
+        "Mese":"2025-01-01",
+        "CarType":"Commercial Van",
+        "flotta":0.0
+    },
+    {
+        "Station":"Trapani aeroporto",
+        "Mese":"2025-01-01",
+        "CarType":"Economy",
+        "flotta":0.0
+    },
+    {
+        "Station":"Trapani aeroporto",
+        "Mese":"2025-01-01",
+        "CarType":"Cabriolet",
+        "flotta":0.0
+    },
+    {
+        "Station":"trapani porto",
+        "Mese":"2025-01-01",
+        "CarType":"Small",
+        "flotta":3.0
+    },
+    {
+        "Station":"trapani porto",
+        "Mese":"2025-01-01",
+        "CarType":"Commercial Van",
+        "flotta":3.0
+    },
+    {
+        "Station":"trapani porto",
+        "Mese":"2025-01-01",
+        "CarType":"Large",
+        "flotta":2.0
+    },
+    {
+        "Station":"trapani porto",
+        "Mese":"2025-01-01",
+        "CarType":"Economy",
+        "flotta":0.0
+    },
+    {
+        "Station":"trapani porto",
+        "Mese":"2025-01-01",
+        "CarType":"Station Wagon",
+        "flotta":0.0
+    },
+    {
+        "Station":"trapani porto",
+        "Mese":"2025-01-01",
+        "CarType":"Premium",
+        "flotta":0.0
+    },
+    {
+        "Station":"trapani porto",
+        "Mese":"2025-01-01",
+        "CarType":"People Mover",
+        "flotta":0.0
+    },
+    {
+        "Station":"trapani porto",
+        "Mese":"2025-01-01",
+        "CarType":"Mini",
+        "flotta":2.0
+    },
+    {
+        "Station":"trapani porto",
+        "Mese":"2025-01-01",
+        "CarType":"Suv",
+        "flotta":0.0
+    },
+    {
+        "Station":"trapani porto",
+        "Mese":"2025-01-01",
+        "CarType":"Cabriolet",
+        "flotta":0.0
+    },
+    {
+        "Station":"valle di comino",
+        "Mese":"2025-01-01",
+        "CarType":"Economy",
+        "flotta":2.0
+    },
+    {
+        "Station":"valle di comino",
+        "Mese":"2025-01-01",
+        "CarType":"Suv",
+        "flotta":0.0
+    },
+    {
+        "Station":"valle di comino",
+        "Mese":"2025-01-01",
+        "CarType":"Small",
+        "flotta":1.0
+    },
+    {
+        "Station":"valle di comino",
+        "Mese":"2025-01-01",
+        "CarType":"Commercial Van",
+        "flotta":3.0
+    },
+    {
+        "Station":"valle di comino",
+        "Mese":"2025-01-01",
+        "CarType":"People Mover",
+        "flotta":1.0
+    },
+    {
+        "Station":"valle di comino",
+        "Mese":"2025-01-01",
+        "CarType":"Large",
+        "flotta":0.0
+    },
+    {
+        "Station":"valle di comino",
+        "Mese":"2025-01-01",
+        "CarType":"Station Wagon",
+        "flotta":0.0
+    },
+    {
+        "Station":"valle di comino",
+        "Mese":"2025-01-01",
+        "CarType":"Mini",
+        "flotta":1.0
+    },
+    {
+        "Station":"valle di comino",
+        "Mese":"2025-01-01",
+        "CarType":"Premium",
+        "flotta":0.0
+    },
+    {
+        "Station":"valle di comino",
+        "Mese":"2025-01-01",
+        "CarType":"Cabriolet",
+        "flotta":0.0
+    },
+    {
+        "Station":"brindisi",
+        "Mese":"2025-02-01",
+        "CarType":"Mini",
+        "flotta":0.0
+    },
+    {
+        "Station":"brindisi",
+        "Mese":"2025-02-01",
+        "CarType":"Suv",
+        "flotta":0.0
+    },
+    {
+        "Station":"brindisi",
+        "Mese":"2025-02-01",
+        "CarType":"Cabriolet",
+        "flotta":0.0
+    },
+    {
+        "Station":"brindisi",
+        "Mese":"2025-02-01",
+        "CarType":"Large",
+        "flotta":2.0
+    },
+    {
+        "Station":"brindisi",
+        "Mese":"2025-02-01",
+        "CarType":"Commercial Van",
+        "flotta":0.0
+    },
+    {
+        "Station":"brindisi",
+        "Mese":"2025-02-01",
+        "CarType":"Station Wagon",
+        "flotta":0.0
+    },
+    {
+        "Station":"brindisi",
+        "Mese":"2025-02-01",
+        "CarType":"Economy",
+        "flotta":1.0
+    },
+    {
+        "Station":"brindisi",
+        "Mese":"2025-02-01",
+        "CarType":"People Mover",
+        "flotta":1.0
+    },
+    {
