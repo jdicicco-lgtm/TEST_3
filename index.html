@@ -137,7 +137,7 @@
           <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4">
             <!-- Dimensione Flotta -->
             <div class="bg-white rounded-2xl shadow px-4 py-3">
-              <p class="text-xs font-semibold text-slate-500">Dimensione Flotta (media)</p>
+              <p class="text-xs font-semibold text-slate-500">Dimensione Flotta (conteggio veicoli)</p>
               <p id="kpiFleetSize" class="text-xl font-bold text-slate-900 mt-1">-</p>
               <p id="kpiFleetSizePrev" class="text-[11px] text-slate-400 mt-1">
                 Periodo precedente: -
@@ -274,26 +274,6 @@
         maximumFractionDigits: decimals,
         minimumFractionDigits: decimals
       });
-    }
-
-    // Normalizzazioni testo
-    function normalizeText(val) {
-      if (val === null || val === undefined) return "";
-      const s = String(val).trim();
-      if (!s || s.toUpperCase() === "NAN") return "";
-      return s;
-    }
-
-    function normalizeGroup(val) {
-      const s = normalizeText(val);
-      if (!s) return "";
-      return s.toUpperCase();
-    }
-
-    function normalizeStation(val) {
-      const s = normalizeText(val);
-      if (!s) return "";
-      return s.toUpperCase();
     }
 
     // Caricamento JSON con pulizia NaN numerici
@@ -506,19 +486,9 @@
       return { fleet, bookings };
     }
 
-    // KPI: nuova logica Dimensione Flotta (media veicoli per mese)
+    // KPI: flotta = numero di righe flotta filtrate
     function computeKpiForRange(fleet, bookings) {
-      // media veicoli/mese nel periodo
-      const monthlyCounts = {};
-      fleet.forEach(f => {
-        const d = parseISO(f.refDate);
-        const key = `${getYear(d)}-${String(getMonth(d)).padStart(2,"0")}`;
-        monthlyCounts[key] = (monthlyCounts[key] || 0) + 1;
-      });
-      const values = Object.values(monthlyCounts);
-      const fleetSize = values.length
-        ? values.reduce((a,b)=>a+b,0) / values.length
-        : 0;
+      const fleetSize = fleet.length;
 
       const sumCanone = fleet.reduce((acc, f) => acc + (f.canoneImponibile || 0), 0);
       const sumAss = fleet.reduce((acc, f) => acc + (f.assicurazione || 0), 0);
@@ -594,7 +564,7 @@
           labels,
           datasets: [
             {
-              label: "Flotta (veicoli, conteggio mensile)",
+              label: "Flotta (righe flotta)",
               data: fleetSeries,
               borderWidth: 2,
               tension: 0.2,
@@ -658,7 +628,7 @@
               position: "left",
               title: {
                 display: true,
-                text: "Numero veicoli"
+                text: "Numero veicoli (righe flotta)"
               },
               beginAtZero: true
             },
@@ -709,17 +679,17 @@
       const kpiCurrent = computeKpiForRange(fleetCurrent, bookingsCurrent);
       const kpiPrev    = computeKpiForRange(fleetPrev, bookingsPrev);
 
-      document.getElementById("kpiFleetSize").textContent      = formatNumber(kpiCurrent.fleetSize, 1);
+      document.getElementById("kpiFleetSize").textContent      = formatNumber(kpiCurrent.fleetSize, 0);
       document.getElementById("kpiCanone").textContent         = formatCurrency(kpiCurrent.canone);
       document.getElementById("kpiCanoneIvato").textContent    = formatCurrency(kpiCurrent.canoneIvato);
       document.getElementById("kpiAssicurazione").textContent  = formatCurrency(kpiCurrent.assicurazione);
       document.getElementById("kpiCostoTotale").textContent    = formatCurrency(kpiCurrent.costoTotale);
       document.getElementById("kpiRevenue").textContent        = formatCurrency(kpiCurrent.revenue);
       document.getElementById("kpiRevenuePerDay").textContent  = formatNumber(kpiCurrent.revenuePerDay, 2);
-      document.getElementById("kpiNumPren").textContent        = formatNumber(kpiCurrent.numPren);
+      document.getElementById("kpiNumPren").textContent        = formatNumber(kpiCurrent.numPren, 0);
 
       document.getElementById("kpiFleetSizePrev").textContent =
-        "Periodo precedente: " + formatNumber(kpiPrev.fleetSize, 1);
+        "Periodo precedente: " + formatNumber(kpiPrev.fleetSize, 0);
       document.getElementById("kpiCanonePrev").textContent =
         "Periodo precedente: " + formatCurrency(kpiPrev.canone);
       document.getElementById("kpiAssicurazionePrev").textContent =
@@ -731,10 +701,10 @@
       document.getElementById("kpiRevenuePerDayPrev").textContent =
         "Periodo precedente: " + formatNumber(kpiPrev.revenuePerDay, 2);
       document.getElementById("kpiNumPrenPrev").textContent =
-        "Periodo precedente: " + formatNumber(kpiPrev.numPren);
+        "Periodo precedente: " + formatNumber(kpiPrev.numPren, 0);
 
       const prenGen2026 = computeJan2026Kpi(filters);
-      document.getElementById("kpiPrenGen2026").textContent = formatNumber(prenGen2026);
+      document.getElementById("kpiPrenGen2026").textContent = formatNumber(prenGen2026, 0);
 
       updateMainChart(fleetData, allBookings, filters);
     }
@@ -758,28 +728,6 @@
           loadJsonClean("bookings2025.json"),
           loadJsonClean("bookingsJan2026.json")
         ]);
-
-        // Normalizzo gruppo / stazione in memoria per deduplicare
-        fleetData = fleetData.map(r => ({
-          ...r,
-          gruppo: normalizeGroup(r.gruppo),
-          acquisizione: normalizeText(r.acquisizione),
-          stazione: normalizeStation(r.stazione)
-        }));
-
-        bookings2025 = bookings2025.map(r => ({
-          ...r,
-          gruppo: normalizeGroup(r.gruppo),
-          acquisizione: normalizeText(r.acquisizione),
-          stazione: normalizeStation(r.stazione)
-        }));
-
-        bookingsJan2026 = bookingsJan2026.map(r => ({
-          ...r,
-          gruppo: normalizeGroup(r.gruppo),
-          acquisizione: normalizeText(r.acquisizione),
-          stazione: normalizeStation(r.stazione)
-        }));
 
         const defaultProjectionFactor = parseFloat(
           document.getElementById("projectionSelect").value
