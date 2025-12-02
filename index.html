@@ -350,7 +350,7 @@
   <!-- Bootstrap Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <script>
+    <script>
     // ================== DATI IN MEMORIA ==================
     let fleetData = [];
     let fleetStations2025 = [];
@@ -360,6 +360,20 @@
     const monthNames = [
       "Gennaio","Febbraio","Marzo","Aprile","Maggio","Giugno",
       "Luglio","Agosto","Settembre","Ottobre","Novembre","Dicembre"
+    ];
+
+    // Lista ufficiale dei gruppi veicolo (ordine come richiesto)
+    const GROUP_LABELS = [
+      "Commercial Van",
+      "Large",
+      "Economy",
+      "Small",
+      "Mini",
+      "Premium",
+      "Suv",
+      "People Mover",
+      "Station Wagon",
+      "Cabriolet"
     ];
 
     // ================== HELPER ==================
@@ -467,12 +481,12 @@
 
     // ================== POPOLAMENTO FILTRI ==================
     function populateFilterOptions(allFleet, allBookings, stationsData) {
-      const yearSel  = document.getElementById("yearFilter");
-      const monthSel = document.getElementById("monthFilter");
-      const tipoSel  = document.getElementById("tipoFilter");
-      const gruppoSel= document.getElementById("gruppoFilter");
-      const acqSel   = document.getElementById("acquisizioneFilter");
-      const statSel  = document.getElementById("stazioneFilter");
+      const yearSel   = document.getElementById("yearFilter");
+      const monthSel  = document.getElementById("monthFilter");
+      const tipoSel   = document.getElementById("tipoFilter");
+      const gruppoSel = document.getElementById("gruppoFilter");
+      const acqSel    = document.getElementById("acquisizioneFilter");
+      const statSel   = document.getElementById("stazioneFilter");
 
       [yearSel,monthSel,tipoSel,gruppoSel,acqSel,statSel].forEach(sel => sel.innerHTML = "");
 
@@ -500,25 +514,17 @@
         monthSel.appendChild(opt);
       }
 
-      // Tipologia (fallback su gruppo se non presente)
+      // Tipologia: ricavata se presente (fallback su gruppo)
       const tipoMap = new Map();
       allFleet.forEach(f => {
-        if (!f.tipoKey && f.gruppoKey) {
-          f.tipoKey   = f.gruppoKey;
-          f.tipoLabel = f.gruppoLabel;
-        }
-        if (f.tipoKey && !tipoMap.has(f.tipoKey)) {
-          tipoMap.set(f.tipoKey, f.tipoLabel || f.tipoKey);
-        }
+        const key = f.tipoKey || f.gruppoKey;
+        const label = f.tipoLabel || f.gruppoLabel;
+        if (key && !tipoMap.has(key)) tipoMap.set(key, label || key);
       });
       allBookings.forEach(b => {
-        if (!b.tipoKey && b.gruppoKey) {
-          b.tipoKey   = b.gruppoKey;
-          b.tipoLabel = b.gruppoLabel;
-        }
-        if (b.tipoKey && !tipoMap.has(b.tipoKey)) {
-          tipoMap.set(b.tipoKey, b.tipoLabel || b.tipoKey);
-        }
+        const key = b.tipoKey || b.gruppoKey;
+        const label = b.tipoLabel || b.gruppoLabel;
+        if (key && !tipoMap.has(key)) tipoMap.set(key, label || key);
       });
 
       Array.from(tipoMap.entries())
@@ -530,34 +536,16 @@
           tipoSel.appendChild(opt);
         });
 
-      // Gruppo (fonte principale: fleetStations2025)
-      const groupMap = new Map();
-      stationsData.forEach(s => {
-        if (s.groupKey && !groupMap.has(s.groupKey)) {
-          groupMap.set(s.groupKey, s.groupLabel || s.groupKey);
-        }
-      });
-      allFleet.forEach(f => {
-        if (f.gruppoKey && !groupMap.has(f.gruppoKey)) {
-          groupMap.set(f.gruppoKey, f.gruppoLabel || f.gruppoKey);
-        }
-      });
-      allBookings.forEach(b => {
-        if (b.gruppoKey && !groupMap.has(b.gruppoKey)) {
-          groupMap.set(b.gruppoKey, b.gruppoLabel || b.gruppoKey);
-        }
+      // Gruppo veicolo: lista FISSA, non dai dati
+      GROUP_LABELS.forEach(label => {
+        const key = normalizeKey(label); // es. "COMMERCIAL VAN" -> "COMMERCIAL VAN"
+        const opt = document.createElement("option");
+        opt.value = key;
+        opt.textContent = label;
+        gruppoSel.appendChild(opt);
       });
 
-      Array.from(groupMap.entries())
-        .sort((a,b) => a[1].localeCompare(b[1],"it"))
-        .forEach(([key,label]) => {
-          const opt = document.createElement("option");
-          opt.value = key;
-          opt.textContent = label;
-          gruppoSel.appendChild(opt);
-        });
-
-      // Acquisizione
+      // Acquisizione: solo da fleetData_clean + bookings se hanno campo valido
       const acqMap = new Map();
       allFleet.forEach(f => {
         if (f.acqKey && !acqMap.has(f.acqKey)) {
@@ -579,7 +567,7 @@
           acqSel.appendChild(opt);
         });
 
-      // Stazione
+      // Stazione: fonte principale fleetStations2025
       const statMap = new Map();
       stationsData.forEach(s => {
         if (s.stationKey && !statMap.has(s.stationKey)) {
@@ -606,7 +594,7 @@
           statSel.appendChild(opt);
         });
 
-      // selezione completa di default
+      // seleziona tutto
       [yearSel,monthSel,tipoSel,gruppoSel,acqSel,statSel].forEach(sel => {
         for (let i=0; i<sel.options.length; i++) sel.options[i].selected = true;
       });
@@ -666,10 +654,10 @@
           if (filters.years.length && !filters.years.includes(String(year))) return false;
           if (filters.months.length && !filters.months.includes(String(month))) return false;
         }
-        if (filters.tipiKeys.length && f.tipoKey    && !filters.tipiKeys.includes(f.tipoKey)) return false;
-        if (filters.groupKeys.length && f.gruppoKey && !filters.groupKeys.includes(f.gruppoKey)) return false;
-        if (filters.acqKeys.length   && f.acqKey    && !filters.acqKeys.includes(f.acqKey))   return false;
-        if (filters.stationKeys.length && f.stationKey && !filters.stationKeys.includes(f.stationKey)) return false;
+        if (filters.tipiKeys.length   && f.tipoKey    && !filters.tipiKeys.includes(f.tipoKey)) return false;
+        if (filters.groupKeys.length  && f.gruppoKey  && !filters.groupKeys.includes(f.gruppoKey)) return false;
+        if (filters.acqKeys.length    && f.acqKey     && !filters.acqKeys.includes(f.acqKey))    return false;
+        if (filters.stationKeys.length&& f.stationKey && !filters.stationKeys.includes(f.stationKey)) return false;
 
         return d >= range.start && d <= range.end;
       });
@@ -683,10 +671,10 @@
           if (filters.years.length && !filters.years.includes(String(year))) return false;
           if (filters.months.length && !filters.months.includes(String(month))) return false;
         }
-        if (filters.tipiKeys.length && b.tipoKey    && !filters.tipiKeys.includes(b.tipoKey)) return false;
-        if (filters.groupKeys.length && b.gruppoKey && !filters.groupKeys.includes(b.gruppoKey)) return false;
-        if (filters.acqKeys.length   && b.acqKey    && !filters.acqKeys.includes(b.acqKey))   return false;
-        if (filters.stationKeys.length && b.stationKey && !filters.stationKeys.includes(b.stationKey)) return false;
+        if (filters.tipiKeys.length   && b.tipoKey    && !filters.tipiKeys.includes(b.tipoKey)) return false;
+        if (filters.groupKeys.length  && b.gruppoKey  && !filters.groupKeys.includes(b.gruppoKey)) return false;
+        if (filters.acqKeys.length    && b.acqKey     && !filters.acqKeys.includes(b.acqKey))    return false;
+        if (filters.stationKeys.length&& b.stationKey && !filters.stationKeys.includes(b.stationKey)) return false;
 
         return d >= range.start && d <= range.end;
       });
@@ -700,8 +688,8 @@
           if (filters.years.length && !filters.years.includes(String(year))) return false;
           if (filters.months.length && !filters.months.includes(String(month))) return false;
         }
-        if (filters.groupKeys.length && s.groupKey   && !filters.groupKeys.includes(s.groupKey))   return false;
-        if (filters.stationKeys.length && s.stationKey && !filters.stationKeys.includes(s.stationKey)) return false;
+        if (filters.groupKeys.length  && s.groupKey   && !filters.groupKeys.includes(s.groupKey))   return false;
+        if (filters.stationKeys.length&& s.stationKey && !filters.stationKeys.includes(s.stationKey)) return false;
 
         return d >= range.start && d <= range.end;
       });
@@ -709,15 +697,13 @@
       return { fleet, bookings, stations };
     }
 
-    // ================== KPI ==================
+    // ================== KPI / DELTA ==================
     function computeKpiForRange(fleet, bookings, stations) {
-      // costi
       const sumCanone = fleet.reduce((acc,f) => acc + (f.canoneImponibile || 0), 0);
       const sumAss    = fleet.reduce((acc,f) => acc + (f.assicurazione   || 0), 0);
       const costoTot  = sumCanone + sumAss;
       const canoneIvato = sumCanone * 1.22;
 
-      // flotta media usando stations (fallback: conta veicoli se manca)
       const monthlyCounts = {};
       stations.forEach(s => {
         const key = `${s.year}-${String(s.month).padStart(2,"0")}`;
@@ -732,7 +718,6 @@
       const values = Object.values(monthlyCounts);
       const fleetSize = values.length ? values.reduce((a,b)=>a+b,0) / values.length : 0;
 
-      // revenue
       const sumRevenue  = bookings.reduce((acc,b)=>acc + (b.price || 0), 0);
       const sumDuration = bookings.reduce((acc,b)=>acc + (b.duration || 0), 0);
       const revenuePerDay = sumDuration > 0 ? sumRevenue / sumDuration : null;
@@ -752,10 +737,10 @@
 
     function computeJan2026Kpi(filters) {
       const bookings = bookingsJan2026.filter(b => {
-        if (filters.tipiKeys.length && b.tipoKey    && !filters.tipiKeys.includes(b.tipoKey)) return false;
-        if (filters.groupKeys.length && b.gruppoKey && !filters.groupKeys.includes(b.gruppoKey)) return false;
-        if (filters.acqKeys.length   && b.acqKey    && !filters.acqKeys.includes(b.acqKey))   return false;
-        if (filters.stationKeys.length && b.stationKey && !filters.stationKeys.includes(b.stationKey)) return false;
+        if (filters.tipiKeys.length   && b.tipoKey    && !filters.tipiKeys.includes(b.tipoKey)) return false;
+        if (filters.groupKeys.length  && b.gruppoKey  && !filters.groupKeys.includes(b.gruppoKey)) return false;
+        if (filters.acqKeys.length    && b.acqKey     && !filters.acqKeys.includes(b.acqKey))    return false;
+        if (filters.stationKeys.length&& b.stationKey && !filters.stationKeys.includes(b.stationKey)) return false;
         return true;
       });
       return bookings.length;
@@ -767,9 +752,7 @@
       }
       const diff = currVal - prevVal;
       let pct   = null;
-      if (prevVal !== 0) {
-        pct = (diff / prevVal) * 100;
-      }
+      if (prevVal !== 0) pct = (diff / prevVal) * 100;
 
       const baseLabel = labelPrev + ": " + (isCurrency ? formatCurrency(prevVal) : formatNumber(prevVal, decimals));
       if (pct === null) return baseLabel + " (Δ n/d)";
@@ -779,38 +762,28 @@
       return `${baseLabel} · <span class="${cls}">${sign === "±0%" ? sign : sign + pctStr}</span>`;
     }
 
-    // ================== GRAFICO ==================
+    // ================== GRAFICO (resto invariato) ==================
     let mainChart = null;
-
     function updateChart(allFleet, allBookings, stationsData, filters) {
       const { fleet, bookings, stations } = filterDataForRange(
         allFleet, allBookings, stationsData, filters, "current"
       );
 
       const buckets = {};
-
       stations.forEach(s => {
         const key = `${s.year}-${String(s.month).padStart(2,"0")}`;
-        if (!buckets[key]) {
-          buckets[key] = { fleet: 0, costo: 0, revenue: 0 };
-        }
+        if (!buckets[key]) buckets[key] = { fleet: 0, costo: 0, revenue: 0 };
         buckets[key].fleet += (s.fleet || 0);
       });
-
       fleet.forEach(f => {
         const key = `${f.year}-${String(f.month).padStart(2,"0")}`;
-        if (!buckets[key]) {
-          buckets[key] = { fleet: 0, costo: 0, revenue: 0 };
-        }
+        if (!buckets[key]) buckets[key] = { fleet: 0, costo: 0, revenue: 0 };
         if (buckets[key].fleet === 0) buckets[key].fleet += 1;
         buckets[key].costo += (f.canoneImponibile || 0) + (f.assicurazione || 0);
       });
-
       bookings.forEach(b => {
         const key = `${b.year}-${String(b.month).padStart(2,"0")}`;
-        if (!buckets[key]) {
-          buckets[key] = { fleet: 0, costo: 0, revenue: 0 };
-        }
+        if (!buckets[key]) buckets[key] = { fleet: 0, costo: 0, revenue: 0 };
         buckets[key].revenue += (b.price || 0);
       });
 
@@ -854,10 +827,7 @@
         options: {
           responsive: true,
           maintainAspectRatio: false,
-          interaction: {
-            mode: "index",
-            intersect: false
-          },
+          interaction: { mode: "index", intersect: false },
           plugins: {
             tooltip: {
               callbacks: {
@@ -903,7 +873,7 @@
       });
     }
 
-    // ================== UPDATE DASHBOARD ==================
+    // ================== UPDATE DASHBOARD / RESET / INIT ==================
     function updateDashboard() {
       const projectionFactor = parseFloat(
         document.getElementById("projectionSelect").value
@@ -936,7 +906,6 @@
       const kCurr = computeKpiForRange(current.fleet, current.bookings, current.stations);
       const kPrev = computeKpiForRange(previous.fleet, previous.bookings, previous.stations);
 
-      // KPI principali
       document.getElementById("kpiFleetSize").textContent      = formatNumber(kCurr.fleetSize,1);
       document.getElementById("kpiCanone").textContent         = formatCurrency(kCurr.canone);
       document.getElementById("kpiCanoneIvato").textContent    = formatCurrency(kCurr.canoneIvato);
@@ -946,33 +915,24 @@
       document.getElementById("kpiRevenuePerDay").textContent  = formatNumber(kCurr.revenuePerDay,2);
       document.getElementById("kpiNumPren").textContent        = formatNumber(kCurr.numPren,0);
 
-      // KPI periodi precedenti con % Δ
       document.getElementById("kpiFleetSizePrev").innerHTML =
-        buildPrevText("Periodo precedente", kCurr.fleetSize, kPrev.fleetSize, false, 1);
-
+        buildPrevText("Periodo precedente", kCurr.fleetSize,      kPrev.fleetSize,      false,1);
       document.getElementById("kpiCanonePrev").innerHTML =
-        buildPrevText("Periodo precedente", kCurr.canone, kPrev.canone, true);
-
+        buildPrevText("Periodo precedente", kCurr.canone,         kPrev.canone,         true);
       document.getElementById("kpiAssicurazionePrev").innerHTML =
-        buildPrevText("Periodo precedente", kCurr.assicurazione, kPrev.assicurazione, true);
-
+        buildPrevText("Periodo precedente", kCurr.assicurazione,  kPrev.assicurazione,  true);
       document.getElementById("kpiCostoTotalePrev").innerHTML =
-        buildPrevText("Periodo precedente", kCurr.costoTotale, kPrev.costoTotale, true);
-
+        buildPrevText("Periodo precedente", kCurr.costoTotale,    kPrev.costoTotale,    true);
       document.getElementById("kpiRevenuePrev").innerHTML =
-        buildPrevText("Periodo precedente", kCurr.revenue, kPrev.revenue, true);
-
+        buildPrevText("Periodo precedente", kCurr.revenue,        kPrev.revenue,        true);
       document.getElementById("kpiRevenuePerDayPrev").innerHTML =
-        buildPrevText("Periodo precedente", kCurr.revenuePerDay, kPrev.revenuePerDay, false, 2);
-
+        buildPrevText("Periodo precedente", kCurr.revenuePerDay,  kPrev.revenuePerDay,  false,2);
       document.getElementById("kpiNumPrenPrev").innerHTML =
-        buildPrevText("Periodo precedente", kCurr.numPren, kPrev.numPren, false, 0);
+        buildPrevText("Periodo precedente", kCurr.numPren,        kPrev.numPren,        false,0);
 
-      // Prenotazioni effettive Gen 2026
       const prenGen = computeJan2026Kpi(filters);
       document.getElementById("kpiPrenGen2026").textContent = formatNumber(prenGen,0);
 
-      // Grafico
       updateChart(fleetData, allBookings, fleetStations2025, filters);
     }
 
@@ -986,7 +946,6 @@
       updateDashboard();
     }
 
-    // ================== INIT ==================
     async function initDashboard() {
       try {
         [fleetData, fleetStations2025, bookings2025, bookingsJan2026] = await Promise.all([
@@ -996,10 +955,11 @@
           loadJsonClean("bookingsJan2026.json")
         ]);
 
-        // normalizzazione flotta
+        // --- normalizzazione flotta (usiamo SOLO colonne note del JSON pulito) ---
         fleetData = fleetData.map(row => {
-          const refDate = row.refDate || row.DATA_RIF || row.dataRif || row.data_ref;
+          const refDate = row.refDate;
           const d = parseISO(refDate);
+          const gruppoLabel = normalizeLabel(row.gruppo);
           return {
             ...row,
             refDate,
@@ -1007,19 +967,20 @@
             year: getYear(d),
             month: getMonth(d),
             gruppoKey: normalizeKey(row.gruppo),
-            gruppoLabel: normalizeLabel(row.gruppo),
-            tipoKey: normalizeKey(row.tipologia || row.tipo || ""),
-            tipoLabel: normalizeLabel(row.tipologia || row.tipo || ""),
+            gruppoLabel,
+            // tipologia per ora uguale al gruppo se non c'è una colonna dedicata
+            tipoKey: normalizeKey(row.tipologia || row.tipo || row.gruppo),
+            tipoLabel: normalizeLabel(row.tipologia || row.tipo || row.gruppo),
             acqKey: normalizeKey(row.acquisizione),
             acqLabel: normalizeLabel(row.acquisizione),
             stationKey: normalizeKey(row.stazione || row.station || ""),
             stationLabel: normalizeLabel(row.stazione || row.station || ""),
-            canoneImponibile: Number(row.canoneImponibile || row.CANONE_IMPONIBILE || 0),
-            assicurazione:   Number(row.assicurazione   || row.COPERTURA_ASS   || 0)
+            canoneImponibile: Number(row.canoneImponibile || 0),
+            assicurazione:   Number(row.assicurazione   || 0)
           };
         });
 
-        // normalizzazione stazioni
+        // --- normalizzazione stazioni (colonne note: date, group/gruppo, station/stazione, fleet) ---
         fleetStations2025 = fleetStations2025.map(s => {
           const d = parseISO(s.date || s.DATA || s.data);
           const year = s.year || getYear(d);
@@ -1037,7 +998,7 @@
           };
         });
 
-        // bookings 2025
+        // bookings 2025: usiamo detectColumn solo qui perché non conosciamo lo schema preciso
         const bSample = bookings2025[0] || {};
         const bGroupCol = detectColumn(bSample, ["gruppo","group","cartype","car_type","tipologia","tipo"]);
         const bTipoCol  = detectColumn(bSample, ["tipologia","tipo"]);
@@ -1055,8 +1016,8 @@
             month: getMonth(d),
             gruppoKey: normalizeKey(bGroupCol ? b[bGroupCol] : ""),
             gruppoLabel: normalizeLabel(bGroupCol ? b[bGroupCol] : ""),
-            tipoKey: normalizeKey(bTipoCol ? b[bTipoCol] : ""),
-            tipoLabel: normalizeLabel(bTipoCol ? b[bTipoCol] : ""),
+            tipoKey: normalizeKey(bTipoCol ? b[bTipoCol] : (bGroupCol ? b[bGroupCol] : "")),
+            tipoLabel: normalizeLabel(bTipoCol ? b[bTipoCol] : (bGroupCol ? b[bGroupCol] : "")),
             acqKey: normalizeKey(bAcqCol ? b[bAcqCol] : ""),
             acqLabel: normalizeLabel(bAcqCol ? b[bAcqCol] : ""),
             stationKey: normalizeKey(bStatCol ? b[bStatCol] : ""),
@@ -1066,7 +1027,7 @@
           };
         });
 
-        // bookings Jan 2026
+        // bookings gennaio 2026
         const bjSample = bookingsJan2026[0] || {};
         const bjGroupCol = detectColumn(bjSample, ["gruppo","group","cartype","car_type","tipologia","tipo"]);
         const bjTipoCol  = detectColumn(bjSample, ["tipologia","tipo"]);
@@ -1084,8 +1045,8 @@
             month: getMonth(d),
             gruppoKey: normalizeKey(bjGroupCol ? b[bjGroupCol] : ""),
             gruppoLabel: normalizeLabel(bjGroupCol ? b[bjGroupCol] : ""),
-            tipoKey: normalizeKey(bjTipoCol ? b[bjTipoCol] : ""),
-            tipoLabel: normalizeLabel(bjTipoCol ? b[bjTipoCol] : ""),
+            tipoKey: normalizeKey(bjTipoCol ? b[bjTipoCol] : (bjGroupCol ? b[bjGroupCol] : "")),
+            tipoLabel: normalizeLabel(bjTipoCol ? b[bjTipoCol] : (bjGroupCol ? b[bjGroupCol] : "")),
             acqKey: normalizeKey(bjAcqCol ? b[bjAcqCol] : ""),
             acqLabel: normalizeLabel(bjAcqCol ? b[bjAcqCol] : ""),
             stationKey: normalizeKey(bjStatCol ? b[bjStatCol] : ""),
@@ -1118,5 +1079,3 @@
 
     document.addEventListener("DOMContentLoaded", initDashboard);
   </script>
-</body>
-</html>
