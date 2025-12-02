@@ -324,7 +324,7 @@
       return s;
     }
 
-    // Trova dinamicamente la colonna giusta (es. "GRUPPO", "CarType", ecc.)
+    // trova dinamicamente la colonna giusta (es. "GRUPPO", "CarType", ecc.)
     function detectColumn(obj, candidatesNormalized) {
       if (!obj) return null;
       const keys = Object.keys(obj);
@@ -393,7 +393,7 @@
       return all;
     }
 
-    // Popolamento filtri (con normalizzazione e deduplicazione)
+    // Popolamento filtri
     function populateFilterOptions(allFleet, allBookings, stationsData) {
       const yearSelect = document.getElementById("yearFilter");
       const monthSelect = document.getElementById("monthFilter");
@@ -404,7 +404,7 @@
       [yearSelect, monthSelect, gruppoSelect, acquisizioneSelect, stazioneSelect]
         .forEach(sel => sel.innerHTML = "");
 
-      // Anni: limito a 2024–2026
+      // Anni 2024–2026
       const years = new Set();
       allFleet.forEach(f => years.add(getYear(parseISO(f.refDate))));
       allBookings.forEach(b => years.add(b.year));
@@ -428,7 +428,7 @@
         monthSelect.appendChild(opt);
       }
 
-      // Gruppi: chiave da fleetStations2025 (sorgente "ufficiale")
+      // Gruppi da fleetStations2025 (fonte ufficiale)
       const groupMap = new Map(); // key -> label
       stationsData.forEach(s => {
         if (!s.groupKey) return;
@@ -436,15 +436,15 @@
           groupMap.set(s.groupKey, s.groupLabel || s.groupKey);
         }
       });
-      // eventuali gruppi presenti solo nella flotta / bookings
+      // eventuali gruppi extra
       allFleet.forEach(f => {
         if (f.groupKey && !groupMap.has(f.groupKey)) {
-          groupMap.set(f.groupKey, f.groupLabel || f.gruppo || f.groupKey);
+          groupMap.set(f.groupKey, f.groupLabel || f.group || f.groupKey);
         }
       });
       allBookings.forEach(b => {
         if (b.groupKey && !groupMap.has(b.groupKey)) {
-          groupMap.set(b.groupKey, b.groupLabel || b.gruppo || b.groupKey);
+          groupMap.set(b.groupKey, b.groupLabel || b.group || b.groupKey);
         }
       });
 
@@ -511,7 +511,7 @@
           stazioneSelect.appendChild(opt);
         });
 
-      // Seleziona tutto di default
+      // Seleziona tutto
       [yearSelect, monthSelect, gruppoSelect, acquisizioneSelect, stazioneSelect]
         .forEach(sel => {
           for (let i = 0; i < sel.options.length; i++) {
@@ -615,7 +615,7 @@
       return { fleet, bookings, stations };
     }
 
-    // KPI: flotta = media dei conteggi mensili (usando fleetStations dove disponibile)
+    // KPI
     function computeKpiForRange(fleet, bookings, stations) {
       const sumCanone = fleet.reduce((acc, f) => acc + (f.canoneImponibile || 0), 0);
       const sumAss = fleet.reduce((acc, f) => acc + (f.assicurazione || 0), 0);
@@ -905,7 +905,7 @@
           loadJsonClean("fleetStations2025.json")
         ]);
 
-        // normalizzo chiavi per le stazioni (sorgente per gruppo/stazione)
+        // normalizzo chiavi per le stazioni (fonte ufficiale gruppi/stazioni)
         fleetStations2025 = fleetStations2025.map(s => ({
           ...s,
           groupKey: normalizeKey(s.group),
@@ -914,4 +914,76 @@
           stationLabel: normalizeLabel(s.station)
         }));
 
-        // rilevo dinamicamente le colonne per flotta
+        // flotta: rilevo dinamicamente le colonne
+        const fleetSample = fleetData[0] || {};
+        const fleetGroupCol = detectColumn(fleetSample, ["gruppo","group","cartype","car_type","tipologia"]);
+        const fleetAcqCol   = detectColumn(fleetSample, ["acquisizione","acquisition"]);
+        const fleetStatCol  = detectColumn(fleetSample, ["stazione","station"]);
+
+        fleetData = fleetData.map(f => ({
+          ...f,
+          groupKey: normalizeKey(fleetGroupCol ? f[fleetGroupCol] : ""),
+          groupLabel: normalizeLabel(fleetGroupCol ? f[fleetGroupCol] : ""),
+          acqKey: normalizeKey(fleetAcqCol ? f[fleetAcqCol] : ""),
+          acqLabel: normalizeLabel(fleetAcqCol ? f[fleetAcqCol] : ""),
+          stationKey: normalizeKey(fleetStatCol ? f[fleetStatCol] : ""),
+          stationLabel: normalizeLabel(fleetStatCol ? f[fleetStatCol] : "")
+        }));
+
+        // prenotazioni 2025
+        const bookSample = bookings2025[0] || {};
+        const bookGroupCol = detectColumn(bookSample, ["gruppo","group","cartype","car_type","tipologia"]);
+        const bookAcqCol   = detectColumn(bookSample, ["acquisizione","acquisition"]);
+        const bookStatCol  = detectColumn(bookSample, ["stazione","station"]);
+
+        bookings2025 = bookings2025.map(b => ({
+          ...b,
+          groupKey: normalizeKey(bookGroupCol ? b[bookGroupCol] : ""),
+          groupLabel: normalizeLabel(bookGroupCol ? b[bookGroupCol] : ""),
+          acqKey: normalizeKey(bookAcqCol ? b[bookAcqCol] : ""),
+          acqLabel: normalizeLabel(bookAcqCol ? b[bookAcqCol] : ""),
+          stationKey: normalizeKey(bookStatCol ? b[bookStatCol] : ""),
+          stationLabel: normalizeLabel(bookStatCol ? b[bookStatCol] : "")
+        }));
+
+        // prenotazioni Jan 2026
+        const bookJanSample = bookingsJan2026[0] || {};
+        const bookJanGroupCol = detectColumn(bookJanSample, ["gruppo","group","cartype","car_type","tipologia"]);
+        const bookJanAcqCol   = detectColumn(bookJanSample, ["acquisizione","acquisition"]);
+        const bookJanStatCol  = detectColumn(bookJanSample, ["stazione","station"]);
+
+        bookingsJan2026 = bookingsJan2026.map(b => ({
+          ...b,
+          groupKey: normalizeKey(bookJanGroupCol ? b[bookJanGroupCol] : ""),
+          acqKey: normalizeKey(bookJanAcqCol ? b[bookJanAcqCol] : ""),
+          stationKey: normalizeKey(bookJanStatCol ? b[bookJanStatCol] : "")
+        }));
+
+        const defaultProjectionFactor = parseFloat(
+          document.getElementById("projectionSelect").value
+        );
+        const allBookings = generateAllBookings(defaultProjectionFactor);
+
+        populateFilterOptions(fleetData, allBookings, fleetStations2025);
+
+        [
+          "yearFilter","monthFilter","gruppoFilter",
+          "acquisizioneFilter","stazioneFilter","projectionSelect"
+        ].forEach(id => {
+          document.getElementById(id).addEventListener("change", updateDashboard);
+        });
+
+        document.getElementById("resetFiltersBtn")
+          .addEventListener("click", resetFilters);
+
+        updateDashboard();
+      } catch (err) {
+        console.error("Errore durante init dashboard:", err);
+        alert("Errore nel caricamento dei dati JSON. Verifica che i file siano nella stessa cartella di index.html.");
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", initDashboardWithJson);
+  </script>
+</body>
+</html>
