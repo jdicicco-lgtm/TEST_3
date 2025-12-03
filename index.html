@@ -50,15 +50,15 @@
         }
 
         .delta-positive {
-            color: #198754; /* Bootstrap success */
+            color: #198754;
         }
 
         .delta-negative {
-            color: #dc3545; /* Bootstrap danger */
+            color: #dc3545;
         }
 
         .delta-neutral {
-            color: #6c757d; /* Bootstrap secondary */
+            color: #6c757d;
         }
 
         .filter-label {
@@ -80,11 +80,10 @@
             border-radius: 0.75rem;
             box-shadow: 0 2px 6px rgba(0,0,0,0.06);
             border: none;
+            min-height: 380px;
         }
 
-        .no-print {
-            /* Elements hidden in print */
-        }
+        .no-print {}
 
         .print-only {
             display: none;
@@ -192,28 +191,22 @@
                                 </select>
                             </div>
 
-                            <!-- Tipologia (opzionale, nascosta se non presente nei dati) -->
+                            <!-- Tipologia -->
                             <div class="mb-3" id="tipologiaFilterContainer">
                                 <div class="filter-label">Tipologia</div>
-                                <select id="tipologiaFilter" class="form-select form-select-sm filter-select" multiple>
-                                    <!-- Popolato via JS se disponibile -->
-                                </select>
+                                <select id="tipologiaFilter" class="form-select form-select-sm filter-select" multiple></select>
                             </div>
 
                             <!-- Acquisizione -->
                             <div class="mb-3">
                                 <div class="filter-label">Acquisizione</div>
-                                <select id="acquisitionFilter" class="form-select form-select-sm filter-select" multiple>
-                                    <!-- Popolato via JS -->
-                                </select>
+                                <select id="acquisitionFilter" class="form-select form-select-sm filter-select" multiple></select>
                             </div>
 
                             <!-- Stazione -->
                             <div class="mb-3">
                                 <div class="filter-label">Stazione</div>
-                                <select id="stationFilter" class="form-select form-select-sm filter-select" multiple>
-                                    <!-- Popolato via JS -->
-                                </select>
+                                <select id="stationFilter" class="form-select form-select-sm filter-select" multiple></select>
                             </div>
 
                             <!-- Proiezione 2026 -->
@@ -267,7 +260,7 @@
                     </div>
                 </div>
 
-                <!-- 3: Canone Totale IVATO (solo descrittivo) -->
+                <!-- 3: Canone Totale IVATO -->
                 <div class="col-md-6 col-xl-3">
                     <div class="card kpi-card">
                         <div class="card-body">
@@ -368,16 +361,16 @@
 
             <!-- GRAFICO -->
             <div class="card chart-card mt-3">
-                <div class="card-body">
+                <div class="card-body" style="height:380px;">
                     <h5 class="card-title mb-3">Andamento mensile flotta, costi e prenotazioni</h5>
-                    <canvas id="mainChart" height="120"></canvas>
+                    <canvas id="mainChart"></canvas>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Bootstrap 5 JS (for accordion etc.) -->
+<!-- Bootstrap 5 JS -->
 <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -410,30 +403,60 @@
         "Lug", "Ago", "Set", "Ott", "Nov", "Dic"
     ];
 
-    let fleetData = [];              // dati flotta normalizzati
-    let baseBookings2025 = [];       // prenotazioni 2025 normalizzate (base)
-    let jan2026Bookings = [];        // prenotazioni gennaio 2026 normalizzate (real)
-    let allBookings = [];            // prenotazioni 2024-2026 (real + proiezioni)
-    let stationsList = new Set();    // lista stazioni
-    let acquisitionList = new Set(); // lista acquisizioni
-    let tipologiaList = new Set();   // lista tipologie (se presente)
+    let fleetData = [];
+    let baseBookings2025 = [];
+    let jan2026Bookings = [];
+    let allBookings = [];
+
+    // dedup case-insensitive
+    const stationsMapCI = new Map();    // lower -> label
+    const acquisitionMapCI = new Map(); // lower -> label
+    const tipologiaMapCI = new Map();   // lower -> label
 
     let chartInstance = null;
 
     // =========================
-    // UTILITY GENERALI
+    // UTILITY
     // =========================
 
-    function parseDateFlexible(value) {
+    function isInvalidLabel(str) {
+        if (!str) return true;
+        const s = String(str).trim();
+        if (!s) return true;
+        const lower = s.toLowerCase();
+        return lower === "nan" || lower === "undefined" || lower === "null";
+    }
+
+    function addCI(map, value) {
+        if (isInvalidLabel(value)) return;
+        const s = String(value).trim();
+        const lower = s.toLowerCase();
+        if (!map.has(lower)) {
+            map.set(lower, s);
+        }
+    }
+
+    function parseDateFlexible(value, yearFieldVal, monthFieldVal, dayFieldVal) {
+        // prefer Y/M se passati
+        const y = parseInt(yearFieldVal, 10);
+        const m = parseInt(monthFieldVal, 10);
+        const d = parseInt(dayFieldVal, 10);
+        if (!isNaN(y) && !isNaN(m)) {
+            const day = !isNaN(d) && d > 0 ? d : 1;
+            return new Date(y, m - 1, day);
+        }
+
         if (!value) return null;
-        if (value instanceof Date) return value;
-        const d = new Date(value);
-        if (!isNaN(d.getTime())) return d;
-        // fallback semplice (se formati strani): prova a sostituire / con -
+        if (value instanceof Date && !isNaN(value.getTime())) return value;
+
+        const d1 = new Date(value);
+        if (!isNaN(d1.getTime())) return d1;
+
         try {
             const d2 = new Date(String(value).replace(/\//g, "-"));
             if (!isNaN(d2.getTime())) return d2;
         } catch (e) {}
+
         return null;
     }
 
@@ -480,6 +503,7 @@
     }
 
     function setAllOptionsSelected(selectEl, selected = true) {
+        if (!selectEl) return;
         Array.from(selectEl.options).forEach(opt => {
             opt.selected = selected;
         });
@@ -493,23 +517,20 @@
     function isValueSelectedCaseInsensitive(selectedSet, value) {
         if (!selectedSet || selectedSet.size === 0) return true;
         if (value == null) return false;
-        const setUpper = new Set(Array.from(selectedSet).map(v => String(v).toUpperCase()));
-        return setUpper.has(String(value).toUpperCase());
+        const valUpper = String(value).toUpperCase();
+        for (const v of selectedSet) {
+            if (String(v).toUpperCase() === valUpper) return true;
+        }
+        return false;
     }
-
-    // =========================
-    // DETECTION CAMPI (robustezza nomi)
-    // =========================
 
     function detectFieldName(sample, candidates) {
         if (!sample) return null;
         const keys = Object.keys(sample);
         for (const cand of candidates) {
-            const lowerCand = cand.toLowerCase();
+            const lc = cand.toLowerCase();
             for (const k of keys) {
-                if (k.toLowerCase() === lowerCand) {
-                    return k;
-                }
+                if (k.toLowerCase() === lc) return k;
             }
         }
         return null;
@@ -525,22 +546,16 @@
         if (!r) return null;
         let upper = r.toUpperCase();
 
-        // Mappature specifiche per casi noti
-        if (upper === "VAN") return "People Mover";      // come richiesto in precedenza
+        if (upper === "VAN") return "People Mover";
         if (upper === "FURGONE") return "Commercial Van";
         if (upper.includes("COMMERCIAL")) return "Commercial Van";
         if (upper.includes("PEOPLE")) return "People Mover";
         if (upper === "SUV") return "Suv";
         if (upper === "STATION WAGON") return "Station Wagon";
 
-        // match diretto su lista fissa
         for (const label of GROUP_LABELS) {
-            if (upper === label.toUpperCase()) {
-                return label;
-            }
+            if (upper === label.toUpperCase()) return label;
         }
-
-        // fallback: restituisci stringa originale (così almeno non buttiamo dati)
         return r;
     }
 
@@ -549,6 +564,10 @@
 
         const sample = rawFleet[0] || {};
         const dateField = detectFieldName(sample, ["refDate", "date", "data", "referenceDate"]);
+        const yearField = detectFieldName(sample, ["year", "anno", "ANNO"]);
+        const monthField = detectFieldName(sample, ["month", "mese", "MESE"]);
+        const dayField = detectFieldName(sample, ["day", "giorno"]);
+
         const groupField = detectFieldName(sample, ["gruppo", "group", "carGroup", "categoria"]);
         const acqField = detectFieldName(sample, ["acquisizione", "acquisition", "tipo_acquisizione"]);
         const stationField = detectFieldName(sample, ["stazione", "station", "location"]);
@@ -559,7 +578,10 @@
         const normalized = [];
 
         for (const row of rawFleet) {
-            const d = parseDateFlexible(row[dateField]);
+            const yv = yearField ? row[yearField] : null;
+            const mv = monthField ? row[monthField] : null;
+            const dv = dayField ? row[dayField] : null;
+            const d = parseDateFlexible(row[dateField], yv, mv, dv);
             if (!d) continue;
             const year = d.getFullYear();
             const month = d.getMonth() + 1;
@@ -567,15 +589,21 @@
             const groupRaw = groupField ? row[groupField] : null;
             const groupLabel = mapGroupLabel(groupRaw);
 
-            const acq = acqField ? (row[acqField] || "").toString().trim() : "";
-            const station = stationField ? (row[stationField] || "").toString().trim() : "";
+            const acqRaw = acqField ? row[acqField] : "";
+            const acq = isInvalidLabel(acqRaw) ? "" : String(acqRaw).trim();
+
+            const stRaw = stationField ? row[stationField] : "";
+            const station = isInvalidLabel(stRaw) ? "" : String(stRaw).trim();
+
             const canone = canoneField ? Number(row[canoneField]) || 0 : 0;
             const ass = assField ? Number(row[assField]) || 0 : 0;
-            const tip = tipologiaField ? (row[tipologiaField] || "").toString().trim() : "";
 
-            if (station) stationsList.add(station);
-            if (acq) acquisitionList.add(acq);
-            if (tip) tipologiaList.add(tip);
+            const tipRaw = tipologiaField ? row[tipologiaField] : "";
+            const tip = isInvalidLabel(tipRaw) ? "" : String(tipRaw).trim();
+
+            if (!isInvalidLabel(station)) addCI(stationsMapCI, station);
+            if (!isInvalidLabel(acq)) addCI(acquisitionMapCI, acq);
+            if (!isInvalidLabel(tip)) addCI(tipologiaMapCI, tip);
 
             normalized.push({
                 raw: row,
@@ -595,7 +623,7 @@
     }
 
     // =========================
-    // NORMALIZZAZIONE PRENOTAZIONI
+    // NORMALIZZAZIONE BOOKING
     // =========================
 
     function normalizeBookings(rawBookings, isJan2026 = false) {
@@ -605,6 +633,10 @@
         const dateField = detectFieldName(sample, [
             "startDate", "from", "data_inizio", "DATA_INIZIO", "bookingStart", "start"
         ]);
+        const yearField = detectFieldName(sample, ["year", "anno", "ANNO"]);
+        const monthField = detectFieldName(sample, ["month", "mese", "MESE"]);
+        const dayField = detectFieldName(sample, ["day", "giorno"]);
+
         const groupField = detectFieldName(sample, [
             "gruppo", "group", "carGroup", "car_type", "carType"
         ]);
@@ -628,7 +660,11 @@
 
         for (let idx = 0; idx < rawBookings.length; idx++) {
             const row = rawBookings[idx];
-            const d = parseDateFlexible(row[dateField]);
+
+            const yv = yearField ? row[yearField] : null;
+            const mv = monthField ? row[monthField] : null;
+            const dv = dayField ? row[dayField] : null;
+            const d = parseDateFlexible(row[dateField], yv, mv, dv);
             if (!d) continue;
             const year = d.getFullYear();
             const month = d.getMonth() + 1;
@@ -636,14 +672,22 @@
             const groupRaw = groupField ? row[groupField] : null;
             const groupLabel = mapGroupLabel(groupRaw);
 
-            const station = stationField ? (row[stationField] || "").toString().trim() : "";
-            const acq = acqField ? (row[acqField] || "").toString().trim() : "";
+            const stRaw = stationField ? row[stationField] : "";
+            const station = isInvalidLabel(stRaw) ? "" : String(stRaw).trim();
+
+            const acqRaw = acqField ? row[acqField] : "";
+            const acq = isInvalidLabel(acqRaw) ? "" : String(acqRaw).trim();
+
             const duration = durationField ? Number(row[durationField]) || 0 : 0;
             const price = priceField ? Number(row[priceField]) || 0 : 0;
-            const vehicleId = vehicleField ? (row[vehicleField] || "").toString().trim() : "BOOKING_" + idx + "_" + (isJan2026 ? "J26" : "B25");
 
-            if (station) stationsList.add(station);
-            if (acq) acquisitionList.add(acq);
+            const vehicleRaw = vehicleField ? row[vehicleField] : "";
+            const vehicleId = isInvalidLabel(vehicleRaw)
+                ? "BOOKING_" + idx + "_" + (isJan2026 ? "J26" : "B25")
+                : String(vehicleRaw).trim();
+
+            if (!isInvalidLabel(station)) addCI(stationsMapCI, station);
+            if (!isInvalidLabel(acq)) addCI(acquisitionMapCI, acq);
 
             normalized.push({
                 raw: row,
@@ -663,18 +707,17 @@
     }
 
     // =========================
-    // PROIEZIONI BOOKING 2024–2026
+    // PROIEZIONI BOOKING
     // =========================
 
     function generateAllBookings(projectionFactor) {
         const all = [];
 
-        // 2025 reali + proiezioni 2024/2026 basate su booking 2025
         for (const b of baseBookings2025) {
             // 2025 reale
             all.push({ ...b });
 
-            // 2024: -1 anno, -5% price
+            // 2024: -5% su price, stesso mese/giorno
             const d2024 = new Date(b.date.getTime());
             d2024.setFullYear(b.year - 1);
             all.push({
@@ -682,10 +725,10 @@
                 date: d2024,
                 year: b.year - 1,
                 month: b.month,
-                price: b.price * 0.95 // -5%
+                price: b.price * 0.95
             });
 
-            // 2026: +1 anno, +projectionFactor, solo se mese != gennaio
+            // 2026: +X% su price (solo Feb–Dic)
             if (b.month !== 1) {
                 const d2026 = new Date(b.date.getTime());
                 d2026.setFullYear(b.year + 1);
@@ -699,7 +742,7 @@
             }
         }
 
-        // Gennaio 2026 reale: nessuna proiezione
+        // Gennaio 2026 reale
         for (const jb of jan2026Bookings) {
             all.push({ ...jb });
         }
@@ -708,22 +751,16 @@
     }
 
     // =========================
-    // FILTRI: RANGE CORRENTE / PRECEDENTE
+    // RANGE CORRENTE/PRECEDENTE
     // =========================
 
     function getCurrentAndPreviousRanges(filters) {
-        // Anni selezionati
         let years = Array.from(filters.yearsSelected).map(v => parseInt(v, 10)).filter(v => !isNaN(v));
-        if (years.length === 0) {
-            years = [2024, 2025, 2026];
-        }
+        if (years.length === 0) years = [2024, 2025, 2026];
         years.sort((a, b) => a - b);
 
-        // Mesi selezionati
         let months = Array.from(filters.monthsSelected).map(v => parseInt(v, 10)).filter(v => !isNaN(v));
-        if (months.length === 0) {
-            months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-        }
+        if (months.length === 0) months = [1,2,3,4,5,6,7,8,9,10,11,12];
         months.sort((a, b) => a - b);
 
         const startYear = years[0];
@@ -736,7 +773,7 @@
         const monthsCount = endIndex - startIndex + 1;
 
         const currentStart = new Date(startYear, startMonth - 1, 1);
-        const currentEnd = new Date(endYear, endMonth, 0); // ultimo giorno del mese
+        const currentEnd = new Date(endYear, endMonth, 0);
 
         let previousStart = null;
         let previousEnd = null;
@@ -757,10 +794,10 @@
     }
 
     // =========================
-    // FILTRAGGIO DATI PER RANGE
+    // FILTRAGGIO DATI
     // =========================
 
-    function filterDataForRange(range, filters, includeTimeFiltersForCurrent, isPreviousRange) {
+    function filterDataForRange(range, filters, applyTimeFiltersForCurrent, isPrevious) {
         const { start, end } = range;
         const fleet = [];
         const bookings = [];
@@ -771,8 +808,7 @@
         for (const f of fleetData) {
             if (!f.date || f.date < start || f.date > end) continue;
 
-            // I filtri temporali (anno/mese) si applicano solo al periodo corrente
-            if (includeTimeFiltersForCurrent) {
+            if (applyTimeFiltersForCurrent) {
                 if (!isValueSelected(yearsSelected, f.year)) continue;
                 if (!isValueSelected(monthsSelected, f.month)) continue;
             }
@@ -791,7 +827,7 @@
         for (const b of allBookings) {
             if (!b.date || b.date < start || b.date > end) continue;
 
-            if (includeTimeFiltersForCurrent) {
+            if (applyTimeFiltersForCurrent) {
                 if (!isValueSelected(yearsSelected, b.year)) continue;
                 if (!isValueSelected(monthsSelected, b.month)) continue;
             }
@@ -807,11 +843,11 @@
     }
 
     // =========================
-    // KPI: AGGREGAZIONI
+    // KPI HELPERS
     // =========================
 
     function computeFleetMonthlyCounts(fleet) {
-        const map = new Map(); // key: YYYY-MM, value: count
+        const map = new Map();
         for (const f of fleet) {
             const key = f.year + "-" + String(f.month).padStart(2, "0");
             map.set(key, (map.get(key) || 0) + 1);
@@ -820,14 +856,15 @@
     }
 
     function computeFleetMonthlyCosts(fleet) {
-        const mapCost = new Map();      // key => costo totale
-        const mapCanone = new Map();    // key => canone imponibile
-        const mapAss = new Map();       // key => assicurazione
+        const mapCost = new Map();
+        const mapCanone = new Map();
+        const mapAss = new Map();
 
         for (const f of fleet) {
             const key = f.year + "-" + String(f.month).padStart(2, "0");
             const canone = f.canoneImponibile || 0;
             const ass = f.assicurazione || 0;
+
             mapCanone.set(key, (mapCanone.get(key) || 0) + canone);
             mapAss.set(key, (mapAss.get(key) || 0) + ass);
             mapCost.set(key, (mapCost.get(key) || 0) + canone + ass);
@@ -840,7 +877,7 @@
         const mapRevenue = new Map();
         const mapDuration = new Map();
         const mapBookingsCount = new Map();
-        const mapVehicles = new Map(); // key => Set(vehicleId)
+        const mapVehicles = new Map();
 
         for (const b of bookings) {
             const key = b.year + "-" + String(b.month).padStart(2, "0");
@@ -856,9 +893,9 @@
         return { mapRevenue, mapDuration, mapBookingsCount, mapVehicles };
     }
 
-    function sumMap(map) {
+    function sumMap(m) {
         let s = 0;
-        for (const v of map.values()) s += v;
+        for (const v of m.values()) s += v;
         return s;
     }
 
@@ -869,10 +906,6 @@
         }
         return set.size;
     }
-
-    // =========================
-    // UPDATE KPI CARD HELPER
-    // =========================
 
     function updateKpiCard(options) {
         const {
@@ -927,9 +960,17 @@
         }
     }
 
-    // =========================
-    // CALCOLO KPI GLOBALI
-    // =========================
+    function computePrenotazioniGennaio2026(filters) {
+        let count = 0;
+        for (const b of jan2026Bookings) {
+            if (b.year !== 2026 || b.month !== 1) continue;
+            if (!isValueSelectedCaseInsensitive(filters.groupsSelected, b.groupLabel)) continue;
+            if (!isValueSelectedCaseInsensitive(filters.acquisitionsSelected, b.acquisition)) continue;
+            if (!isValueSelectedCaseInsensitive(filters.stationsSelected, b.station)) continue;
+            count++;
+        }
+        return count;
+    }
 
     function updateKpis(currentData, previousData, ranges, filters) {
         const currentFleet = currentData.fleet;
@@ -937,7 +978,6 @@
         const currentBookings = currentData.bookings;
         const previousBookings = previousData ? previousData.bookings : [];
 
-        // Flotta: dimensione media per mese nel range selezionato
         const fleetMonthlyCurrent = computeFleetMonthlyCounts(currentFleet);
         const fleetMonthlyPrevious = computeFleetMonthlyCounts(previousFleet);
 
@@ -952,12 +992,9 @@
             currentValue: fleetSizeCurrent,
             previousValue: fleetSizePrevious,
             isCurrency: false,
-            decimals: 1,
-            showPrevious: true,
-            showDelta: true
+            decimals: 1
         });
 
-        // Canoni e assicurazione
         const { mapCost: costMapCurrent, mapCanone: canoneMapCurrent, mapAss: assMapCurrent } =
             computeFleetMonthlyCosts(currentFleet);
         const { mapCost: costMapPrevious, mapCanone: canoneMapPrevious, mapAss: assMapPrevious } =
@@ -970,71 +1007,51 @@
         const costCurrent = sumMap(costMapCurrent);
         const costPrevious = sumMap(costMapPrevious);
 
-        // Canone imponibile
         updateKpiCard({
             idPrefix: "canone",
             currentValue: canoneCurrent,
             previousValue: canonePrevious,
-            isCurrency: true,
-            decimals: 0,
-            showPrevious: true,
-            showDelta: true
+            isCurrency: true
         });
 
-        // Canone IVATO (solo descrittivo)
         const canoneIvato = canoneCurrent * 1.22;
-        const canoneIvatoElValue = document.getElementById("kpi-canone-ivato-value");
-        if (canoneIvatoElValue) {
-            canoneIvatoElValue.textContent = formatCurrency(canoneIvato);
-        }
-        const canoneIvatoDeltaEl = document.getElementById("kpi-canone-ivato-delta");
-        if (canoneIvatoDeltaEl) {
-            canoneIvatoDeltaEl.textContent = ""; // nessun confronto richiesto
-        }
+        const canIvVal = document.getElementById("kpi-canone-ivato-value");
+        if (canIvVal) canIvVal.textContent = formatCurrency(canoneIvato);
+        const canIvPrev = document.getElementById("kpi-canone-ivato-previous");
+        if (canIvPrev) canIvPrev.textContent = "Descrittivo";
+        const canIvDelta = document.getElementById("kpi-canone-ivato-delta");
+        if (canIvDelta) canIvDelta.textContent = "";
 
-        // Assicurazione
         updateKpiCard({
             idPrefix: "assicurazione",
             currentValue: assCurrent,
             previousValue: assPrevious,
-            isCurrency: true,
-            decimals: 0,
-            showPrevious: true,
-            showDelta: true
+            isCurrency: true
         });
 
-        // Costo totale
         updateKpiCard({
             idPrefix: "costo-totale",
             currentValue: costCurrent,
             previousValue: costPrevious,
-            isCurrency: true,
-            decimals: 0,
-            showPrevious: true,
-            showDelta: true
+            isCurrency: true
         });
 
-        // Booking aggregati
         const {
             mapRevenue: revCurrentMap,
             mapDuration: durCurrentMap,
-            mapBookingsCount: bookCurrentMap,
-            mapVehicles: vehiclesCurrentMap
+            mapBookingsCount: bookCurrentMap
         } = computeBookingMonthlyAggregates(currentBookings);
 
         const {
             mapRevenue: revPrevMap,
             mapDuration: durPrevMap,
-            mapBookingsCount: bookPrevMap,
-            mapVehicles: vehiclesPrevMap
+            mapBookingsCount: bookPrevMap
         } = computeBookingMonthlyAggregates(previousBookings);
 
         const revenueCurrent = sumMap(revCurrentMap);
         const revenuePrevious = sumMap(revPrevMap);
-
         const durationCurrent = sumMap(durCurrentMap);
         const durationPrevious = sumMap(durPrevMap);
-
         const numBookingCurrent = sumMap(bookCurrentMap);
         const numBookingPrevious = sumMap(bookPrevMap);
 
@@ -1044,77 +1061,42 @@
         const revenuePerDayCurrent = durationCurrent > 0 ? revenueCurrent / durationCurrent : 0;
         const revenuePerDayPrevious = durationPrevious > 0 ? revenuePrevious / durationPrevious : 0;
 
-        // Revenue
         updateKpiCard({
             idPrefix: "revenue",
             currentValue: revenueCurrent,
             previousValue: revenuePrevious,
-            isCurrency: true,
-            decimals: 0,
-            showPrevious: true,
-            showDelta: true
+            isCurrency: true
         });
 
-        // Revenue per day
         updateKpiCard({
             idPrefix: "revenue-day",
             currentValue: revenuePerDayCurrent,
             previousValue: revenuePerDayPrevious,
             isCurrency: true,
-            decimals: 1,
-            showPrevious: true,
-            showDelta: true
+            decimals: 1
         });
 
-        // Numero prenotazioni
         updateKpiCard({
             idPrefix: "num-prenotazioni",
             currentValue: numBookingCurrent,
             previousValue: numBookingPrevious,
-            isCurrency: false,
-            decimals: 0,
-            showPrevious: true,
-            showDelta: true
+            isCurrency: false
         });
 
-        // Veicoli effettivamente noleggiati
         updateKpiCard({
             idPrefix: "vehicles-rented",
             currentValue: vehiclesCurrent,
             previousValue: vehiclesPrevious,
-            isCurrency: false,
-            decimals: 0,
-            showPrevious: true,
-            showDelta: true
+            isCurrency: false
         });
 
-        // Prenotazioni effettive Gennaio 2026 (SEM­PRE solo gennaio 2026, filtro gruppo/acq/stazione/tipologia, no proiezione)
         const prenGen26Count = computePrenotazioniGennaio2026(filters);
-        const prenGen26ValueEl = document.getElementById("kpi-prenotazioni-gen26-value");
-        if (prenGen26ValueEl) {
-            prenGen26ValueEl.textContent = formatNumber(prenGen26Count, 0);
-        }
-        const prenGen26DeltaEl = document.getElementById("kpi-prenotazioni-gen26-delta");
-        if (prenGen26DeltaEl) prenGen26DeltaEl.textContent = "";
-    }
-
-    function computePrenotazioniGennaio2026(filters) {
-        let count = 0;
-        for (const b of jan2026Bookings) {
-            if (b.month !== 1 || b.year !== 2026) continue;
-            if (!isValueSelectedCaseInsensitive(filters.groupsSelected, b.groupLabel)) continue;
-            if (!isValueSelectedCaseInsensitive(filters.acquisitionsSelected, b.acquisition)) continue;
-            if (!isValueSelectedCaseInsensitive(filters.stationsSelected, b.station)) continue;
-            if (filters.tipologieSelected && filters.tipologieSelected.size > 0) {
-                // tipologia non prevista nei booking -> ignoriamo filtro tipologia per questo KPI
-            }
-            count++;
-        }
-        return count;
+        const prenGen26Val = document.getElementById("kpi-prenotazioni-gen26-value");
+        if (prenGen26Val) prenGen26Val.textContent = formatNumber(prenGen26Count, 0);
     }
 
     // =========================
-    // GRAFICO CHART.JS
+    // GRAFICO
     // =========================
 
     function updateChart(currentData, ranges) {
@@ -1133,7 +1115,6 @@
             mapVehicles
         } = computeBookingMonthlyAggregates(currentBookings);
 
-        // Costruiamo asse X: tutti i mesi compresi tra start e end
         const labels = [];
         const flottaSeries = [];
         const costSeries = [];
@@ -1148,18 +1129,13 @@
             const key = year + "-" + String(month).padStart(2, "0");
 
             labels.push(monthLabel(year, month));
-            flottaSeries.push(flottaSeriesValue(key, fleetMonthlyCounts));
+            flottaSeries.push(fleetMonthlyCounts.get(key) || 0);
             costSeries.push(mapCost.get(key) || 0);
             revenueSeries.push(mapRevenue.get(key) || 0);
-
             const setVehicles = mapVehicles.get(key);
             vehiclesSeries.push(setVehicles ? setVehicles.size : 0);
 
             idx++;
-        }
-
-        function flottaSeriesValue(key, map) {
-            return map.get(key) || 0;
         }
 
         const data = {
@@ -1219,9 +1195,7 @@
                     intersect: false
                 },
                 plugins: {
-                    legend: {
-                        display: true
-                    },
+                    legend: { display: true },
                     tooltip: {
                         callbacks: {
                             label: function(context) {
@@ -1237,10 +1211,7 @@
                 },
                 scales: {
                     x: {
-                        display: true,
-                        title: {
-                            display: false
-                        }
+                        display: true
                     },
                     y: {
                         type: "linear",
@@ -1332,29 +1303,27 @@
     }
 
     // =========================
-    // GESTIONE FILTRI & REFRESH
+    // FILTRI & REFRESH
     // =========================
 
     function getFiltersFromUI() {
         const yearFilter = document.getElementById("yearFilter");
         const monthFilter = document.getElementById("monthFilter");
         const groupFilter = document.getElementById("groupFilter");
-        const tipologiaFilterEl = document.getElementById("tipologiaFilter");
-        const acquisitionFilter = document.getElementById("acquisitionFilter");
+        const tipFilter = document.getElementById("tipologiaFilter");
+        const acqFilter = document.getElementById("acquisitionFilter");
         const stationFilter = document.getElementById("stationFilter");
 
-        const filters = {
+        return {
             yearsSelected: getSelectedValues(yearFilter),
             monthsSelected: getSelectedValues(monthFilter),
             groupsSelected: getSelectedValues(groupFilter),
-            acquisitionsSelected: getSelectedValues(acquisitionFilter),
+            acquisitionsSelected: getSelectedValues(acqFilter),
             stationsSelected: getSelectedValues(stationFilter),
-            tipologieSelected: tipologiaFilterEl && tipologiaFilterEl.offsetParent !== null
-                ? getSelectedValues(tipologiaFilterEl)
+            tipologieSelected: tipFilter && tipFilter.offsetParent !== null
+                ? getSelectedValues(tipFilter)
                 : new Set()
         };
-
-        return filters;
     }
 
     function refreshDashboard() {
@@ -1373,17 +1342,21 @@
     }
 
     // =========================
-    // INIZIALIZZAZIONE FILTRI (LISTE)
+    // INIZIALIZZAZIONE FILTRI
     // =========================
 
     function initFiltersLists() {
-        // Stazioni
         const stationFilter = document.getElementById("stationFilter");
+        const acquisitionFilter = document.getElementById("acquisitionFilter");
+        const tipContainer = document.getElementById("tipologiaFilterContainer");
+        const tipFilter = document.getElementById("tipologiaFilter");
+
+        // stazioni
         stationFilter.innerHTML = "";
-        const sortedStations = Array.from(stationsList).sort((a, b) =>
+        const stationsSorted = Array.from(stationsMapCI.values()).sort((a, b) =>
             a.localeCompare(b, "it", { sensitivity: "base" })
         );
-        sortedStations.forEach(st => {
+        stationsSorted.forEach(st => {
             const opt = document.createElement("option");
             opt.value = st;
             opt.textContent = st;
@@ -1391,13 +1364,12 @@
             stationFilter.appendChild(opt);
         });
 
-        // Acquisizioni
-        const acquisitionFilter = document.getElementById("acquisitionFilter");
+        // acquisizione
         acquisitionFilter.innerHTML = "";
-        const sortedAcq = Array.from(acquisitionList).sort((a, b) =>
+        const acqSorted = Array.from(acquisitionMapCI.values()).sort((a, b) =>
             a.localeCompare(b, "it", { sensitivity: "base" })
         );
-        sortedAcq.forEach(acq => {
+        acqSorted.forEach(acq => {
             const opt = document.createElement("option");
             opt.value = acq;
             opt.textContent = acq;
@@ -1405,15 +1377,13 @@
             acquisitionFilter.appendChild(opt);
         });
 
-        // Tipologia (se presente)
-        const tipContainer = document.getElementById("tipologiaFilterContainer");
-        const tipFilter = document.getElementById("tipologiaFilter");
-        if (tipologiaList.size > 0) {
+        // tipologia
+        if (tipologiaMapCI.size > 0) {
             tipFilter.innerHTML = "";
-            const sortedTip = Array.from(tipologiaList).sort((a, b) =>
+            const tipSorted = Array.from(tipologiaMapCI.values()).sort((a, b) =>
                 a.localeCompare(b, "it", { sensitivity: "base" })
             );
-            sortedTip.forEach(t => {
+            tipSorted.forEach(t => {
                 const opt = document.createElement("option");
                 opt.value = t;
                 opt.textContent = t;
@@ -1425,7 +1395,7 @@
             tipContainer.style.display = "none";
         }
 
-        // Anno/mese/gruppo: selezioniamo tutto di default
+        // anno / mese / gruppo -> tutti selezionati
         setAllOptionsSelected(document.getElementById("yearFilter"), true);
         setAllOptionsSelected(document.getElementById("monthFilter"), true);
         setAllOptionsSelected(document.getElementById("groupFilter"), true);
@@ -1441,24 +1411,19 @@
 
         const projectionSelect = document.getElementById("projectionSelect");
         projectionSelect.addEventListener("change", () => {
-            const factor = parseFloat(projectionSelect.value) || 0.1;
+            const factor = parseFloat(projectionSelect.value) || 0.10;
             generateAllBookings(factor);
             refreshDashboard();
         });
 
         const clearBtn = document.getElementById("clearFiltersBtn");
         clearBtn.addEventListener("click", () => {
-            // reset multi-selects
-            const yearFilter = document.getElementById("yearFilter");
-            const monthFilter = document.getElementById("monthFilter");
-            const groupFilter = document.getElementById("groupFilter");
-            const acquisitionFilter = document.getElementById("acquisitionFilter");
-            const stationFilter = document.getElementById("stationFilter");
-            const tipFilter = document.getElementById("tipologiaFilter");
-
-            [yearFilter, monthFilter, groupFilter, acquisitionFilter, stationFilter, tipFilter].forEach(sel => {
-                if (sel) setAllOptionsSelected(sel, true);
-            });
+            setAllOptionsSelected(document.getElementById("yearFilter"), true);
+            setAllOptionsSelected(document.getElementById("monthFilter"), true);
+            setAllOptionsSelected(document.getElementById("groupFilter"), true);
+            setAllOptionsSelected(document.getElementById("acquisitionFilter"), true);
+            setAllOptionsSelected(document.getElementById("stationFilter"), true);
+            setAllOptionsSelected(document.getElementById("tipologiaFilter"), true);
 
             const projectionSelect = document.getElementById("projectionSelect");
             projectionSelect.value = "0.10";
@@ -1466,13 +1431,11 @@
             refreshDashboard();
         });
 
-        const printBtn = document.getElementById("printBtn");
-        printBtn.addEventListener("click", () => {
+        document.getElementById("printBtn").addEventListener("click", () => {
             window.print();
         });
 
-        const csvBtn = document.getElementById("downloadCsvBtn");
-        csvBtn.addEventListener("click", () => {
+        document.getElementById("downloadCsvBtn").addEventListener("click", () => {
             const { currentData } = refreshDashboard();
             downloadFilteredCsv(currentData);
         });
@@ -1503,40 +1466,38 @@
                 bookingsJanRes.json()
             ]);
 
-            // Normalizza flotta
+            // flotta
             fleetData = normalizeFleetData(fleetJson || []);
 
-            // Stazioni da fleetStations2025.json (solo per arricchire stationsList)
+            // stazioni da fleetStations2025 (solo arricchimento, senza duplicati)
             if (Array.isArray(stationJson)) {
                 const sampleS = stationJson[0] || {};
                 const stationField = detectFieldName(sampleS, ["stazione", "station", "location"]);
                 if (stationField) {
                     stationJson.forEach(row => {
-                        const st = (row[stationField] || "").toString().trim();
-                        if (st) stationsList.add(st);
+                        const st = row[stationField];
+                        if (!isInvalidLabel(st)) addCI(stationsMapCI, st);
                     });
                 }
             }
 
-            // Normalizza prenotazioni
+            // prenotazioni
             baseBookings2025 = normalizeBookings(bookingsJson || [], false);
             jan2026Bookings = normalizeBookings(bookingsJanJson || [], true);
 
-            // Proiezioni iniziali (10%)
+            // proiezioni di default (10%)
             generateAllBookings(0.10);
 
-            // Inizializza liste filtri
+            // filtri
             initFiltersLists();
-
-            // Aggancia eventi
             attachFilterEvents();
 
-            // Primo render
+            // primo render
             refreshDashboard();
 
         } catch (err) {
-            console.error("Errore nel caricamento dei dati:", err);
-            alert("Errore nel caricamento dei dati. Verifica i file JSON nella root del repository.");
+            console.error("Errore nel caricamento dati:", err);
+            alert("Errore nel caricamento dei dati. Verifica che i file JSON siano nella root e validi.");
         }
     }
 
