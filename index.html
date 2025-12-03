@@ -1,1081 +1,1546 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <title>Dashboard Flotta & Prenotazioni</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <title>Dashboard Flotta & Prenotazioni 2024–2026</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Bootstrap 5 -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
+    <!-- Bootstrap 5 CSS (CDN) -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossorigin="anonymous"
+    />
 
-  <!-- Chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            background-color: #f5f5f7;
+        }
 
-  <style>
-    body {
-      background-color: #f3f4f6;
-    }
-    .kpi-card {
-      border-radius: 1rem;
-      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
-    }
-    .kpi-label {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #6b7280;
-    }
-    .kpi-value {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #111827;
-    }
-    .kpi-prev {
-      font-size: 0.72rem;
-      color: #9ca3af;
-    }
-    .kpi-delta-pos {
-      color: #16a34a;
-      font-weight: 600;
-    }
-    .kpi-delta-neg {
-      color: #dc2626;
-      font-weight: 600;
-    }
-    .sidebar {
-      position: sticky;
-      top: 1rem;
-    }
-    .chart-container {
-      position: relative;
-      height: 420px;
-    }
-  </style>
+        .kpi-card {
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+            border: none;
+            background: #ffffff;
+            height: 100%;
+        }
+
+        .kpi-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .kpi-value {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-top: 0.25rem;
+        }
+
+        .kpi-previous {
+            font-size: 0.8rem;
+            margin-top: 0.25rem;
+        }
+
+        .kpi-delta {
+            font-size: 0.8rem;
+            margin-top: 0.15rem;
+            font-weight: 600;
+        }
+
+        .delta-positive {
+            color: #198754; /* Bootstrap success */
+        }
+
+        .delta-negative {
+            color: #dc3545; /* Bootstrap danger */
+        }
+
+        .delta-neutral {
+            color: #6c757d; /* Bootstrap secondary */
+        }
+
+        .filter-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .filter-select {
+            font-size: 0.85rem;
+        }
+
+        .accordion-button {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .chart-card {
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+            border: none;
+        }
+
+        .no-print {
+            /* Elements hidden in print */
+        }
+
+        .print-only {
+            display: none;
+        }
+
+        @media print {
+            body {
+                background: #ffffff;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .print-only {
+                display: block !important;
+            }
+            .container-fluid {
+                padding: 0;
+            }
+            .row {
+                margin: 0;
+            }
+            .col-md-3,
+            .col-md-9,
+            .col-xl-3,
+            .col-md-6 {
+                float: none;
+                width: 100%;
+            }
+            .kpi-card {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="bg-white border-bottom mb-3">
-    <div class="container-fluid py-3 px-3 px-md-4 d-flex justify-content-between align-items-center">
-      <div>
-        <h1 class="h4 mb-1">Dashboard Flotta &amp; Prenotazioni 🚗📊</h1>
-        <div class="text-muted small">
-          Analisi 2024–2026 · Flotta, Costi &amp; Revenue (con proiezioni)
+<div class="container-fluid p-3">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="h4 mb-0">Dashboard Flotta &amp; Prenotazioni 2024–2026</h1>
+        <div class="d-flex gap-2 no-print">
+            <button id="downloadCsvBtn" class="btn btn-outline-secondary btn-sm">
+                Scarica CSV dati filtrati
+            </button>
+            <button id="printBtn" class="btn btn-outline-primary btn-sm">
+                Stampa / Esporta PDF
+            </button>
         </div>
-      </div>
-      <span class="badge rounded-pill text-bg-success">
-        Static HTML · JSON · GitHub Pages
-      </span>
     </div>
-  </header>
 
-  <main class="container-fluid pb-4 px-3 px-md-4">
     <div class="row g-3">
-      <!-- SIDEBAR FILTRI -->
-      <aside class="col-lg-3">
-        <div class="sidebar">
-          <div class="card kpi-card mb-3">
-            <div class="card-body">
-              <div class="d-flex justify-content-between align-items-center mb-2">
-                <h2 class="h6 mb-0">Filtri 🎛️</h2>
-                <button id="resetFiltersBtn" class="btn btn-sm btn-outline-secondary">
-                  Pulisci filtri
-                </button>
-              </div>
-
-              <div class="accordion" id="filtersAccordion">
-                <!-- Anno -->
+        <!-- FILTRI -->
+        <div class="col-md-3 no-print">
+            <div class="accordion" id="filtersAccordion">
                 <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingYear">
-                    <button class="accordion-button py-2 collapsed" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#collapseYear">
-                      Anno
-                    </button>
-                  </h2>
-                  <div id="collapseYear" class="accordion-collapse collapse"
-                       data-bs-parent="#filtersAccordion">
-                    <div class="accordion-body py-2">
-                      <select id="yearFilter" class="form-select form-select-sm" multiple></select>
-                      <div class="form-text small">Multi-selezione (2024–2026)</div>
+                    <h2 class="accordion-header" id="filtersHeading">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#filtersCollapse" aria-expanded="true" aria-controls="filtersCollapse">
+                            Filtri avanzati
+                        </button>
+                    </h2>
+                    <div id="filtersCollapse" class="accordion-collapse collapse show" aria-labelledby="filtersHeading">
+                        <div class="accordion-body">
+                            <!-- Anno -->
+                            <div class="mb-3">
+                                <div class="filter-label">Anno</div>
+                                <select id="yearFilter" class="form-select form-select-sm filter-select" multiple>
+                                    <option value="2024">2024</option>
+                                    <option value="2025">2025</option>
+                                    <option value="2026">2026</option>
+                                </select>
+                                <small class="text-muted">Selezione multipla (Ctrl+click).</small>
+                            </div>
+
+                            <!-- Mese -->
+                            <div class="mb-3">
+                                <div class="filter-label">Mese</div>
+                                <select id="monthFilter" class="form-select form-select-sm filter-select" multiple>
+                                    <option value="1">Gennaio</option>
+                                    <option value="2">Febbraio</option>
+                                    <option value="3">Marzo</option>
+                                    <option value="4">Aprile</option>
+                                    <option value="5">Maggio</option>
+                                    <option value="6">Giugno</option>
+                                    <option value="7">Luglio</option>
+                                    <option value="8">Agosto</option>
+                                    <option value="9">Settembre</option>
+                                    <option value="10">Ottobre</option>
+                                    <option value="11">Novembre</option>
+                                    <option value="12">Dicembre</option>
+                                </select>
+                            </div>
+
+                            <!-- Gruppo veicolo -->
+                            <div class="mb-3">
+                                <div class="filter-label">Gruppo veicolo</div>
+                                <select id="groupFilter" class="form-select form-select-sm filter-select" multiple>
+                                    <option value="Commercial Van">Commercial Van</option>
+                                    <option value="Large">Large</option>
+                                    <option value="Economy">Economy</option>
+                                    <option value="Small">Small</option>
+                                    <option value="Mini">Mini</option>
+                                    <option value="Premium">Premium</option>
+                                    <option value="Suv">Suv</option>
+                                    <option value="People Mover">People Mover</option>
+                                    <option value="Station Wagon">Station Wagon</option>
+                                    <option value="Cabriolet">Cabriolet</option>
+                                </select>
+                            </div>
+
+                            <!-- Tipologia (opzionale, nascosta se non presente nei dati) -->
+                            <div class="mb-3" id="tipologiaFilterContainer">
+                                <div class="filter-label">Tipologia</div>
+                                <select id="tipologiaFilter" class="form-select form-select-sm filter-select" multiple>
+                                    <!-- Popolato via JS se disponibile -->
+                                </select>
+                            </div>
+
+                            <!-- Acquisizione -->
+                            <div class="mb-3">
+                                <div class="filter-label">Acquisizione</div>
+                                <select id="acquisitionFilter" class="form-select form-select-sm filter-select" multiple>
+                                    <!-- Popolato via JS -->
+                                </select>
+                            </div>
+
+                            <!-- Stazione -->
+                            <div class="mb-3">
+                                <div class="filter-label">Stazione</div>
+                                <select id="stationFilter" class="form-select form-select-sm filter-select" multiple>
+                                    <!-- Popolato via JS -->
+                                </select>
+                            </div>
+
+                            <!-- Proiezione 2026 -->
+                            <div class="mb-3">
+                                <div class="filter-label">Proiezione 2026 🔮</div>
+                                <select id="projectionSelect" class="form-select form-select-sm">
+                                    <option value="0.05">5%</option>
+                                    <option value="0.10" selected>10%</option>
+                                    <option value="0.15">15%</option>
+                                    <option value="0.20">20%</option>
+                                </select>
+                            </div>
+
+                            <!-- Pulsante pulisci -->
+                            <div class="d-grid">
+                                <button id="clearFiltersBtn" class="btn btn-outline-secondary btn-sm">
+                                    Pulisci filtri
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-
-                <!-- Mese -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingMonth">
-                    <button class="accordion-button py-2 collapsed" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#collapseMonth">
-                      Mese
-                    </button>
-                  </h2>
-                  <div id="collapseMonth" class="accordion-collapse collapse"
-                       data-bs-parent="#filtersAccordion">
-                    <div class="accordion-body py-2">
-                      <select id="monthFilter" class="form-select form-select-sm" multiple></select>
-                      <div class="form-text small">Gennaio–Dicembre</div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Tipologia -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingTipo">
-                    <button class="accordion-button py-2 collapsed" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#collapseTipo">
-                      Tipologia
-                    </button>
-                  </h2>
-                  <div id="collapseTipo" class="accordion-collapse collapse"
-                       data-bs-parent="#filtersAccordion">
-                    <div class="accordion-body py-2">
-                      <select id="tipoFilter" class="form-select form-select-sm" multiple></select>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Gruppo veicolo -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingGruppo">
-                    <button class="accordion-button py-2 collapsed" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#collapseGruppo">
-                      Gruppo veicolo
-                    </button>
-                  </h2>
-                  <div id="collapseGruppo" class="accordion-collapse collapse"
-                       data-bs-parent="#filtersAccordion">
-                    <div class="accordion-body py-2">
-                      <select id="gruppoFilter" class="form-select form-select-sm" multiple></select>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Acquisizione -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingAcq">
-                    <button class="accordion-button py-2 collapsed" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#collapseAcq">
-                      Acquisizione
-                    </button>
-                  </h2>
-                  <div id="collapseAcq" class="accordion-collapse collapse"
-                       data-bs-parent="#filtersAccordion">
-                    <div class="accordion-body py-2">
-                      <select id="acquisizioneFilter" class="form-select form-select-sm" multiple></select>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Stazione -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingStation">
-                    <button class="accordion-button py-2 collapsed" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#collapseStation">
-                      Stazione
-                    </button>
-                  </h2>
-                  <div id="collapseStation" class="accordion-collapse collapse"
-                       data-bs-parent="#filtersAccordion">
-                    <div class="accordion-body py-2">
-                      <select id="stazioneFilter" class="form-select form-select-sm" multiple></select>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Proiezione 2026 -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingProj">
-                    <button class="accordion-button py-2 collapsed" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#collapseProj">
-                      Proiezione 2026 🔮
-                    </button>
-                  </h2>
-                  <div id="collapseProj" class="accordion-collapse collapse"
-                       data-bs-parent="#filtersAccordion">
-                    <div class="accordion-body py-2">
-                      <select id="projectionSelect" class="form-select form-select-sm">
-                        <option value="0.05">+5%</option>
-                        <option value="0.10" selected>+10% (default)</option>
-                        <option value="0.15">+15%</option>
-                        <option value="0.20">+20%</option>
-                      </select>
-                      <div class="form-text small">
-                        Applicata alle prenotazioni proiettate Feb–Dic 2026.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> <!-- accordion -->
             </div>
-          </div>
-        </div>
-      </aside>
-
-      <!-- CONTENUTO PRINCIPALE -->
-      <section class="col-lg-9">
-        <!-- KPI CARDS -->
-        <div class="row g-3 mb-3">
-          <!-- Dimensione Flotta -->
-          <div class="col-md-6 col-xl-3">
-            <div class="card kpi-card h-100">
-              <div class="card-body">
-                <div class="kpi-label mb-1">🚗 Dimensione Flotta (media)</div>
-                <div id="kpiFleetSize" class="kpi-value">-</div>
-                <div id="kpiFleetSizePrev" class="kpi-prev mt-1"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Canone Imponibile -->
-          <div class="col-md-6 col-xl-3">
-            <div class="card kpi-card h-100">
-              <div class="card-body">
-                <div class="kpi-label mb-1">💶 Canone Imponibile</div>
-                <div id="kpiCanone" class="kpi-value">-</div>
-                <div id="kpiCanonePrev" class="kpi-prev mt-1"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Canone Totale IVATO -->
-          <div class="col-md-6 col-xl-3">
-            <div class="card kpi-card h-100">
-              <div class="card-body">
-                <div class="kpi-label mb-1">💶 Canone Totale (IVATO)</div>
-                <div id="kpiCanoneIvato" class="kpi-value">-</div>
-                <div class="kpi-prev mt-1">
-                  Calcolato con IVA 22% su Canone Imponibile.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Assicurazione -->
-          <div class="col-md-6 col-xl-3">
-            <div class="card kpi-card h-100">
-              <div class="card-body">
-                <div class="kpi-label mb-1">🛡️ Assicurazione</div>
-                <div id="kpiAssicurazione" class="kpi-value">-</div>
-                <div id="kpiAssicurazionePrev" class="kpi-prev mt-1"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Costo Totale -->
-          <div class="col-md-6 col-xl-3">
-            <div class="card kpi-card h-100">
-              <div class="card-body">
-                <div class="kpi-label mb-1">💰 Costo Totale</div>
-                <div id="kpiCostoTotale" class="kpi-value">-</div>
-                <div id="kpiCostoTotalePrev" class="kpi-prev mt-1"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Revenue -->
-          <div class="col-md-6 col-xl-3">
-            <div class="card kpi-card h-100">
-              <div class="card-body">
-                <div class="kpi-label mb-1">💸 Revenue</div>
-                <div id="kpiRevenue" class="kpi-value">-</div>
-                <div id="kpiRevenuePrev" class="kpi-prev mt-1"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Revenue per Day -->
-          <div class="col-md-6 col-xl-3">
-            <div class="card kpi-card h-100">
-              <div class="card-body">
-                <div class="kpi-label mb-1">☀️ Revenue per Day</div>
-                <div id="kpiRevenuePerDay" class="kpi-value">-</div>
-                <div id="kpiRevenuePerDayPrev" class="kpi-prev mt-1"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Numero Prenotazioni -->
-          <div class="col-md-6 col-xl-3">
-            <div class="card kpi-card h-100">
-              <div class="card-body">
-                <div class="kpi-label mb-1">📝 Numero Prenotazioni</div>
-                <div id="kpiNumPren" class="kpi-value">-</div>
-                <div id="kpiNumPrenPrev" class="kpi-prev mt-1"></div>
-              </div>
-            </div>
-          </div>
         </div>
 
-        <!-- BLOCCO PROIEZIONI / PRENOTAZIONI GEN 2026 -->
-        <div class="card kpi-card mb-3 bg-dark text-light">
-          <div class="card-body">
-            <div class="d-flex justify-content-between align-items-center mb-2">
-              <h2 class="h6 mb-0">PROIEZIONI 2026 &amp; DATI EFFETTIVI 🔭</h2>
-              <span class="small text-secondary">
-                Gennaio 2026 = dati reali (no proiezione %)
-              </span>
-            </div>
-            <div class="row g-3">
-              <div class="col-md-4">
-                <div class="border rounded-3 p-3 bg-black bg-opacity-25">
-                  <div class="kpi-label mb-1 text-light">
-                    ✅ Prenotazioni Effettive (Gennaio 2026)
-                  </div>
-                  <div id="kpiPrenGen2026" class="kpi-value text-light">-</div>
-                  <div class="kpi-prev mt-1">
-                    Filtrate per gruppi/stazioni selezionati (no % proiezione).
-                  </div>
+        <!-- KPI + GRAFICO -->
+        <div class="col-md-9">
+            <!-- KPI ROW -->
+            <div class="row g-3" id="kpiRow">
+                <!-- 1: Dimensione Flotta -->
+                <div class="col-md-6 col-xl-3">
+                    <div class="card kpi-card">
+                        <div class="card-body">
+                            <div class="kpi-title">🚗 Dimensione flotta (media)</div>
+                            <div class="kpi-value" id="kpi-fleet-size-value">-</div>
+                            <div class="kpi-previous text-muted" id="kpi-fleet-size-previous">Periodo prec.: -</div>
+                            <div class="kpi-delta delta-neutral" id="kpi-fleet-size-delta">±0%</div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- GRAFICO -->
-        <div class="card kpi-card">
-          <div class="card-body">
-            <div class="kpi-label mb-1">
-              Andamento Flotta, Costo Totale e Revenue per mese
+                <!-- 2: Canone Imponibile -->
+                <div class="col-md-6 col-xl-3">
+                    <div class="card kpi-card">
+                        <div class="card-body">
+                            <div class="kpi-title">💶 Canone imponibile</div>
+                            <div class="kpi-value" id="kpi-canone-value">-</div>
+                            <div class="kpi-previous text-muted" id="kpi-canone-previous">Periodo prec.: -</div>
+                            <div class="kpi-delta delta-neutral" id="kpi-canone-delta">±0%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3: Canone Totale IVATO (solo descrittivo) -->
+                <div class="col-md-6 col-xl-3">
+                    <div class="card kpi-card">
+                        <div class="card-body">
+                            <div class="kpi-title">💶 Canone totale IVATO</div>
+                            <div class="kpi-value" id="kpi-canone-ivato-value">-</div>
+                            <div class="kpi-previous text-muted" id="kpi-canone-ivato-previous">Descrittivo</div>
+                            <div class="kpi-delta delta-neutral" id="kpi-canone-ivato-delta"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4: Assicurazione -->
+                <div class="col-md-6 col-xl-3">
+                    <div class="card kpi-card">
+                        <div class="card-body">
+                            <div class="kpi-title">🛡️ Assicurazione</div>
+                            <div class="kpi-value" id="kpi-assicurazione-value">-</div>
+                            <div class="kpi-previous text-muted" id="kpi-assicurazione-previous">Periodo prec.: -</div>
+                            <div class="kpi-delta delta-neutral" id="kpi-assicurazione-delta">±0%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5: Costo totale -->
+                <div class="col-md-6 col-xl-3">
+                    <div class="card kpi-card">
+                        <div class="card-body">
+                            <div class="kpi-title">💰 Costo totale</div>
+                            <div class="kpi-value" id="kpi-costo-totale-value">-</div>
+                            <div class="kpi-previous text-muted" id="kpi-costo-totale-previous">Periodo prec.: -</div>
+                            <div class="kpi-delta delta-neutral" id="kpi-costo-totale-delta">±0%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6: Revenue -->
+                <div class="col-md-6 col-xl-3">
+                    <div class="card kpi-card">
+                        <div class="card-body">
+                            <div class="kpi-title">💸 Revenue</div>
+                            <div class="kpi-value" id="kpi-revenue-value">-</div>
+                            <div class="kpi-previous text-muted" id="kpi-revenue-previous">Periodo prec.: -</div>
+                            <div class="kpi-delta delta-neutral" id="kpi-revenue-delta">±0%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7: Revenue per day -->
+                <div class="col-md-6 col-xl-3">
+                    <div class="card kpi-card">
+                        <div class="card-body">
+                            <div class="kpi-title">☀️ Revenue per day</div>
+                            <div class="kpi-value" id="kpi-revenue-day-value">-</div>
+                            <div class="kpi-previous text-muted" id="kpi-revenue-day-previous">Periodo prec.: -</div>
+                            <div class="kpi-delta delta-neutral" id="kpi-revenue-day-delta">±0%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8: Numero prenotazioni -->
+                <div class="col-md-6 col-xl-3">
+                    <div class="card kpi-card">
+                        <div class="card-body">
+                            <div class="kpi-title">📝 Numero prenotazioni</div>
+                            <div class="kpi-value" id="kpi-num-prenotazioni-value">-</div>
+                            <div class="kpi-previous text-muted" id="kpi-num-prenotazioni-previous">Periodo prec.: -</div>
+                            <div class="kpi-delta delta-neutral" id="kpi-num-prenotazioni-delta">±0%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9: Veicoli effettivamente noleggiati -->
+                <div class="col-md-6 col-xl-3">
+                    <div class="card kpi-card">
+                        <div class="card-body">
+                            <div class="kpi-title">🚙 Veicoli effettivamente noleggiati</div>
+                            <div class="kpi-value" id="kpi-vehicles-rented-value">-</div>
+                            <div class="kpi-previous text-muted" id="kpi-vehicles-rented-previous">Periodo prec.: -</div>
+                            <div class="kpi-delta delta-neutral" id="kpi-vehicles-rented-delta">±0%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10: Prenotazioni effettive Gennaio 2026 -->
+                <div class="col-md-6 col-xl-3">
+                    <div class="card kpi-card">
+                        <div class="card-body">
+                            <div class="kpi-title">✅ Prenotazioni effettive (Gennaio 2026)</div>
+                            <div class="kpi-value" id="kpi-prenotazioni-gen26-value">-</div>
+                            <div class="kpi-previous text-muted" id="kpi-prenotazioni-gen26-previous">
+                                Filtrate solo per gruppo/acquisizione/stazione
+                            </div>
+                            <div class="kpi-delta delta-neutral" id="kpi-prenotazioni-gen26-delta"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="chart-container">
-              <canvas id="mainChart"></canvas>
+
+            <!-- GRAFICO -->
+            <div class="card chart-card mt-3">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">Andamento mensile flotta, costi e prenotazioni</h5>
+                    <canvas id="mainChart" height="120"></canvas>
+                </div>
             </div>
-          </div>
         </div>
-      </section>
     </div>
-  </main>
+</div>
 
-  <!-- Bootstrap Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap 5 JS (for accordion etc.) -->
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+></script>
 
-    <script>
-    // ================== DATI IN MEMORIA ==================
-    let fleetData = [];
-    let fleetStations2025 = [];
-    let bookings2025 = [];
-    let bookingsJan2026 = [];
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
-    const monthNames = [
-      "Gennaio","Febbraio","Marzo","Aprile","Maggio","Giugno",
-      "Luglio","Agosto","Settembre","Ottobre","Novembre","Dicembre"
-    ];
+<script>
+    // =========================
+    // COSTANTI & VARIABILI GLOBALI
+    // =========================
 
-    // Lista ufficiale dei gruppi veicolo (ordine come richiesto)
     const GROUP_LABELS = [
-      "Commercial Van",
-      "Large",
-      "Economy",
-      "Small",
-      "Mini",
-      "Premium",
-      "Suv",
-      "People Mover",
-      "Station Wagon",
-      "Cabriolet"
+        "Commercial Van",
+        "Large",
+        "Economy",
+        "Small",
+        "Mini",
+        "Premium",
+        "Suv",
+        "People Mover",
+        "Station Wagon",
+        "Cabriolet"
     ];
 
-    // ================== HELPER ==================
-    function parseISO(dateStr) {
-      return new Date(dateStr + "T00:00:00");
+    const IT_MONTH_NAMES = [
+        "Gen", "Feb", "Mar", "Apr", "Mag", "Giu",
+        "Lug", "Ago", "Set", "Ott", "Nov", "Dic"
+    ];
+
+    let fleetData = [];              // dati flotta normalizzati
+    let baseBookings2025 = [];       // prenotazioni 2025 normalizzate (base)
+    let jan2026Bookings = [];        // prenotazioni gennaio 2026 normalizzate (real)
+    let allBookings = [];            // prenotazioni 2024-2026 (real + proiezioni)
+    let stationsList = new Set();    // lista stazioni
+    let acquisitionList = new Set(); // lista acquisizioni
+    let tipologiaList = new Set();   // lista tipologie (se presente)
+
+    let chartInstance = null;
+
+    // =========================
+    // UTILITY GENERALI
+    // =========================
+
+    function parseDateFlexible(value) {
+        if (!value) return null;
+        if (value instanceof Date) return value;
+        const d = new Date(value);
+        if (!isNaN(d.getTime())) return d;
+        // fallback semplice (se formati strani): prova a sostituire / con -
+        try {
+            const d2 = new Date(String(value).replace(/\//g, "-"));
+            if (!isNaN(d2.getTime())) return d2;
+        } catch (e) {}
+        return null;
     }
-    function getYear(d) { return d.getFullYear(); }
-    function getMonth(d) { return d.getMonth() + 1; }
+
+    function ymToIndex(year, month) {
+        return year * 12 + (month - 1);
+    }
+
+    function indexToYm(index) {
+        return {
+            year: Math.floor(index / 12),
+            month: (index % 12) + 1
+        };
+    }
 
     function formatCurrency(value) {
-      if (value == null || isNaN(value)) return "-";
-      return value.toLocaleString("it-IT", {
-        style: "currency",
-        currency: "EUR",
-        maximumFractionDigits: 0
-      });
+        if (value == null || isNaN(value)) return "-";
+        return new Intl.NumberFormat("it-IT", {
+            style: "currency",
+            currency: "EUR",
+            maximumFractionDigits: 0
+        }).format(value);
     }
 
     function formatNumber(value, decimals = 0) {
-      if (value == null || isNaN(value)) return "-";
-      return value.toLocaleString("it-IT", {
-        maximumFractionDigits: decimals,
-        minimumFractionDigits: decimals
-      });
+        if (value == null || isNaN(value)) return "-";
+        return new Intl.NumberFormat("it-IT", {
+            minimumFractionDigits: decimals,
+            maximumFractionDigits: decimals
+        }).format(value);
     }
 
-    function normalizeKey(val) {
-      if (val === null || val === undefined) return "";
-      const s = String(val).trim();
-      if (!s || s.toUpperCase() === "NAN") return "";
-      return s.toUpperCase();
+    function monthLabel(year, month) {
+        return IT_MONTH_NAMES[month - 1] + " " + year;
     }
 
-    function normalizeLabel(val) {
-      if (val === null || val === undefined) return "";
-      const s = String(val).trim();
-      if (!s || s.toUpperCase() === "NAN") return "";
-      return s;
-    }
-
-    function detectColumn(obj, candidatesNormalized) {
-      if (!obj) return null;
-      const keys = Object.keys(obj);
-      for (const key of keys) {
-        const norm = key.toLowerCase().replace(/\s+/g, "");
-        if (candidatesNormalized.includes(norm)) return key;
-      }
-      return null;
-    }
-
-    async function loadJsonClean(url) {
-      const res = await fetch(url);
-      if (!res.ok) throw new Error("Errore nel caricamento di " + url);
-      let text = await res.text();
-      text = text.replace(/\bNaN\b/g, "0");
-      return JSON.parse(text);
-    }
-
-    // ================== PROIEZIONI BOOKING ==================
-    function generateAllBookings(projectionFactor) {
-      const all = [];
-
-      bookings2025.forEach((b) => {
-        const d2025 = parseISO(b.startDate);
-        const year2025 = getYear(d2025);
-        const month = getMonth(d2025);
-
-        // 2025 reale
-        all.push({ ...b, year: year2025, month });
-
-        // 2024 = -5%
-        const d2024 = new Date(d2025);
-        d2024.setFullYear(year2025 - 1);
-        all.push({
-          ...b,
-          year: getYear(d2024),
-          month: getMonth(d2024),
-          startDate: d2024.toISOString().slice(0, 10),
-          price: (b.price || 0) * 0.95
-        });
-
-        // 2026 (escluso Gennaio)
-        const d2026 = new Date(d2025);
-        d2026.setFullYear(year2025 + 1);
-        const m2026 = getMonth(d2026);
-        if (m2026 !== 1) {
-          all.push({
-            ...b,
-            year: getYear(d2026),
-            month: m2026,
-            startDate: d2026.toISOString().slice(0, 10),
-            price: (b.price || 0) * (1 + projectionFactor)
-          });
-        }
-      });
-
-      // Gennaio 2026 reale
-      bookingsJan2026.forEach((b) => {
-        const d = parseISO(b.startDate);
-        all.push({ ...b, year: getYear(d), month: getMonth(d) });
-      });
-
-      return all;
-    }
-
-    // ================== POPOLAMENTO FILTRI ==================
-    function populateFilterOptions(allFleet, allBookings, stationsData) {
-      const yearSel   = document.getElementById("yearFilter");
-      const monthSel  = document.getElementById("monthFilter");
-      const tipoSel   = document.getElementById("tipoFilter");
-      const gruppoSel = document.getElementById("gruppoFilter");
-      const acqSel    = document.getElementById("acquisizioneFilter");
-      const statSel   = document.getElementById("stazioneFilter");
-
-      [yearSel,monthSel,tipoSel,gruppoSel,acqSel,statSel].forEach(sel => sel.innerHTML = "");
-
-      // Anni 2024-2026
-      const years = new Set();
-      allFleet.forEach(f => years.add(f.year));
-      allBookings.forEach(b => years.add(b.year));
-      stationsData.forEach(s => years.add(s.year));
-
-      Array.from(years)
-        .filter(y => y >= 2024 && y <= 2026)
-        .sort()
-        .forEach(y => {
-          const opt = document.createElement("option");
-          opt.value = String(y);
-          opt.textContent = String(y);
-          yearSel.appendChild(opt);
-        });
-
-      // Mesi 1-12
-      for (let m = 1; m <= 12; m++) {
-        const opt = document.createElement("option");
-        opt.value = String(m);
-        opt.textContent = monthNames[m-1];
-        monthSel.appendChild(opt);
-      }
-
-      // Tipologia: ricavata se presente (fallback su gruppo)
-      const tipoMap = new Map();
-      allFleet.forEach(f => {
-        const key = f.tipoKey || f.gruppoKey;
-        const label = f.tipoLabel || f.gruppoLabel;
-        if (key && !tipoMap.has(key)) tipoMap.set(key, label || key);
-      });
-      allBookings.forEach(b => {
-        const key = b.tipoKey || b.gruppoKey;
-        const label = b.tipoLabel || b.gruppoLabel;
-        if (key && !tipoMap.has(key)) tipoMap.set(key, label || key);
-      });
-
-      Array.from(tipoMap.entries())
-        .sort((a,b) => a[1].localeCompare(b[1],"it"))
-        .forEach(([key,label]) => {
-          const opt = document.createElement("option");
-          opt.value = key;
-          opt.textContent = label;
-          tipoSel.appendChild(opt);
-        });
-
-      // Gruppo veicolo: lista FISSA, non dai dati
-      GROUP_LABELS.forEach(label => {
-        const key = normalizeKey(label); // es. "COMMERCIAL VAN" -> "COMMERCIAL VAN"
-        const opt = document.createElement("option");
-        opt.value = key;
-        opt.textContent = label;
-        gruppoSel.appendChild(opt);
-      });
-
-      // Acquisizione: solo da fleetData_clean + bookings se hanno campo valido
-      const acqMap = new Map();
-      allFleet.forEach(f => {
-        if (f.acqKey && !acqMap.has(f.acqKey)) {
-          acqMap.set(f.acqKey, f.acqLabel || f.acqKey);
-        }
-      });
-      allBookings.forEach(b => {
-        if (b.acqKey && !acqMap.has(b.acqKey)) {
-          acqMap.set(b.acqKey, b.acqLabel || b.acqKey);
-        }
-      });
-
-      Array.from(acqMap.entries())
-        .sort((a,b) => a[1].localeCompare(b[1],"it"))
-        .forEach(([key,label]) => {
-          const opt = document.createElement("option");
-          opt.value = key;
-          opt.textContent = label;
-          acqSel.appendChild(opt);
-        });
-
-      // Stazione: fonte principale fleetStations2025
-      const statMap = new Map();
-      stationsData.forEach(s => {
-        if (s.stationKey && !statMap.has(s.stationKey)) {
-          statMap.set(s.stationKey, s.stationLabel || s.stationKey);
-        }
-      });
-      allFleet.forEach(f => {
-        if (f.stationKey && !statMap.has(f.stationKey)) {
-          statMap.set(f.stationKey, f.stationLabel || f.stationKey);
-        }
-      });
-      allBookings.forEach(b => {
-        if (b.stationKey && !statMap.has(b.stationKey)) {
-          statMap.set(b.stationKey, b.stationLabel || b.stationKey);
-        }
-      });
-
-      Array.from(statMap.entries())
-        .sort((a,b) => a[1].localeCompare(b[1],"it"))
-        .forEach(([key,label]) => {
-          const opt = document.createElement("option");
-          opt.value = key;
-          opt.textContent = label;
-          statSel.appendChild(opt);
-        });
-
-      // seleziona tutto
-      [yearSel,monthSel,tipoSel,gruppoSel,acqSel,statSel].forEach(sel => {
-        for (let i=0; i<sel.options.length; i++) sel.options[i].selected = true;
-      });
-    }
-
-    function getMultiSelectValues(id) {
-      const sel = document.getElementById(id);
-      const vals = [];
-      for (let i=0; i<sel.options.length; i++) {
-        if (sel.options[i].selected) vals.push(sel.options[i].value);
-      }
-      return vals;
-    }
-
-    // ================== RANGE PERIODI ==================
-    function getCurrentAndPreviousRanges(filters) {
-      const { years, months } = filters;
-
-      const allYears  = years.length ? years.map(y => parseInt(y,10)) : [2024,2025,2026];
-      const allMonths = months.length ? months.map(m => parseInt(m,10)) : [1,12];
-
-      const minYear  = Math.min(...allYears);
-      const maxYear  = Math.max(...allYears);
-      const minMonth = Math.min(...allMonths);
-      const maxMonth = Math.max(...allMonths);
-
-      const startCurrent = new Date(minYear, minMonth-1, 1);
-      const endCurrent   = new Date(maxYear, maxMonth, 0);
-
-      const diffMonths =
-        (endCurrent.getFullYear() - startCurrent.getFullYear()) * 12 +
-        (endCurrent.getMonth() - startCurrent.getMonth()) + 1;
-
-      const endPrev = new Date(startCurrent);
-      endPrev.setMonth(endPrev.getMonth() - 1);
-      const startPrev = new Date(endPrev);
-      startPrev.setMonth(startPrev.getMonth() - (diffMonths-1));
-      startPrev.setDate(1);
-      endPrev.setDate(new Date(endPrev.getFullYear(), endPrev.getMonth()+1, 0).getDate());
-
-      return {
-        current : { start: startCurrent, end: endCurrent },
-        previous: { start: startPrev,    end: endPrev }
-      };
-    }
-
-    function filterDataForRange(allFleet, allBookings, stationsData, filters, rangeKey) {
-      const range = rangeKey === "current" ? filters.currentRange : filters.previousRange;
-      const applyYearMonth = (rangeKey === "current");
-
-      const fleet = allFleet.filter(f => {
-        const d = f.refDateObj;
-        const year = f.year;
-        const month= f.month;
-
-        if (applyYearMonth) {
-          if (filters.years.length && !filters.years.includes(String(year))) return false;
-          if (filters.months.length && !filters.months.includes(String(month))) return false;
-        }
-        if (filters.tipiKeys.length   && f.tipoKey    && !filters.tipiKeys.includes(f.tipoKey)) return false;
-        if (filters.groupKeys.length  && f.gruppoKey  && !filters.groupKeys.includes(f.gruppoKey)) return false;
-        if (filters.acqKeys.length    && f.acqKey     && !filters.acqKeys.includes(f.acqKey))    return false;
-        if (filters.stationKeys.length&& f.stationKey && !filters.stationKeys.includes(f.stationKey)) return false;
-
-        return d >= range.start && d <= range.end;
-      });
-
-      const bookings = allBookings.filter(b => {
-        const d = parseISO(b.startDate);
-        const year = b.year;
-        const month= b.month;
-
-        if (applyYearMonth) {
-          if (filters.years.length && !filters.years.includes(String(year))) return false;
-          if (filters.months.length && !filters.months.includes(String(month))) return false;
-        }
-        if (filters.tipiKeys.length   && b.tipoKey    && !filters.tipiKeys.includes(b.tipoKey)) return false;
-        if (filters.groupKeys.length  && b.gruppoKey  && !filters.groupKeys.includes(b.gruppoKey)) return false;
-        if (filters.acqKeys.length    && b.acqKey     && !filters.acqKeys.includes(b.acqKey))    return false;
-        if (filters.stationKeys.length&& b.stationKey && !filters.stationKeys.includes(b.stationKey)) return false;
-
-        return d >= range.start && d <= range.end;
-      });
-
-      const stations = stationsData.filter(s => {
-        const d = s.dateObj;
-        const year = s.year;
-        const month= s.month;
-
-        if (applyYearMonth) {
-          if (filters.years.length && !filters.years.includes(String(year))) return false;
-          if (filters.months.length && !filters.months.includes(String(month))) return false;
-        }
-        if (filters.groupKeys.length  && s.groupKey   && !filters.groupKeys.includes(s.groupKey))   return false;
-        if (filters.stationKeys.length&& s.stationKey && !filters.stationKeys.includes(s.stationKey)) return false;
-
-        return d >= range.start && d <= range.end;
-      });
-
-      return { fleet, bookings, stations };
-    }
-
-    // ================== KPI / DELTA ==================
-    function computeKpiForRange(fleet, bookings, stations) {
-      const sumCanone = fleet.reduce((acc,f) => acc + (f.canoneImponibile || 0), 0);
-      const sumAss    = fleet.reduce((acc,f) => acc + (f.assicurazione   || 0), 0);
-      const costoTot  = sumCanone + sumAss;
-      const canoneIvato = sumCanone * 1.22;
-
-      const monthlyCounts = {};
-      stations.forEach(s => {
-        const key = `${s.year}-${String(s.month).padStart(2,"0")}`;
-        monthlyCounts[key] = (monthlyCounts[key] || 0) + (s.fleet || 0);
-      });
-      fleet.forEach(f => {
-        const key = `${f.year}-${String(f.month).padStart(2,"0")}`;
-        if (!(key in monthlyCounts)) {
-          monthlyCounts[key] = (monthlyCounts[key] || 0) + 1;
-        }
-      });
-      const values = Object.values(monthlyCounts);
-      const fleetSize = values.length ? values.reduce((a,b)=>a+b,0) / values.length : 0;
-
-      const sumRevenue  = bookings.reduce((acc,b)=>acc + (b.price || 0), 0);
-      const sumDuration = bookings.reduce((acc,b)=>acc + (b.duration || 0), 0);
-      const revenuePerDay = sumDuration > 0 ? sumRevenue / sumDuration : null;
-      const numPren = bookings.length;
-
-      return {
-        fleetSize,
-        canone: sumCanone,
-        canoneIvato,
-        assicurazione: sumAss,
-        costoTotale: costoTot,
-        revenue: sumRevenue,
-        revenuePerDay,
-        numPren
-      };
-    }
-
-    function computeJan2026Kpi(filters) {
-      const bookings = bookingsJan2026.filter(b => {
-        if (filters.tipiKeys.length   && b.tipoKey    && !filters.tipiKeys.includes(b.tipoKey)) return false;
-        if (filters.groupKeys.length  && b.gruppoKey  && !filters.groupKeys.includes(b.gruppoKey)) return false;
-        if (filters.acqKeys.length    && b.acqKey     && !filters.acqKeys.includes(b.acqKey))    return false;
-        if (filters.stationKeys.length&& b.stationKey && !filters.stationKeys.includes(b.stationKey)) return false;
-        return true;
-      });
-      return bookings.length;
-    }
-
-    function buildPrevText(labelPrev, currVal, prevVal, isCurrency=false, decimals=1) {
-      if (prevVal == null || isNaN(prevVal)) {
-        return labelPrev + ": -";
-      }
-      const diff = currVal - prevVal;
-      let pct   = null;
-      if (prevVal !== 0) pct = (diff / prevVal) * 100;
-
-      const baseLabel = labelPrev + ": " + (isCurrency ? formatCurrency(prevVal) : formatNumber(prevVal, decimals));
-      if (pct === null) return baseLabel + " (Δ n/d)";
-      const pctStr = formatNumber(Math.abs(pct), 1) + "%";
-      const sign = pct > 0 ? "+" : pct < 0 ? "−" : "±0%";
-      const cls  = pct > 0 ? "kpi-delta-pos" : pct < 0 ? "kpi-delta-neg" : "";
-      return `${baseLabel} · <span class="${cls}">${sign === "±0%" ? sign : sign + pctStr}</span>`;
-    }
-
-    // ================== GRAFICO (resto invariato) ==================
-    let mainChart = null;
-    function updateChart(allFleet, allBookings, stationsData, filters) {
-      const { fleet, bookings, stations } = filterDataForRange(
-        allFleet, allBookings, stationsData, filters, "current"
-      );
-
-      const buckets = {};
-      stations.forEach(s => {
-        const key = `${s.year}-${String(s.month).padStart(2,"0")}`;
-        if (!buckets[key]) buckets[key] = { fleet: 0, costo: 0, revenue: 0 };
-        buckets[key].fleet += (s.fleet || 0);
-      });
-      fleet.forEach(f => {
-        const key = `${f.year}-${String(f.month).padStart(2,"0")}`;
-        if (!buckets[key]) buckets[key] = { fleet: 0, costo: 0, revenue: 0 };
-        if (buckets[key].fleet === 0) buckets[key].fleet += 1;
-        buckets[key].costo += (f.canoneImponibile || 0) + (f.assicurazione || 0);
-      });
-      bookings.forEach(b => {
-        const key = `${b.year}-${String(b.month).padStart(2,"0")}`;
-        if (!buckets[key]) buckets[key] = { fleet: 0, costo: 0, revenue: 0 };
-        buckets[key].revenue += (b.price || 0);
-      });
-
-      const labels = Object.keys(buckets).sort();
-      const fleetSeries = labels.map(k => buckets[k].fleet);
-      const costoSeries = labels.map(k => buckets[k].costo);
-      const revSeries   = labels.map(k => buckets[k].revenue);
-
-      const ctx = document.getElementById("mainChart").getContext("2d");
-      if (mainChart) mainChart.destroy();
-
-      mainChart = new Chart(ctx, {
-        type: "line",
-        data: {
-          labels,
-          datasets: [
-            {
-              label: "Flotta (veicoli)",
-              data: fleetSeries,
-              borderWidth: 2,
-              tension: 0.25,
-              yAxisID: "y",
-            },
-            {
-              label: "Costo Totale (€)",
-              data: costoSeries,
-              borderWidth: 2,
-              tension: 0.25,
-              yAxisID: "y1",
-            },
-            {
-              label: "Revenue (€)",
-              data: revSeries,
-              borderWidth: 2,
-              borderDash: [5,5],
-              tension: 0.25,
-              yAxisID: "y1",
+    function getSelectedValues(selectEl) {
+        const values = [];
+        Array.from(selectEl.options).forEach(opt => {
+            if (opt.selected) {
+                values.push(opt.value);
             }
-          ]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          interaction: { mode: "index", intersect: false },
-          plugins: {
-            tooltip: {
-              callbacks: {
-                title: (items) => {
-                  if (!items.length) return "";
-                  const [y,m] = items[0].label.split("-");
-                  return `${monthNames[parseInt(m,10)-1]} ${y}`;
-                },
-                label: (item) => {
-                  const label = item.dataset.label || "";
-                  if (label.includes("Flotta")) {
-                    return `${label}: ${formatNumber(item.parsed.y,0)} veicoli`;
-                  } else {
-                    return `${label}: ${formatCurrency(item.parsed.y)}`;
-                  }
+        });
+        return new Set(values);
+    }
+
+    function setAllOptionsSelected(selectEl, selected = true) {
+        Array.from(selectEl.options).forEach(opt => {
+            opt.selected = selected;
+        });
+    }
+
+    function isValueSelected(selectedSet, value) {
+        if (!selectedSet || selectedSet.size === 0) return true;
+        return selectedSet.has(String(value));
+    }
+
+    function isValueSelectedCaseInsensitive(selectedSet, value) {
+        if (!selectedSet || selectedSet.size === 0) return true;
+        if (value == null) return false;
+        const setUpper = new Set(Array.from(selectedSet).map(v => String(v).toUpperCase()));
+        return setUpper.has(String(value).toUpperCase());
+    }
+
+    // =========================
+    // DETECTION CAMPI (robustezza nomi)
+    // =========================
+
+    function detectFieldName(sample, candidates) {
+        if (!sample) return null;
+        const keys = Object.keys(sample);
+        for (const cand of candidates) {
+            const lowerCand = cand.toLowerCase();
+            for (const k of keys) {
+                if (k.toLowerCase() === lowerCand) {
+                    return k;
                 }
-              }
             }
-          },
-          scales: {
-            x: {
-              ticks: {
-                callback: function(value) {
-                  const label = this.getLabelForValue(value);
-                  const [y,m] = label.split("-");
-                  return `${monthNames[parseInt(m,10)-1].slice(0,3)} ${y}`;
-                }
-              }
-            },
-            y: {
-              position: "left",
-              title: { display: true, text: "Flotta (veicoli)" },
-              beginAtZero: true
-            },
-            y1: {
-              position: "right",
-              title: { display: true, text: "€" },
-              grid: { drawOnChartArea: false },
-              beginAtZero: true
-            }
-          }
         }
-      });
+        return null;
     }
 
-    // ================== UPDATE DASHBOARD / RESET / INIT ==================
-    function updateDashboard() {
-      const projectionFactor = parseFloat(
-        document.getElementById("projectionSelect").value
-      );
-      const allBookings = generateAllBookings(projectionFactor);
+    // =========================
+    // NORMALIZZAZIONE FLOTTA
+    // =========================
 
-      const years      = getMultiSelectValues("yearFilter");
-      const months     = getMultiSelectValues("monthFilter");
-      const tipiKeys   = getMultiSelectValues("tipoFilter");
-      const groupKeys  = getMultiSelectValues("gruppoFilter");
-      const acqKeys    = getMultiSelectValues("acquisizioneFilter");
-      const stationKeys= getMultiSelectValues("stazioneFilter");
+    function mapGroupLabel(raw) {
+        if (!raw) return null;
+        let r = String(raw).trim();
+        if (!r) return null;
+        let upper = r.toUpperCase();
 
-      const ranges = getCurrentAndPreviousRanges({ years, months });
+        // Mappature specifiche per casi noti
+        if (upper === "VAN") return "People Mover";      // come richiesto in precedenza
+        if (upper === "FURGONE") return "Commercial Van";
+        if (upper.includes("COMMERCIAL")) return "Commercial Van";
+        if (upper.includes("PEOPLE")) return "People Mover";
+        if (upper === "SUV") return "Suv";
+        if (upper === "STATION WAGON") return "Station Wagon";
 
-      const filters = {
-        years,
-        months,
-        tipiKeys,
-        groupKeys,
-        acqKeys,
-        stationKeys,
-        currentRange: ranges.current,
-        previousRange: ranges.previous
-      };
+        // match diretto su lista fissa
+        for (const label of GROUP_LABELS) {
+            if (upper === label.toUpperCase()) {
+                return label;
+            }
+        }
 
-      const current  = filterDataForRange(fleetData, allBookings, fleetStations2025, filters, "current");
-      const previous = filterDataForRange(fleetData, allBookings, fleetStations2025, filters, "previous");
-
-      const kCurr = computeKpiForRange(current.fleet, current.bookings, current.stations);
-      const kPrev = computeKpiForRange(previous.fleet, previous.bookings, previous.stations);
-
-      document.getElementById("kpiFleetSize").textContent      = formatNumber(kCurr.fleetSize,1);
-      document.getElementById("kpiCanone").textContent         = formatCurrency(kCurr.canone);
-      document.getElementById("kpiCanoneIvato").textContent    = formatCurrency(kCurr.canoneIvato);
-      document.getElementById("kpiAssicurazione").textContent  = formatCurrency(kCurr.assicurazione);
-      document.getElementById("kpiCostoTotale").textContent    = formatCurrency(kCurr.costoTotale);
-      document.getElementById("kpiRevenue").textContent        = formatCurrency(kCurr.revenue);
-      document.getElementById("kpiRevenuePerDay").textContent  = formatNumber(kCurr.revenuePerDay,2);
-      document.getElementById("kpiNumPren").textContent        = formatNumber(kCurr.numPren,0);
-
-      document.getElementById("kpiFleetSizePrev").innerHTML =
-        buildPrevText("Periodo precedente", kCurr.fleetSize,      kPrev.fleetSize,      false,1);
-      document.getElementById("kpiCanonePrev").innerHTML =
-        buildPrevText("Periodo precedente", kCurr.canone,         kPrev.canone,         true);
-      document.getElementById("kpiAssicurazionePrev").innerHTML =
-        buildPrevText("Periodo precedente", kCurr.assicurazione,  kPrev.assicurazione,  true);
-      document.getElementById("kpiCostoTotalePrev").innerHTML =
-        buildPrevText("Periodo precedente", kCurr.costoTotale,    kPrev.costoTotale,    true);
-      document.getElementById("kpiRevenuePrev").innerHTML =
-        buildPrevText("Periodo precedente", kCurr.revenue,        kPrev.revenue,        true);
-      document.getElementById("kpiRevenuePerDayPrev").innerHTML =
-        buildPrevText("Periodo precedente", kCurr.revenuePerDay,  kPrev.revenuePerDay,  false,2);
-      document.getElementById("kpiNumPrenPrev").innerHTML =
-        buildPrevText("Periodo precedente", kCurr.numPren,        kPrev.numPren,        false,0);
-
-      const prenGen = computeJan2026Kpi(filters);
-      document.getElementById("kpiPrenGen2026").textContent = formatNumber(prenGen,0);
-
-      updateChart(fleetData, allBookings, fleetStations2025, filters);
+        // fallback: restituisci stringa originale (così almeno non buttiamo dati)
+        return r;
     }
 
-    function resetFilters() {
-      ["yearFilter","monthFilter","tipoFilter","gruppoFilter","acquisizioneFilter","stazioneFilter"]
-        .forEach(id => {
-          const sel = document.getElementById(id);
-          for (let i=0; i<sel.options.length; i++) sel.options[i].selected = true;
-        });
-      document.getElementById("projectionSelect").value = "0.10";
-      updateDashboard();
+    function normalizeFleetData(rawFleet) {
+        if (!Array.isArray(rawFleet)) return [];
+
+        const sample = rawFleet[0] || {};
+        const dateField = detectFieldName(sample, ["refDate", "date", "data", "referenceDate"]);
+        const groupField = detectFieldName(sample, ["gruppo", "group", "carGroup", "categoria"]);
+        const acqField = detectFieldName(sample, ["acquisizione", "acquisition", "tipo_acquisizione"]);
+        const stationField = detectFieldName(sample, ["stazione", "station", "location"]);
+        const canoneField = detectFieldName(sample, ["canoneImponibile", "canone_imponibile", "canone"]);
+        const assField = detectFieldName(sample, ["assicurazione", "insurance", "premio_assicurativo"]);
+        const tipologiaField = detectFieldName(sample, ["tipologia", "tipo"]);
+
+        const normalized = [];
+
+        for (const row of rawFleet) {
+            const d = parseDateFlexible(row[dateField]);
+            if (!d) continue;
+            const year = d.getFullYear();
+            const month = d.getMonth() + 1;
+
+            const groupRaw = groupField ? row[groupField] : null;
+            const groupLabel = mapGroupLabel(groupRaw);
+
+            const acq = acqField ? (row[acqField] || "").toString().trim() : "";
+            const station = stationField ? (row[stationField] || "").toString().trim() : "";
+            const canone = canoneField ? Number(row[canoneField]) || 0 : 0;
+            const ass = assField ? Number(row[assField]) || 0 : 0;
+            const tip = tipologiaField ? (row[tipologiaField] || "").toString().trim() : "";
+
+            if (station) stationsList.add(station);
+            if (acq) acquisitionList.add(acq);
+            if (tip) tipologiaList.add(tip);
+
+            normalized.push({
+                raw: row,
+                date: d,
+                year,
+                month,
+                groupLabel,
+                acquisition: acq,
+                station,
+                canoneImponibile: canone,
+                assicurazione: ass,
+                tipologia: tip
+            });
+        }
+
+        return normalized;
     }
 
-    async function initDashboard() {
-      try {
-        [fleetData, fleetStations2025, bookings2025, bookingsJan2026] = await Promise.all([
-          loadJsonClean("fleetData_clean.json"),
-          loadJsonClean("fleetStations2025.json"),
-          loadJsonClean("bookings2025.json"),
-          loadJsonClean("bookingsJan2026.json")
+    // =========================
+    // NORMALIZZAZIONE PRENOTAZIONI
+    // =========================
+
+    function normalizeBookings(rawBookings, isJan2026 = false) {
+        if (!Array.isArray(rawBookings)) return [];
+
+        const sample = rawBookings[0] || {};
+        const dateField = detectFieldName(sample, [
+            "startDate", "from", "data_inizio", "DATA_INIZIO", "bookingStart", "start"
+        ]);
+        const groupField = detectFieldName(sample, [
+            "gruppo", "group", "carGroup", "car_type", "carType"
+        ]);
+        const stationField = detectFieldName(sample, [
+            "stazione", "station", "location"
+        ]);
+        const acqField = detectFieldName(sample, [
+            "acquisizione", "acquisition", "tipo_acquisizione"
+        ]);
+        const durationField = detectFieldName(sample, [
+            "duration", "giorni", "days", "giorni_noleggio"
+        ]);
+        const priceField = detectFieldName(sample, [
+            "price", "revenue", "amount", "totale", "total"
+        ]);
+        const vehicleField = detectFieldName(sample, [
+            "targa", "plate", "vehicleId", "id_vehicle", "car_id", "idVeicolo"
         ]);
 
-        // --- normalizzazione flotta (usiamo SOLO colonne note del JSON pulito) ---
-        fleetData = fleetData.map(row => {
-          const refDate = row.refDate;
-          const d = parseISO(refDate);
-          const gruppoLabel = normalizeLabel(row.gruppo);
-          return {
-            ...row,
-            refDate,
-            refDateObj: d,
-            year: getYear(d),
-            month: getMonth(d),
-            gruppoKey: normalizeKey(row.gruppo),
-            gruppoLabel,
-            // tipologia per ora uguale al gruppo se non c'è una colonna dedicata
-            tipoKey: normalizeKey(row.tipologia || row.tipo || row.gruppo),
-            tipoLabel: normalizeLabel(row.tipologia || row.tipo || row.gruppo),
-            acqKey: normalizeKey(row.acquisizione),
-            acqLabel: normalizeLabel(row.acquisizione),
-            stationKey: normalizeKey(row.stazione || row.station || ""),
-            stationLabel: normalizeLabel(row.stazione || row.station || ""),
-            canoneImponibile: Number(row.canoneImponibile || 0),
-            assicurazione:   Number(row.assicurazione   || 0)
-          };
+        const normalized = [];
+
+        for (let idx = 0; idx < rawBookings.length; idx++) {
+            const row = rawBookings[idx];
+            const d = parseDateFlexible(row[dateField]);
+            if (!d) continue;
+            const year = d.getFullYear();
+            const month = d.getMonth() + 1;
+
+            const groupRaw = groupField ? row[groupField] : null;
+            const groupLabel = mapGroupLabel(groupRaw);
+
+            const station = stationField ? (row[stationField] || "").toString().trim() : "";
+            const acq = acqField ? (row[acqField] || "").toString().trim() : "";
+            const duration = durationField ? Number(row[durationField]) || 0 : 0;
+            const price = priceField ? Number(row[priceField]) || 0 : 0;
+            const vehicleId = vehicleField ? (row[vehicleField] || "").toString().trim() : "BOOKING_" + idx + "_" + (isJan2026 ? "J26" : "B25");
+
+            if (station) stationsList.add(station);
+            if (acq) acquisitionList.add(acq);
+
+            normalized.push({
+                raw: row,
+                date: d,
+                year,
+                month,
+                groupLabel,
+                station,
+                acquisition: acq,
+                duration,
+                price,
+                vehicleId
+            });
+        }
+
+        return normalized;
+    }
+
+    // =========================
+    // PROIEZIONI BOOKING 2024–2026
+    // =========================
+
+    function generateAllBookings(projectionFactor) {
+        const all = [];
+
+        // 2025 reali + proiezioni 2024/2026 basate su booking 2025
+        for (const b of baseBookings2025) {
+            // 2025 reale
+            all.push({ ...b });
+
+            // 2024: -1 anno, -5% price
+            const d2024 = new Date(b.date.getTime());
+            d2024.setFullYear(b.year - 1);
+            all.push({
+                ...b,
+                date: d2024,
+                year: b.year - 1,
+                month: b.month,
+                price: b.price * 0.95 // -5%
+            });
+
+            // 2026: +1 anno, +projectionFactor, solo se mese != gennaio
+            if (b.month !== 1) {
+                const d2026 = new Date(b.date.getTime());
+                d2026.setFullYear(b.year + 1);
+                all.push({
+                    ...b,
+                    date: d2026,
+                    year: b.year + 1,
+                    month: b.month,
+                    price: b.price * (1 + projectionFactor)
+                });
+            }
+        }
+
+        // Gennaio 2026 reale: nessuna proiezione
+        for (const jb of jan2026Bookings) {
+            all.push({ ...jb });
+        }
+
+        allBookings = all;
+    }
+
+    // =========================
+    // FILTRI: RANGE CORRENTE / PRECEDENTE
+    // =========================
+
+    function getCurrentAndPreviousRanges(filters) {
+        // Anni selezionati
+        let years = Array.from(filters.yearsSelected).map(v => parseInt(v, 10)).filter(v => !isNaN(v));
+        if (years.length === 0) {
+            years = [2024, 2025, 2026];
+        }
+        years.sort((a, b) => a - b);
+
+        // Mesi selezionati
+        let months = Array.from(filters.monthsSelected).map(v => parseInt(v, 10)).filter(v => !isNaN(v));
+        if (months.length === 0) {
+            months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+        }
+        months.sort((a, b) => a - b);
+
+        const startYear = years[0];
+        const endYear = years[years.length - 1];
+        const startMonth = months[0];
+        const endMonth = months[months.length - 1];
+
+        const startIndex = ymToIndex(startYear, startMonth);
+        const endIndex = ymToIndex(endYear, endMonth);
+        const monthsCount = endIndex - startIndex + 1;
+
+        const currentStart = new Date(startYear, startMonth - 1, 1);
+        const currentEnd = new Date(endYear, endMonth, 0); // ultimo giorno del mese
+
+        let previousStart = null;
+        let previousEnd = null;
+
+        const prevEndIndex = startIndex - 1;
+        if (prevEndIndex >= 0 && monthsCount > 0) {
+            const prevStartIndex = prevEndIndex - (monthsCount - 1);
+            const ymStart = indexToYm(prevStartIndex);
+            const ymEnd = indexToYm(prevEndIndex);
+            previousStart = new Date(ymStart.year, ymStart.month - 1, 1);
+            previousEnd = new Date(ymEnd.year, ymEnd.month, 0);
+        }
+
+        return {
+            current: { start: currentStart, end: currentEnd },
+            previous: previousStart && previousEnd ? { start: previousStart, end: previousEnd } : null
+        };
+    }
+
+    // =========================
+    // FILTRAGGIO DATI PER RANGE
+    // =========================
+
+    function filterDataForRange(range, filters, includeTimeFiltersForCurrent, isPreviousRange) {
+        const { start, end } = range;
+        const fleet = [];
+        const bookings = [];
+
+        const yearsSelected = filters.yearsSelected;
+        const monthsSelected = filters.monthsSelected;
+
+        for (const f of fleetData) {
+            if (!f.date || f.date < start || f.date > end) continue;
+
+            // I filtri temporali (anno/mese) si applicano solo al periodo corrente
+            if (includeTimeFiltersForCurrent) {
+                if (!isValueSelected(yearsSelected, f.year)) continue;
+                if (!isValueSelected(monthsSelected, f.month)) continue;
+            }
+
+            if (!isValueSelectedCaseInsensitive(filters.groupsSelected, f.groupLabel)) continue;
+            if (!isValueSelectedCaseInsensitive(filters.acquisitionsSelected, f.acquisition)) continue;
+            if (!isValueSelectedCaseInsensitive(filters.stationsSelected, f.station)) continue;
+
+            if (filters.tipologieSelected && filters.tipologieSelected.size > 0) {
+                if (!isValueSelectedCaseInsensitive(filters.tipologieSelected, f.tipologia)) continue;
+            }
+
+            fleet.push(f);
+        }
+
+        for (const b of allBookings) {
+            if (!b.date || b.date < start || b.date > end) continue;
+
+            if (includeTimeFiltersForCurrent) {
+                if (!isValueSelected(yearsSelected, b.year)) continue;
+                if (!isValueSelected(monthsSelected, b.month)) continue;
+            }
+
+            if (!isValueSelectedCaseInsensitive(filters.groupsSelected, b.groupLabel)) continue;
+            if (!isValueSelectedCaseInsensitive(filters.acquisitionsSelected, b.acquisition)) continue;
+            if (!isValueSelectedCaseInsensitive(filters.stationsSelected, b.station)) continue;
+
+            bookings.push(b);
+        }
+
+        return { fleet, bookings };
+    }
+
+    // =========================
+    // KPI: AGGREGAZIONI
+    // =========================
+
+    function computeFleetMonthlyCounts(fleet) {
+        const map = new Map(); // key: YYYY-MM, value: count
+        for (const f of fleet) {
+            const key = f.year + "-" + String(f.month).padStart(2, "0");
+            map.set(key, (map.get(key) || 0) + 1);
+        }
+        return map;
+    }
+
+    function computeFleetMonthlyCosts(fleet) {
+        const mapCost = new Map();      // key => costo totale
+        const mapCanone = new Map();    // key => canone imponibile
+        const mapAss = new Map();       // key => assicurazione
+
+        for (const f of fleet) {
+            const key = f.year + "-" + String(f.month).padStart(2, "0");
+            const canone = f.canoneImponibile || 0;
+            const ass = f.assicurazione || 0;
+            mapCanone.set(key, (mapCanone.get(key) || 0) + canone);
+            mapAss.set(key, (mapAss.get(key) || 0) + ass);
+            mapCost.set(key, (mapCost.get(key) || 0) + canone + ass);
+        }
+
+        return { mapCost, mapCanone, mapAss };
+    }
+
+    function computeBookingMonthlyAggregates(bookings) {
+        const mapRevenue = new Map();
+        const mapDuration = new Map();
+        const mapBookingsCount = new Map();
+        const mapVehicles = new Map(); // key => Set(vehicleId)
+
+        for (const b of bookings) {
+            const key = b.year + "-" + String(b.month).padStart(2, "0");
+            mapRevenue.set(key, (mapRevenue.get(key) || 0) + (b.price || 0));
+            mapDuration.set(key, (mapDuration.get(key) || 0) + (b.duration || 0));
+            mapBookingsCount.set(key, (mapBookingsCount.get(key) || 0) + 1);
+
+            const setV = mapVehicles.get(key) || new Set();
+            setV.add(b.vehicleId);
+            mapVehicles.set(key, setV);
+        }
+
+        return { mapRevenue, mapDuration, mapBookingsCount, mapVehicles };
+    }
+
+    function sumMap(map) {
+        let s = 0;
+        for (const v of map.values()) s += v;
+        return s;
+    }
+
+    function countDistinctVehicles(bookings) {
+        const set = new Set();
+        for (const b of bookings) {
+            set.add(b.vehicleId);
+        }
+        return set.size;
+    }
+
+    // =========================
+    // UPDATE KPI CARD HELPER
+    // =========================
+
+    function updateKpiCard(options) {
+        const {
+            idPrefix,
+            currentValue,
+            previousValue,
+            isCurrency = false,
+            decimals = 0,
+            showPrevious = true,
+            showDelta = true
+        } = options;
+
+        const valueEl = document.getElementById(`kpi-${idPrefix}-value`);
+        const prevEl = document.getElementById(`kpi-${idPrefix}-previous`);
+        const deltaEl = document.getElementById(`kpi-${idPrefix}-delta`);
+
+        if (valueEl) {
+            valueEl.textContent = isCurrency
+                ? formatCurrency(currentValue)
+                : formatNumber(currentValue, decimals);
+        }
+
+        if (prevEl) {
+            if (!showPrevious) {
+                prevEl.textContent = "";
+            } else {
+                const prevText = isCurrency
+                    ? formatCurrency(previousValue)
+                    : formatNumber(previousValue, decimals);
+                prevEl.textContent = "Periodo prec.: " + (prevText === "-" ? "-" : prevText);
+            }
+        }
+
+        if (deltaEl) {
+            deltaEl.classList.remove("delta-positive", "delta-negative", "delta-neutral");
+            if (!showDelta || previousValue == null || isNaN(previousValue) || previousValue === 0) {
+                deltaEl.textContent = showDelta ? "Δ %: N/A" : "";
+                deltaEl.classList.add("delta-neutral");
+            } else {
+                const diff = currentValue - previousValue;
+                const perc = (diff / Math.abs(previousValue)) * 100;
+                const sign = diff > 0 ? "+" : diff < 0 ? "" : "±";
+                deltaEl.textContent = `${sign}${formatNumber(perc, 1)}%`;
+                if (diff > 0) {
+                    deltaEl.classList.add("delta-positive");
+                } else if (diff < 0) {
+                    deltaEl.classList.add("delta-negative");
+                } else {
+                    deltaEl.classList.add("delta-neutral");
+                }
+            }
+        }
+    }
+
+    // =========================
+    // CALCOLO KPI GLOBALI
+    // =========================
+
+    function updateKpis(currentData, previousData, ranges, filters) {
+        const currentFleet = currentData.fleet;
+        const previousFleet = previousData ? previousData.fleet : [];
+        const currentBookings = currentData.bookings;
+        const previousBookings = previousData ? previousData.bookings : [];
+
+        // Flotta: dimensione media per mese nel range selezionato
+        const fleetMonthlyCurrent = computeFleetMonthlyCounts(currentFleet);
+        const fleetMonthlyPrevious = computeFleetMonthlyCounts(previousFleet);
+
+        const fleetMonthsCurrent = fleetMonthlyCurrent.size;
+        const fleetMonthsPrevious = fleetMonthlyPrevious.size;
+
+        const fleetSizeCurrent = fleetMonthsCurrent > 0 ? sumMap(fleetMonthlyCurrent) / fleetMonthsCurrent : 0;
+        const fleetSizePrevious = fleetMonthsPrevious > 0 ? sumMap(fleetMonthlyPrevious) / fleetMonthsPrevious : 0;
+
+        updateKpiCard({
+            idPrefix: "fleet-size",
+            currentValue: fleetSizeCurrent,
+            previousValue: fleetSizePrevious,
+            isCurrency: false,
+            decimals: 1,
+            showPrevious: true,
+            showDelta: true
         });
 
-        // --- normalizzazione stazioni (colonne note: date, group/gruppo, station/stazione, fleet) ---
-        fleetStations2025 = fleetStations2025.map(s => {
-          const d = parseISO(s.date || s.DATA || s.data);
-          const year = s.year || getYear(d);
-          const month= s.month|| getMonth(d);
-          return {
-            ...s,
-            dateObj: d,
-            year,
-            month,
-            groupKey: normalizeKey(s.group || s.gruppo),
-            groupLabel: normalizeLabel(s.group || s.gruppo),
-            stationKey: normalizeKey(s.station || s.stazione),
-            stationLabel: normalizeLabel(s.station || s.stazione),
-            fleet: Number(s.fleet || s.FLOTTA || 0)
-          };
+        // Canoni e assicurazione
+        const { mapCost: costMapCurrent, mapCanone: canoneMapCurrent, mapAss: assMapCurrent } =
+            computeFleetMonthlyCosts(currentFleet);
+        const { mapCost: costMapPrevious, mapCanone: canoneMapPrevious, mapAss: assMapPrevious } =
+            computeFleetMonthlyCosts(previousFleet);
+
+        const canoneCurrent = sumMap(canoneMapCurrent);
+        const canonePrevious = sumMap(canoneMapPrevious);
+        const assCurrent = sumMap(assMapCurrent);
+        const assPrevious = sumMap(assMapPrevious);
+        const costCurrent = sumMap(costMapCurrent);
+        const costPrevious = sumMap(costMapPrevious);
+
+        // Canone imponibile
+        updateKpiCard({
+            idPrefix: "canone",
+            currentValue: canoneCurrent,
+            previousValue: canonePrevious,
+            isCurrency: true,
+            decimals: 0,
+            showPrevious: true,
+            showDelta: true
         });
 
-        // bookings 2025: usiamo detectColumn solo qui perché non conosciamo lo schema preciso
-        const bSample = bookings2025[0] || {};
-        const bGroupCol = detectColumn(bSample, ["gruppo","group","cartype","car_type","tipologia","tipo"]);
-        const bTipoCol  = detectColumn(bSample, ["tipologia","tipo"]);
-        const bAcqCol   = detectColumn(bSample, ["acquisizione","acquisition"]);
-        const bStatCol  = detectColumn(bSample, ["stazione","station"]);
-        const bDurCol   = detectColumn(bSample, ["duration","durata"]);
-        const bPriceCol = detectColumn(bSample, ["price","prezzo","revenue"]);
+        // Canone IVATO (solo descrittivo)
+        const canoneIvato = canoneCurrent * 1.22;
+        const canoneIvatoElValue = document.getElementById("kpi-canone-ivato-value");
+        if (canoneIvatoElValue) {
+            canoneIvatoElValue.textContent = formatCurrency(canoneIvato);
+        }
+        const canoneIvatoDeltaEl = document.getElementById("kpi-canone-ivato-delta");
+        if (canoneIvatoDeltaEl) {
+            canoneIvatoDeltaEl.textContent = ""; // nessun confronto richiesto
+        }
 
-        bookings2025 = bookings2025.map(b => {
-          const d = parseISO(b.startDate || b.DATA_INIZIO || b.dataInizio || b.From);
-          return {
-            ...b,
-            startDate: (b.startDate || b.DATA_INIZIO || b.dataInizio || b.From),
-            year: getYear(d),
-            month: getMonth(d),
-            gruppoKey: normalizeKey(bGroupCol ? b[bGroupCol] : ""),
-            gruppoLabel: normalizeLabel(bGroupCol ? b[bGroupCol] : ""),
-            tipoKey: normalizeKey(bTipoCol ? b[bTipoCol] : (bGroupCol ? b[bGroupCol] : "")),
-            tipoLabel: normalizeLabel(bTipoCol ? b[bTipoCol] : (bGroupCol ? b[bGroupCol] : "")),
-            acqKey: normalizeKey(bAcqCol ? b[bAcqCol] : ""),
-            acqLabel: normalizeLabel(bAcqCol ? b[bAcqCol] : ""),
-            stationKey: normalizeKey(bStatCol ? b[bStatCol] : ""),
-            stationLabel: normalizeLabel(bStatCol ? b[bStatCol] : ""),
-            duration: Number(bDurCol ? b[bDurCol] : b.duration || 0),
-            price:    Number(bPriceCol ? b[bPriceCol] : b.price || 0)
-          };
+        // Assicurazione
+        updateKpiCard({
+            idPrefix: "assicurazione",
+            currentValue: assCurrent,
+            previousValue: assPrevious,
+            isCurrency: true,
+            decimals: 0,
+            showPrevious: true,
+            showDelta: true
         });
 
-        // bookings gennaio 2026
-        const bjSample = bookingsJan2026[0] || {};
-        const bjGroupCol = detectColumn(bjSample, ["gruppo","group","cartype","car_type","tipologia","tipo"]);
-        const bjTipoCol  = detectColumn(bjSample, ["tipologia","tipo"]);
-        const bjAcqCol   = detectColumn(bjSample, ["acquisizione","acquisition"]);
-        const bjStatCol  = detectColumn(bjSample, ["stazione","station"]);
-        const bjDurCol   = detectColumn(bjSample, ["duration","durata"]);
-        const bjPriceCol = detectColumn(bjSample, ["price","prezzo","revenue"]);
-
-        bookingsJan2026 = bookingsJan2026.map(b => {
-          const d = parseISO(b.startDate || b.DATA_INIZIO || b.dataInizio || b.From);
-          return {
-            ...b,
-            startDate: (b.startDate || b.DATA_INIZIO || b.dataInizio || b.From),
-            year: getYear(d),
-            month: getMonth(d),
-            gruppoKey: normalizeKey(bjGroupCol ? b[bjGroupCol] : ""),
-            gruppoLabel: normalizeLabel(bjGroupCol ? b[bjGroupCol] : ""),
-            tipoKey: normalizeKey(bjTipoCol ? b[bjTipoCol] : (bjGroupCol ? b[bjGroupCol] : "")),
-            tipoLabel: normalizeLabel(bjTipoCol ? b[bjTipoCol] : (bjGroupCol ? b[bjGroupCol] : "")),
-            acqKey: normalizeKey(bjAcqCol ? b[bjAcqCol] : ""),
-            acqLabel: normalizeLabel(bjAcqCol ? b[bjAcqCol] : ""),
-            stationKey: normalizeKey(bjStatCol ? b[bjStatCol] : ""),
-            stationLabel: normalizeLabel(bjStatCol ? b[bjStatCol] : ""),
-            duration: Number(bjDurCol ? b[bjDurCol] : b.duration || 0),
-            price:    Number(bjPriceCol ? b[bjPriceCol] : b.price || 0)
-          };
+        // Costo totale
+        updateKpiCard({
+            idPrefix: "costo-totale",
+            currentValue: costCurrent,
+            previousValue: costPrevious,
+            isCurrency: true,
+            decimals: 0,
+            showPrevious: true,
+            showDelta: true
         });
 
-        const defaultProj = parseFloat(document.getElementById("projectionSelect").value);
-        const allBookings = generateAllBookings(defaultProj);
+        // Booking aggregati
+        const {
+            mapRevenue: revCurrentMap,
+            mapDuration: durCurrentMap,
+            mapBookingsCount: bookCurrentMap,
+            mapVehicles: vehiclesCurrentMap
+        } = computeBookingMonthlyAggregates(currentBookings);
 
-        populateFilterOptions(fleetData, allBookings, fleetStations2025);
+        const {
+            mapRevenue: revPrevMap,
+            mapDuration: durPrevMap,
+            mapBookingsCount: bookPrevMap,
+            mapVehicles: vehiclesPrevMap
+        } = computeBookingMonthlyAggregates(previousBookings);
 
-        ["yearFilter","monthFilter","tipoFilter","gruppoFilter",
-         "acquisizioneFilter","stazioneFilter","projectionSelect"]
-          .forEach(id => {
-            document.getElementById(id).addEventListener("change", updateDashboard);
-          });
+        const revenueCurrent = sumMap(revCurrentMap);
+        const revenuePrevious = sumMap(revPrevMap);
 
-        document.getElementById("resetFiltersBtn")
-          .addEventListener("click", resetFilters);
+        const durationCurrent = sumMap(durCurrentMap);
+        const durationPrevious = sumMap(durPrevMap);
 
-        updateDashboard();
-      } catch (err) {
-        console.error(err);
-        alert("Errore nel caricamento dei dati JSON. Controlla i file nel repository.");
-      }
+        const numBookingCurrent = sumMap(bookCurrentMap);
+        const numBookingPrevious = sumMap(bookPrevMap);
+
+        const vehiclesCurrent = countDistinctVehicles(currentBookings);
+        const vehiclesPrevious = countDistinctVehicles(previousBookings);
+
+        const revenuePerDayCurrent = durationCurrent > 0 ? revenueCurrent / durationCurrent : 0;
+        const revenuePerDayPrevious = durationPrevious > 0 ? revenuePrevious / durationPrevious : 0;
+
+        // Revenue
+        updateKpiCard({
+            idPrefix: "revenue",
+            currentValue: revenueCurrent,
+            previousValue: revenuePrevious,
+            isCurrency: true,
+            decimals: 0,
+            showPrevious: true,
+            showDelta: true
+        });
+
+        // Revenue per day
+        updateKpiCard({
+            idPrefix: "revenue-day",
+            currentValue: revenuePerDayCurrent,
+            previousValue: revenuePerDayPrevious,
+            isCurrency: true,
+            decimals: 1,
+            showPrevious: true,
+            showDelta: true
+        });
+
+        // Numero prenotazioni
+        updateKpiCard({
+            idPrefix: "num-prenotazioni",
+            currentValue: numBookingCurrent,
+            previousValue: numBookingPrevious,
+            isCurrency: false,
+            decimals: 0,
+            showPrevious: true,
+            showDelta: true
+        });
+
+        // Veicoli effettivamente noleggiati
+        updateKpiCard({
+            idPrefix: "vehicles-rented",
+            currentValue: vehiclesCurrent,
+            previousValue: vehiclesPrevious,
+            isCurrency: false,
+            decimals: 0,
+            showPrevious: true,
+            showDelta: true
+        });
+
+        // Prenotazioni effettive Gennaio 2026 (SEM­PRE solo gennaio 2026, filtro gruppo/acq/stazione/tipologia, no proiezione)
+        const prenGen26Count = computePrenotazioniGennaio2026(filters);
+        const prenGen26ValueEl = document.getElementById("kpi-prenotazioni-gen26-value");
+        if (prenGen26ValueEl) {
+            prenGen26ValueEl.textContent = formatNumber(prenGen26Count, 0);
+        }
+        const prenGen26DeltaEl = document.getElementById("kpi-prenotazioni-gen26-delta");
+        if (prenGen26DeltaEl) prenGen26DeltaEl.textContent = "";
+    }
+
+    function computePrenotazioniGennaio2026(filters) {
+        let count = 0;
+        for (const b of jan2026Bookings) {
+            if (b.month !== 1 || b.year !== 2026) continue;
+            if (!isValueSelectedCaseInsensitive(filters.groupsSelected, b.groupLabel)) continue;
+            if (!isValueSelectedCaseInsensitive(filters.acquisitionsSelected, b.acquisition)) continue;
+            if (!isValueSelectedCaseInsensitive(filters.stationsSelected, b.station)) continue;
+            if (filters.tipologieSelected && filters.tipologieSelected.size > 0) {
+                // tipologia non prevista nei booking -> ignoriamo filtro tipologia per questo KPI
+            }
+            count++;
+        }
+        return count;
+    }
+
+    // =========================
+    // GRAFICO CHART.JS
+    // =========================
+
+    function updateChart(currentData, ranges) {
+        const ctx = document.getElementById("mainChart").getContext("2d");
+
+        const currentFleet = currentData.fleet;
+        const currentBookings = currentData.bookings;
+        const { start, end } = ranges.current;
+
+        const fleetMonthlyCounts = computeFleetMonthlyCounts(currentFleet);
+        const { mapCost, mapCanone, mapAss } = computeFleetMonthlyCosts(currentFleet);
+        const {
+            mapRevenue,
+            mapDuration,
+            mapBookingsCount,
+            mapVehicles
+        } = computeBookingMonthlyAggregates(currentBookings);
+
+        // Costruiamo asse X: tutti i mesi compresi tra start e end
+        const labels = [];
+        const flottaSeries = [];
+        const costSeries = [];
+        const revenueSeries = [];
+        const vehiclesSeries = [];
+
+        let idx = ymToIndex(start.getFullYear(), start.getMonth() + 1);
+        const endIdx = ymToIndex(end.getFullYear(), end.getMonth() + 1);
+
+        while (idx <= endIdx) {
+            const { year, month } = indexToYm(idx);
+            const key = year + "-" + String(month).padStart(2, "0");
+
+            labels.push(monthLabel(year, month));
+            flottaSeries.push(flottaSeriesValue(key, fleetMonthlyCounts));
+            costSeries.push(mapCost.get(key) || 0);
+            revenueSeries.push(mapRevenue.get(key) || 0);
+
+            const setVehicles = mapVehicles.get(key);
+            vehiclesSeries.push(setVehicles ? setVehicles.size : 0);
+
+            idx++;
+        }
+
+        function flottaSeriesValue(key, map) {
+            return map.get(key) || 0;
+        }
+
+        const data = {
+            labels,
+            datasets: [
+                {
+                    label: "Flotta (veicoli)",
+                    data: flottaSeries,
+                    yAxisID: "y",
+                    tension: 0.3,
+                    borderWidth: 2,
+                    fill: false,
+                    borderColor: "rgba(13,110,253,0.9)",
+                    pointRadius: 2
+                },
+                {
+                    label: "Costo totale (€)",
+                    data: costSeries,
+                    yAxisID: "y1",
+                    tension: 0.3,
+                    borderWidth: 2,
+                    fill: false,
+                    borderColor: "rgba(220,53,69,0.9)",
+                    pointRadius: 2
+                },
+                {
+                    label: "Revenue (€)",
+                    data: revenueSeries,
+                    yAxisID: "y1",
+                    tension: 0.3,
+                    borderWidth: 2,
+                    fill: false,
+                    borderColor: "rgba(25,135,84,0.9)",
+                    pointRadius: 2
+                },
+                {
+                    label: "Veicoli effett. noleggiati",
+                    data: vehiclesSeries,
+                    yAxisID: "y",
+                    tension: 0.3,
+                    borderWidth: 2,
+                    fill: false,
+                    borderColor: "rgba(255,193,7,0.9)",
+                    pointRadius: 2
+                }
+            ]
+        };
+
+        const config = {
+            type: "line",
+            data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {
+                    mode: "index",
+                    intersect: false
+                },
+                plugins: {
+                    legend: {
+                        display: true
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.dataset.label || "";
+                                const value = context.parsed.y;
+                                if (label.includes("€")) {
+                                    return label + ": " + formatCurrency(value);
+                                }
+                                return label + ": " + formatNumber(value, 0);
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        display: true,
+                        title: {
+                            display: false
+                        }
+                    },
+                    y: {
+                        type: "linear",
+                        position: "left",
+                        title: {
+                            display: true,
+                            text: "Veicoli / Noleggi"
+                        },
+                        beginAtZero: true
+                    },
+                    y1: {
+                        type: "linear",
+                        position: "right",
+                        title: {
+                            display: true,
+                            text: "Euro (€)"
+                        },
+                        beginAtZero: true,
+                        grid: {
+                            drawOnChartArea: false
+                        }
+                    }
+                }
+            }
+        };
+
+        if (chartInstance) {
+            chartInstance.destroy();
+        }
+        chartInstance = new Chart(ctx, config);
+    }
+
+    // =========================
+    // CSV EXPORT
+    // =========================
+
+    function downloadFilteredCsv(currentData) {
+        const bookings = currentData.bookings;
+
+        const rows = [];
+        rows.push([
+            "Data",
+            "Anno",
+            "Mese",
+            "Gruppo",
+            "Stazione",
+            "Acquisizione",
+            "Duration",
+            "Price"
+        ]);
+
+        for (const b of bookings) {
+            if (!b.date) continue;
+            const dateStr = b.date.toISOString().slice(0, 10);
+            rows.push([
+                dateStr,
+                b.year,
+                b.month,
+                (b.groupLabel || "").replace(/;/g, ","),
+                (b.station || "").replace(/;/g, ","),
+                (b.acquisition || "").replace(/;/g, ","),
+                b.duration || 0,
+                b.price || 0
+            ]);
+        }
+
+        let csvContent = "";
+        rows.forEach((row, idx) => {
+            const line = row.map(v => {
+                if (v == null) return "";
+                const s = String(v);
+                if (s.includes(",") || s.includes(";") || s.includes('"')) {
+                    return '"' + s.replace(/"/g, '""') + '"';
+                }
+                return s;
+            }).join(";");
+            csvContent += line + (idx < rows.length - 1 ? "\n" : "");
+        });
+
+        const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "dati_filtrati_prenotazioni.csv";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+
+    // =========================
+    // GESTIONE FILTRI & REFRESH
+    // =========================
+
+    function getFiltersFromUI() {
+        const yearFilter = document.getElementById("yearFilter");
+        const monthFilter = document.getElementById("monthFilter");
+        const groupFilter = document.getElementById("groupFilter");
+        const tipologiaFilterEl = document.getElementById("tipologiaFilter");
+        const acquisitionFilter = document.getElementById("acquisitionFilter");
+        const stationFilter = document.getElementById("stationFilter");
+
+        const filters = {
+            yearsSelected: getSelectedValues(yearFilter),
+            monthsSelected: getSelectedValues(monthFilter),
+            groupsSelected: getSelectedValues(groupFilter),
+            acquisitionsSelected: getSelectedValues(acquisitionFilter),
+            stationsSelected: getSelectedValues(stationFilter),
+            tipologieSelected: tipologiaFilterEl && tipologiaFilterEl.offsetParent !== null
+                ? getSelectedValues(tipologiaFilterEl)
+                : new Set()
+        };
+
+        return filters;
+    }
+
+    function refreshDashboard() {
+        const filters = getFiltersFromUI();
+        const ranges = getCurrentAndPreviousRanges(filters);
+
+        const currentData = filterDataForRange(ranges.current, filters, true, false);
+        const previousData = ranges.previous
+            ? filterDataForRange(ranges.previous, filters, false, true)
+            : { fleet: [], bookings: [] };
+
+        updateKpis(currentData, previousData, ranges, filters);
+        updateChart(currentData, ranges);
+
+        return { currentData, previousData, ranges, filters };
+    }
+
+    // =========================
+    // INIZIALIZZAZIONE FILTRI (LISTE)
+    // =========================
+
+    function initFiltersLists() {
+        // Stazioni
+        const stationFilter = document.getElementById("stationFilter");
+        stationFilter.innerHTML = "";
+        const sortedStations = Array.from(stationsList).sort((a, b) =>
+            a.localeCompare(b, "it", { sensitivity: "base" })
+        );
+        sortedStations.forEach(st => {
+            const opt = document.createElement("option");
+            opt.value = st;
+            opt.textContent = st;
+            opt.selected = true;
+            stationFilter.appendChild(opt);
+        });
+
+        // Acquisizioni
+        const acquisitionFilter = document.getElementById("acquisitionFilter");
+        acquisitionFilter.innerHTML = "";
+        const sortedAcq = Array.from(acquisitionList).sort((a, b) =>
+            a.localeCompare(b, "it", { sensitivity: "base" })
+        );
+        sortedAcq.forEach(acq => {
+            const opt = document.createElement("option");
+            opt.value = acq;
+            opt.textContent = acq;
+            opt.selected = true;
+            acquisitionFilter.appendChild(opt);
+        });
+
+        // Tipologia (se presente)
+        const tipContainer = document.getElementById("tipologiaFilterContainer");
+        const tipFilter = document.getElementById("tipologiaFilter");
+        if (tipologiaList.size > 0) {
+            tipFilter.innerHTML = "";
+            const sortedTip = Array.from(tipologiaList).sort((a, b) =>
+                a.localeCompare(b, "it", { sensitivity: "base" })
+            );
+            sortedTip.forEach(t => {
+                const opt = document.createElement("option");
+                opt.value = t;
+                opt.textContent = t;
+                opt.selected = true;
+                tipFilter.appendChild(opt);
+            });
+            tipContainer.style.display = "block";
+        } else {
+            tipContainer.style.display = "none";
+        }
+
+        // Anno/mese/gruppo: selezioniamo tutto di default
+        setAllOptionsSelected(document.getElementById("yearFilter"), true);
+        setAllOptionsSelected(document.getElementById("monthFilter"), true);
+        setAllOptionsSelected(document.getElementById("groupFilter"), true);
+    }
+
+    function attachFilterEvents() {
+        const selects = document.querySelectorAll(".filter-select");
+        selects.forEach(sel => {
+            sel.addEventListener("change", () => {
+                refreshDashboard();
+            });
+        });
+
+        const projectionSelect = document.getElementById("projectionSelect");
+        projectionSelect.addEventListener("change", () => {
+            const factor = parseFloat(projectionSelect.value) || 0.1;
+            generateAllBookings(factor);
+            refreshDashboard();
+        });
+
+        const clearBtn = document.getElementById("clearFiltersBtn");
+        clearBtn.addEventListener("click", () => {
+            // reset multi-selects
+            const yearFilter = document.getElementById("yearFilter");
+            const monthFilter = document.getElementById("monthFilter");
+            const groupFilter = document.getElementById("groupFilter");
+            const acquisitionFilter = document.getElementById("acquisitionFilter");
+            const stationFilter = document.getElementById("stationFilter");
+            const tipFilter = document.getElementById("tipologiaFilter");
+
+            [yearFilter, monthFilter, groupFilter, acquisitionFilter, stationFilter, tipFilter].forEach(sel => {
+                if (sel) setAllOptionsSelected(sel, true);
+            });
+
+            const projectionSelect = document.getElementById("projectionSelect");
+            projectionSelect.value = "0.10";
+            generateAllBookings(0.10);
+            refreshDashboard();
+        });
+
+        const printBtn = document.getElementById("printBtn");
+        printBtn.addEventListener("click", () => {
+            window.print();
+        });
+
+        const csvBtn = document.getElementById("downloadCsvBtn");
+        csvBtn.addEventListener("click", () => {
+            const { currentData } = refreshDashboard();
+            downloadFilteredCsv(currentData);
+        });
+    }
+
+    // =========================
+    // FETCH & INIT
+    // =========================
+
+    async function initDashboard() {
+        try {
+            const [
+                fleetRes,
+                stationRes,
+                bookingsRes,
+                bookingsJanRes
+            ] = await Promise.all([
+                fetch("fleetData_clean.json"),
+                fetch("fleetStations2025.json"),
+                fetch("bookings2025.json"),
+                fetch("bookingsJan2026.json")
+            ]);
+
+            const [fleetJson, stationJson, bookingsJson, bookingsJanJson] = await Promise.all([
+                fleetRes.json(),
+                stationRes.json(),
+                bookingsRes.json(),
+                bookingsJanRes.json()
+            ]);
+
+            // Normalizza flotta
+            fleetData = normalizeFleetData(fleetJson || []);
+
+            // Stazioni da fleetStations2025.json (solo per arricchire stationsList)
+            if (Array.isArray(stationJson)) {
+                const sampleS = stationJson[0] || {};
+                const stationField = detectFieldName(sampleS, ["stazione", "station", "location"]);
+                if (stationField) {
+                    stationJson.forEach(row => {
+                        const st = (row[stationField] || "").toString().trim();
+                        if (st) stationsList.add(st);
+                    });
+                }
+            }
+
+            // Normalizza prenotazioni
+            baseBookings2025 = normalizeBookings(bookingsJson || [], false);
+            jan2026Bookings = normalizeBookings(bookingsJanJson || [], true);
+
+            // Proiezioni iniziali (10%)
+            generateAllBookings(0.10);
+
+            // Inizializza liste filtri
+            initFiltersLists();
+
+            // Aggancia eventi
+            attachFilterEvents();
+
+            // Primo render
+            refreshDashboard();
+
+        } catch (err) {
+            console.error("Errore nel caricamento dei dati:", err);
+            alert("Errore nel caricamento dei dati. Verifica i file JSON nella root del repository.");
+        }
     }
 
     document.addEventListener("DOMContentLoaded", initDashboard);
-  </script>
+</script>
+</body>
+</html>
